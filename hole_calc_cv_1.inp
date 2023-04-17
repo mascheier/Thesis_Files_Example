@@ -1,0 +1,7 @@
+! This is the control
+coord P1.pdb		! Run on 7KQ5 Pentamer
+radius /home/matthewscheier/hole2/rad/simple.rad
+ignore hoh tip wat		! ignore all atoms from waters
+cvect -6.762001  -3.2819977 -4.453003 ! vector calc from histidine to tyrosine
+sphpdb spherical_calc_cv.sph       ! standard hole spherical probe in this run
+endrad 20.
