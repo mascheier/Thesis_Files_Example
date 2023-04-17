@@ -1,0 +1,4166 @@
+log started: Wed Nov 10 16:04:29 2021
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/matthewscheier/anaconda3/envs/md/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/matthewscheier/anaconda3/envs/md/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/matthewscheier/anaconda3/envs/md/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.opc
+----- Source: /home/matthewscheier/anaconda3/envs/md/dat/leap/cmd/leaprc.water.opc
+----- Source of /home/matthewscheier/anaconda3/envs/md/dat/leap/cmd/leaprc.water.opc done
+>> #
+>> #       Load water and ions for OPC + Joung-Chetham monovalent ions for
+>> #       tip4pew + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #       for tip4pew
+>> # 
+>> addAtomTypes {
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>>     { "OW"   "O"   "sp3" }
+>>     { "HW"   "H"   "sp3" }
+>>     { "EP"   ""    "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/matthewscheier/anaconda3/envs/md/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/matthewscheier/anaconda3/envs/md/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = OPC
+>> WAT = OPC
+>> loadAmberParams frcmod.opc
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/frcmod.opc
+Reading force field modification type file (frcmod)
+Reading title:
+Parameters for OPC water (JPCL, 2014, 5 (21), pp 3863–3871) 
+(UNKNOWN ATOM TYPE: EP)
+>> loadAmberParams frcmod.ionsjc_tip4pew
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/frcmod.ionsjc_tip4pew
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP4P/EW water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip4pew
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/frcmod.ions234lm_126_tip4pew
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP4P/EW water model (12-6 normal usage set)
+>> 
+> 
+> loadamberparams frcmod.ions1lm_126_hfe_opc
+Loading parameters: /home/matthewscheier/anaconda3/envs/md/dat/leap/parm/frcmod.ions1lm_126_hfe_opc
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz monovalent ion parameters for OPC  water model (12-6 HFE set)
+> ramp = loadpdb EncTm_G186L.pdb
+Loading PDB file: ./EncTm_G186L.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue MET, term: Terminal/beginning, seq. number: 0 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 264 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 265 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 529 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 530 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 794 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 795 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 1059 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 1060 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 1324 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 1325 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 1589 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 1590 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 1854 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 1855 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 2119 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 2120 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 2384 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 2385 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 2649 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 2650 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 2914 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 2915 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 3179 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 3180 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 3444 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 3445 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 3709 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 3710 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 3974 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 3975 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 4239 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 4240 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 4504 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 4505 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 4769 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 4770 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 5034 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 5035 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 5299 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 5300 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 5564 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 5565 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 5829 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 5830 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 6094 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 6095 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 6359 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 6360 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 6624 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 6625 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 6889 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 6890 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 7154 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 7155 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 7419 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 7420 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 7684 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 7685 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 7949 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 7950 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 8214 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 8215 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 8479 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 8480 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 8744 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 8745 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 9009 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 9010 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 9274 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 9275 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 9539 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 9540 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 9804 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 9805 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 10069 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 10070 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 10334 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 10335 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 10599 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 10600 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 10864 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 10865 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 11129 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 11130 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 11394 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 11395 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 11659 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 11660 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 11924 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 11925 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 12189 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 12190 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 12454 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 12455 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 12719 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 12720 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 12984 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 12985 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 13249 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 13250 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 13514 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 13515 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 13779 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 13780 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 14044 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 14045 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 14309 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 14310 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 14574 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 14575 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 14839 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 14840 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 15104 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 15105 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 15369 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 15370 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 15634 to: CPHE.
+Mapped residue MET, term: Terminal/beginning, seq. number: 15635 to: NMET.
+Mapped residue PHE, term: Terminal/last, seq. number: 15899 to: CPHE.
+  Added missing heavy atom: .R<CPHE 265>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 530>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 795>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 1060>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 1325>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 1590>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 1855>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 2120>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 2385>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 2650>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 2915>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 3180>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 3445>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 3710>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 3975>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 4240>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 4505>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 4770>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 5035>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 5300>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 5565>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 5830>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 6095>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 6360>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 6625>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 6890>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 7155>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 7420>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 7685>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 7950>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 8215>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 8480>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 8745>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 9010>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 9275>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 9540>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 9805>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 10070>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 10335>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 10600>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 10865>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 11130>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 11395>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 11660>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 11925>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 12190>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 12455>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 12720>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 12985>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 13250>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 13515>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 13780>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 14045>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 14310>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 14575>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 14840>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 15105>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 15370>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 15635>.A<OXT 21>
+  Added missing heavy atom: .R<CPHE 15900>.A<OXT 21>
+  total atoms in file: 129360
+  Leap added 130140 missing atoms according to residue templates:
+       60 Heavy
+       130080 H / lone pairs
+> charge ramp
+Total unperturbed charge: -780.000000
+Total perturbed charge:   -780.000000
+> addIons ramp Na+ 0
+780 Na+ ions required to neutralize.
+Adding 780 counter ions to "ramp" using 1A grid
+Total solute charge:  -780.00  Max atom radius:   1.98
+Grid extends from solute vdw + 13.19  to  19.17
+Box:
+   enclosing:  -137.08 -135.96 -139.34   137.08 135.96 139.34
+   sized:			      374.92 376.04 372.66
+   edge:        512.00
+Resolution:      1.00 Angstrom.
+Tree depth: 9
+Volume =  1.11% of box, grid points 1495411
+ (no solvent present)
+Calculating grid charges
+Placed Na+ in ramp at (-26.08, 4.04, -73.34).
+Placed Na+ in ramp at (40.92, -49.96, 43.66).
+Placed Na+ in ramp at (70.92, 28.04, -16.34).
+Placed Na+ in ramp at (-76.08, -11.96, -12.34).
+Placed Na+ in ramp at (-5.08, 76.04, -16.34).
+Placed Na+ in ramp at (45.92, -27.96, -56.34).
+Placed Na+ in ramp at (3.92, 27.04, 72.66).
+Placed Na+ in ramp at (-12.08, -75.96, -12.34).
+Placed Na+ in ramp at (-46.08, -28.96, 55.66).
+Placed Na+ in ramp at (-44.08, 53.04, -36.34).
+Placed Na+ in ramp at (-41.08, -49.96, -43.34).
+Placed Na+ in ramp at (52.92, 31.04, 45.66).
+Placed Na+ in ramp at (-13.08, 60.04, 45.66).
+Placed Na+ in ramp at (47.92, -58.96, -15.34).
+Placed Na+ in ramp at (33.92, 19.04, -65.34).
+Placed Na+ in ramp at (-62.08, 15.04, 43.66).
+Placed Na+ in ramp at (75.92, -11.96, 12.66).
+Placed Na+ in ramp at (-48.08, -58.96, 15.66).
+Placed Na+ in ramp at (7.92, -40.96, 63.66).
+Placed Na+ in ramp at (33.92, 69.04, 11.66).
+Placed Na+ in ramp at (-74.08, 18.04, -16.34).
+Placed Na+ in ramp at (-8.08, 38.04, -65.34).
+Placed Na+ in ramp at (11.92, -75.96, 11.66).
+Placed Na+ in ramp at (36.92, 58.04, -36.34).
+Placed Na+ in ramp at (13.92, -43.96, -60.34).
+Placed Na+ in ramp at (-53.08, 55.04, 7.66).
+Placed Na+ in ramp at (53.92, -2.96, 55.66).
+Placed Na+ in ramp at (-18.08, -17.96, 73.66).
+Placed Na+ in ramp at (66.92, -15.96, -36.34).
+Placed Na+ in ramp at (-53.08, -3.96, -56.34).
+Placed Na+ in ramp at (-34.08, 18.04, 65.66).
+Placed Na+ in ramp at (-68.08, -35.96, 11.66).
+Placed Na+ in ramp at (19.92, 52.04, 54.66).
+Placed Na+ in ramp at (-12.08, -22.96, -73.34).
+Placed Na+ in ramp at (-5.08, -68.96, 35.66).
+Placed Na+ in ramp at (73.92, 18.04, 15.66).
+Placed Na+ in ramp at (-23.08, 71.04, 13.66).
+Placed Na+ in ramp at (17.92, -64.96, -35.34).
+Placed Na+ in ramp at (54.92, 54.04, -11.34).
+Placed Na+ in ramp at (24.92, 3.04, 73.66).
+Placed Na+ in ramp at (59.92, -43.96, 14.66).
+Placed Na+ in ramp at (2.92, 65.04, -42.34).
+Placed Na+ in ramp at (-70.08, 29.04, 15.66).
+Placed Na+ in ramp at (-41.08, -63.96, -15.34).
+Placed Na+ in ramp at (62.92, 18.04, -42.34).
+Placed Na+ in ramp at (16.92, -12.96, -76.34).
+Placed Na+ in ramp at (-35.08, -53.96, 43.66).
+Placed Na+ in ramp at (-60.08, 24.04, -42.34).
+Placed Na+ in ramp at (-41.08, 55.04, 39.66).
+Placed Na+ in ramp at (-67.08, -15.96, 35.66).
+Placed Na+ in ramp at (-12.08, -51.96, -56.34).
+Placed Na+ in ramp at (63.92, -24.96, 36.66).
+Placed Na+ in ramp at (10.92, 76.04, 18.66).
+Placed Na+ in ramp at (-64.08, -23.96, -37.34).
+Placed Na+ in ramp at (67.92, -35.96, -12.34).
+Placed Na+ in ramp at (44.92, 52.04, 35.66).
+Placed Na+ in ramp at (13.92, 44.04, -60.34).
+Placed Na+ in ramp at (40.92, -63.96, 15.66).
+Placed Na+ in ramp at (36.92, -26.96, 60.66).
+Placed Na+ in ramp at (-35.08, 68.04, -13.34).
+Placed Na+ in ramp at (-37.08, 27.04, -60.34).
+Placed Na+ in ramp at (-23.08, -70.96, 13.66).
+Placed Na+ in ramp at (22.92, 71.04, -14.34).
+Placed Na+ in ramp at (-43.08, 35.04, 54.66).
+Placed Na+ in ramp at (42.92, -55.96, -38.34).
+Placed Na+ in ramp at (-60.08, -43.96, -14.34).
+Placed Na+ in ramp at (5.92, -19.96, 76.66).
+Placed Na+ in ramp at (45.92, 0.04, -60.34).
+Placed Na+ in ramp at (59.92, 44.04, 14.66).
+Placed Na+ in ramp at (-37.08, -26.96, -60.34).
+Placed Na+ in ramp at (-60.08, 44.04, -14.34).
+Placed Na+ in ramp at (-74.08, 0.04, 14.66).
+Placed Na+ in ramp at (73.92, 0.04, -15.34).
+Placed Na+ in ramp at (-19.08, 55.04, -53.34).
+Placed Na+ in ramp at (-16.08, 13.04, 76.66).
+Placed Na+ in ramp at (22.92, -70.96, -14.34).
+Placed Na+ in ramp at (43.92, 35.04, -54.34).
+Placed Na+ in ramp at (35.92, 27.04, 60.66).
+Placed Na+ in ramp at (-14.08, -42.96, 60.66).
+Placed Na+ in ramp at (14.92, 14.04, -77.34).
+Placed Na+ in ramp at (21.92, -56.96, 52.66).
+Placed Na+ in ramp at (-14.08, 43.04, 60.66).
+Placed Na+ in ramp at (-2.08, -67.96, -41.34).
+Placed Na+ in ramp at (-45.08, -0.96, 60.66).
+Placed Na+ in ramp at (68.92, -24.96, -96.34).
+Placed Na+ in ramp at (11.92, 119.04, -18.34).
+Placed Na+ in ramp at (-117.08, 25.04, 18.66).
+Placed Na+ in ramp at (65.92, 20.04, 39.66).
+Placed Na+ in ramp at (44.92, 58.04, -96.34).
+Placed Na+ in ramp at (67.92, -60.96, 79.66).
+Placed Na+ in ramp at (-120.08, -15.96, 2.66).
+Placed Na+ in ramp at (36.92, -82.96, -80.34).
+Placed Na+ in ramp at (-41.08, 61.04, -96.34).
+Placed Na+ in ramp at (78.92, 46.04, 79.66).
+Placed Na+ in ramp at (1.92, 70.04, 38.66).
+Placed Na+ in ramp at (-61.08, -102.96, 18.66).
+Placed Na+ in ramp at (-36.08, -45.96, -106.34).
+Placed Na+ in ramp at (116.92, 26.04, -18.34).
+Placed Na+ in ramp at (-69.08, -24.96, 96.66).
+Placed Na+ in ramp at (-43.08, 104.04, 45.66).
+Placed Na+ in ramp at (-37.08, -82.96, 80.66).
+Placed Na+ in ramp at (-55.08, 20.04, -106.34).
+Placed Na+ in ramp at (-45.08, 58.04, 96.66).
+Placed Na+ in ramp at (106.92, -56.96, 0.66).
+Placed Na+ in ramp at (-96.08, -57.96, -46.34).
+Placed Na+ in ramp at (43.92, 103.04, -46.34).
+Placed Na+ in ramp at (31.92, -48.96, -106.34).
+Placed Na+ in ramp at (-91.08, 9.04, 79.66).
+Placed Na+ in ramp at (59.92, -103.96, -19.34).
+Placed Na+ in ramp at (40.92, 61.04, 96.66).
+Placed Na+ in ramp at (1.92, 58.04, -106.34).
+Placed Na+ in ramp at (-85.08, 74.04, -45.34).
+Placed Na+ in ramp at (-62.08, -45.96, 38.66).
+Placed Na+ in ramp at (36.92, -44.96, 106.66).
+Placed Na+ in ramp at (109.92, 48.04, 18.66).
+Placed Na+ in ramp at (55.92, 16.04, -106.34).
+Placed Na+ in ramp at (-77.08, 1.04, -38.34).
+Placed Na+ in ramp at (52.92, 109.04, -1.34).
+Placed Na+ in ramp at (-112.08, -8.96, 45.66).
+Placed Na+ in ramp at (-71.08, -19.96, -96.34).
+Placed Na+ in ramp at (23.92, -73.96, 38.66).
+Placed Na+ in ramp at (-53.08, 109.04, 0.66).
+Placed Na+ in ramp at (112.92, -9.96, -44.34).
+Placed Na+ in ramp at (-3.08, 58.04, 106.66).
+Placed Na+ in ramp at (-2.08, -73.96, -96.34).
+Placed Na+ in ramp at (70.92, -19.96, 96.66).
+Placed Na+ in ramp at (18.92, 89.04, -80.34).
+Placed Na+ in ramp at (-110.08, 48.04, -18.34).
+Placed Na+ in ramp at (24.92, -109.96, -45.34).
+Placed Na+ in ramp at (87.92, 84.04, 2.66).
+Placed Na+ in ramp at (-33.08, -47.96, 106.66).
+Placed Na+ in ramp at (-81.08, -88.96, -19.34).
+Placed Na+ in ramp at (96.92, -58.96, 44.66).
+Placed Na+ in ramp at (-6.08, 20.04, -76.34).
+Placed Na+ in ramp at (-25.08, -109.96, 45.66).
+Placed Na+ in ramp at (-56.08, 15.04, 106.66).
+Placed Na+ in ramp at (90.92, 9.04, -80.34).
+Placed Na+ in ramp at (-19.08, 89.04, 80.66).
+Placed Na+ in ramp at (-68.08, -60.96, -80.34).
+Placed Na+ in ramp at (54.92, 20.04, 106.66).
+Placed Na+ in ramp at (-89.08, 83.04, -3.34).
+Placed Na+ in ramp at (21.92, -119.96, -3.34).
+Placed Na+ in ramp at (84.92, 74.04, 45.66).
+Placed Na+ in ramp at (62.92, 45.04, -38.34).
+Placed Na+ in ramp at (120.92, -14.96, -3.34).
+Placed Na+ in ramp at (-79.08, 46.04, -80.34).
+Placed Na+ in ramp at (1.92, -73.96, 96.66).
+Placed Na+ in ramp at (-24.08, -72.96, -39.34).
+Placed Na+ in ramp at (-63.08, 45.04, 37.66).
+Placed Na+ in ramp at (80.92, -88.96, 19.66).
+Placed Na+ in ramp at (62.92, -44.96, -38.34).
+Placed Na+ in ramp at (-107.08, -57.96, -2.34).
+Placed Na+ in ramp at (-12.08, 120.04, 17.66).
+Placed Na+ in ramp at (-24.08, 73.04, -39.34).
+Placed Na+ in ramp at (-22.08, -119.96, 2.66).
+Placed Na+ in ramp at (76.92, -0.96, 38.66).
+Placed Na+ in ramp at (28.92, -25.96, -65.34).
+Placed Na+ in ramp at (-0.08, 0.04, 86.66).
+Placed Na+ in ramp at (24.92, 73.04, 37.66).
+Placed Na+ in ramp at (-55.08, -37.96, -36.34).
+Placed Na+ in ramp at (74.92, -14.96, -4.34).
+Placed Na+ in ramp at (-4.08, 75.04, 3.66).
+Placed Na+ in ramp at (-0.08, 0.04, -86.34).
+Placed Na+ in ramp at (-73.08, -19.96, 1.66).
+Placed Na+ in ramp at (-19.08, -55.96, 48.66).
+Placed Na+ in ramp at (18.92, 60.04, -42.34).
+Placed Na+ in ramp at (52.92, -37.96, 38.66).
+Placed Na+ in ramp at (-69.08, 32.04, -5.34).
+Placed Na+ in ramp at (16.92, 38.04, 63.66).
+Placed Na+ in ramp at (61.92, 2.04, -44.34).
+Placed Na+ in ramp at (-5.08, -75.96, 0.66).
+Placed Na+ in ramp at (-48.08, 35.04, -47.34).
+Placed Na+ in ramp at (41.92, 63.04, -1.34).
+Placed Na+ in ramp at (-21.08, -34.96, -64.34).
+Placed Na+ in ramp at (-37.08, -18.96, 63.66).
+Placed Na+ in ramp at (38.92, -9.96, 64.66).
+Placed Na+ in ramp at (-27.08, 63.04, 33.66).
+Placed Na+ in ramp at (69.92, 30.04, 5.66).
+Placed Na+ in ramp at (51.92, -55.96, 5.66).
+Placed Na+ in ramp at (-70.08, 0.04, 30.66).
+Placed Na+ in ramp at (-38.08, -65.96, 5.66).
+Placed Na+ in ramp at (-40.08, -9.96, -64.34).
+Placed Na+ in ramp at (-39.08, 65.04, 2.66).
+Placed Na+ in ramp at (22.92, -55.96, -46.34).
+Placed Na+ in ramp at (38.92, 10.04, 64.66).
+Placed Na+ in ramp at (-69.08, -34.96, 30.66).
+Placed Na+ in ramp at (26.92, -74.96, 23.66).
+Placed Na+ in ramp at (25.92, 32.04, -64.34).
+Placed Na+ in ramp at (68.92, -31.96, 5.66).
+Placed Na+ in ramp at (-53.08, 56.04, 22.66).
+Placed Na+ in ramp at (-67.08, 6.04, -48.34).
+Placed Na+ in ramp at (21.92, -33.96, 64.66).
+Placed Na+ in ramp at (53.92, 55.04, -31.34).
+Placed Na+ in ramp at (-26.08, -74.96, -23.34).
+Placed Na+ in ramp at (61.92, -31.96, -45.34).
+Placed Na+ in ramp at (-22.08, 35.04, -64.34).
+Placed Na+ in ramp at (-74.08, 17.04, 5.66).
+Placed Na+ in ramp at (-21.08, -65.96, 31.66).
+Placed Na+ in ramp at (-27.08, 32.04, 63.66).
+Placed Na+ in ramp at (-23.08, 76.04, -24.34).
+Placed Na+ in ramp at (-3.08, -40.96, -64.34).
+Placed Na+ in ramp at (55.92, 41.04, 31.66).
+Placed Na+ in ramp at (9.92, 84.04, 93.66).
+Placed Na+ in ramp at (-46.08, -16.96, -116.34).
+Placed Na+ in ramp at (-93.08, -84.96, 9.66).
+Placed Na+ in ramp at (-59.08, -0.96, 47.66).
+Placed Na+ in ramp at (113.92, 22.04, -50.34).
+Placed Na+ in ramp at (23.92, 124.04, 9.66).
+Placed Na+ in ramp at (51.92, -114.96, 9.66).
+Placed Na+ in ramp at (-105.08, 49.04, -50.34).
+Placed Na+ in ramp at (26.92, 41.04, -116.34).
+Placed Na+ in ramp at (90.92, -39.96, 78.66).
+Placed Na+ in ramp at (-58.08, -60.96, 94.66).
+Placed Na+ in ramp at (65.92, 74.04, 78.66).
+Placed Na+ in ramp at (-42.08, -73.96, -93.34).
+Placed Na+ in ramp at (-116.08, -40.96, -28.34).
+Placed Na+ in ramp at (-76.08, 36.04, 94.66).
+Placed Na+ in ramp at (95.92, -21.96, -79.34).
+Placed Na+ in ramp at (14.92, 115.04, -50.34).
+Placed Na+ in ramp at (-2.08, -123.96, 25.66).
+Placed Na+ in ramp at (109.92, 62.04, -9.34).
+Placed Na+ in ramp at (-2.08, -48.96, 116.66).
+Placed Na+ in ramp at (8.92, -97.96, -79.34).
+Placed Na+ in ramp at (-109.08, 63.04, 9.66).
+Placed Na+ in ramp at (93.92, -83.96, -9.34).
+Placed Na+ in ramp at (-118.08, -34.96, 27.66).
+Placed Na+ in ramp at (49.92, 86.04, -78.34).
+Placed Na+ in ramp at (83.92, 18.04, 92.66).
+Placed Na+ in ramp at (-65.08, 74.04, -79.34).
+Placed Na+ in ramp at (-0.08, -49.96, -116.34).
+Placed Na+ in ramp at (41.92, -73.96, 93.66).
+Placed Na+ in ramp at (74.92, 98.04, 27.66).
+Placed Na+ in ramp at (-70.08, 102.04, 26.66).
+Placed Na+ in ramp at (-79.08, -84.96, -50.34).
+Placed Na+ in ramp at (116.92, -40.96, 26.66).
+Placed Na+ in ramp at (-26.08, 41.04, 116.66).
+Placed Na+ in ramp at (-31.08, 38.04, -116.34).
+Placed Na+ in ramp at (57.92, -62.96, -93.34).
+Placed Na+ in ramp at (-15.08, 115.04, 50.66).
+Placed Na+ in ramp at (-52.08, -114.96, -9.34).
+Placed Na+ in ramp at (-47.08, -12.96, 116.66).
+Placed Na+ in ramp at (103.92, 50.04, 52.66).
+Placed Na+ in ramp at (-114.08, 22.04, 49.66).
+Placed Na+ in ramp at (47.92, -14.96, -116.34).
+Placed Na+ in ramp at (-8.08, -97.96, 79.66).
+Placed Na+ in ramp at (-75.08, 98.04, -27.34).
+Placed Na+ in ramp at (54.92, -101.96, -51.34).
+Placed Na+ in ramp at (46.92, -15.96, 116.66).
+Placed Na+ in ramp at (-83.08, 16.04, -94.34).
+Placed Na+ in ramp at (78.92, 35.04, -92.34).
+Placed Na+ in ramp at (-24.08, 124.04, -9.34).
+Placed Na+ in ramp at (73.92, 17.04, -5.34).
+Placed Na+ in ramp at (-97.08, -20.96, 78.66).
+Placed Na+ in ramp at (30.92, 38.04, 116.66).
+Placed Na+ in ramp at (-56.08, -101.96, 49.66).
+Placed Na+ in ramp at (117.92, -34.96, -29.34).
+Placed Na+ in ramp at (-10.08, 84.04, -94.34).
+Placed Na+ in ramp at (-91.08, -40.96, -78.34).
+Placed Na+ in ramp at (-51.08, 84.04, 79.66).
+Placed Na+ in ramp at (69.92, 102.04, -27.34).
+Placed Na+ in ramp at (37.92, -65.96, -5.34).
+Placed Na+ in ramp at (2.92, -123.96, -26.34).
+Placed Na+ in ramp at (79.92, -83.96, 51.66).
+Placed Na+ in ramp at (-56.08, 41.04, -31.34).
+Placed Na+ in ramp at (-52.08, -54.96, -4.34).
+Placed Na+ in ramp at (125.92, 15.04, 9.66).
+Placed Na+ in ramp at (30.92, 62.04, 45.66).
+Placed Na+ in ramp at (-126.08, 15.04, -10.34).
+Placed Na+ in ramp at (9.92, 10.04, 81.66).
+Placed Na+ in ramp at (33.92, -6.96, -67.34).
+Placed Na+ in ramp at (-76.08, -12.96, -30.34).
+Placed Na+ in ramp at (68.92, -9.96, 45.66).
+Placed Na+ in ramp at (-26.08, -30.96, 64.66).
+Placed Na+ in ramp at (9.92, 75.04, -4.34).
+Placed Na+ in ramp at (-12.08, -5.96, -82.34).
+Placed Na+ in ramp at (-27.08, -61.96, -48.34).
+Placed Na+ in ramp at (-68.08, 31.04, 34.66).
+Placed Na+ in ramp at (10.92, -67.96, 45.66).
+Placed Na+ in ramp at (13.92, 124.04, -27.34).
+Placed Na+ in ramp at (-52.08, -54.96, 34.66).
+Placed Na+ in ramp at (-39.08, 11.04, -64.34).
+Placed Na+ in ramp at (67.92, 32.04, -35.34).
+Placed Na+ in ramp at (-72.08, 56.04, 97.66).
+Placed Na+ in ramp at (101.92, -68.96, 3.66).
+Placed Na+ in ramp at (-43.08, 115.04, 4.66).
+Placed Na+ in ramp at (62.92, -47.96, -23.34).
+Placed Na+ in ramp at (78.92, 3.04, 23.66).
+Placed Na+ in ramp at (1.92, 41.04, 64.66).
+Placed Na+ in ramp at (42.92, 115.04, -3.34).
+Placed Na+ in ramp at (54.92, 23.04, -115.34).
+Placed Na+ in ramp at (-23.08, -54.96, 107.66).
+Placed Na+ in ramp at (-76.08, -99.96, -2.34).
+Placed Na+ in ramp at (103.92, 1.04, -70.34).
+Placed Na+ in ramp at (84.92, -61.96, 68.66).
+Placed Na+ in ramp at (-25.08, 62.04, -106.34).
+Placed Na+ in ramp at (-120.08, -37.96, 0.66).
+Placed Na+ in ramp at (23.92, 62.04, 106.66).
+Placed Na+ in ramp at (8.92, -73.96, -12.34).
+Placed Na+ in ramp at (106.92, 54.04, 28.66).
+Placed Na+ in ramp at (-33.08, -100.96, 67.66).
+Placed Na+ in ramp at (-31.08, 99.04, 70.66).
+Placed Na+ in ramp at (-16.08, -64.96, -106.34).
+Placed Na+ in ramp at (-107.08, 54.04, -29.34).
+Placed Na+ in ramp at (32.92, -98.96, -70.34).
+Placed Na+ in ramp at (-106.08, 0.04, 67.66).
+Placed Na+ in ramp at (-74.08, -30.96, -93.34).
+Placed Na+ in ramp at (31.92, 100.04, -69.34).
+Placed Na+ in ramp at (51.92, -40.96, -107.34).
+Placed Na+ in ramp at (66.92, -3.96, 106.66).
+Placed Na+ in ramp at (-76.08, 100.04, -1.34).
+Placed Na+ in ramp at (70.92, -103.96, -3.34).
+Placed Na+ in ramp at (-103.08, -57.96, -35.34).
+Placed Na+ in ramp at (15.92, -64.96, 106.66).
+Placed Na+ in ramp at (117.92, 20.04, -27.34).
+Placed Na+ in ramp at (-88.08, 64.04, -63.34).
+Placed Na+ in ramp at (84.92, 61.04, 69.66).
+Placed Na+ in ramp at (-1.08, -125.96, 0.66).
+Placed Na+ in ramp at (-14.08, -2.96, 81.66).
+Placed Na+ in ramp at (13.92, 57.04, -108.34).
+Placed Na+ in ramp at (71.92, 103.04, -1.34).
+Placed Na+ in ramp at (-69.08, -31.96, -6.34).
+Placed Na+ in ramp at (-56.08, -35.96, 106.66).
+Placed Na+ in ramp at (-120.08, 38.04, 0.66).
+Placed Na+ in ramp at (-65.08, 5.04, -107.34).
+Placed Na+ in ramp at (120.92, -35.96, -1.34).
+Placed Na+ in ramp at (-54.08, -106.96, 28.66).
+Placed Na+ in ramp at (-31.08, 62.04, -45.34).
+Placed Na+ in ramp at (51.92, 56.04, 4.66).
+Placed Na+ in ramp at (59.92, -60.96, 88.66).
+Placed Na+ in ramp at (-47.08, -33.96, -49.34).
+Placed Na+ in ramp at (-17.08, 119.04, 29.66).
+Placed Na+ in ramp at (-56.08, 33.04, 107.66).
+Placed Na+ in ramp at (69.92, 1.04, -30.34).
+Placed Na+ in ramp at (-117.08, -13.96, 35.66).
+Placed Na+ in ramp at (50.92, 31.04, 107.66).
+Placed Na+ in ramp at (96.92, 76.04, 3.66).
+Placed Na+ in ramp at (-44.08, -37.96, -108.34).
+Placed Na+ in ramp at (-41.08, 88.04, -98.34).
+Placed Na+ in ramp at (77.92, -18.96, -93.34).
+Placed Na+ in ramp at (-88.08, -63.96, -63.34).
+Placed Na+ in ramp at (-85.08, 14.04, 87.66).
+Placed Na+ in ramp at (34.92, -118.96, -2.34).
+Placed Na+ in ramp at (41.92, 69.04, -93.34).
+Placed Na+ in ramp at (-50.08, 107.04, 35.66).
+Placed Na+ in ramp at (48.92, 107.04, -36.34).
+Placed Na+ in ramp at (73.92, -31.96, 93.66).
+Placed Na+ in ramp at (118.92, 41.04, 1.66).
+Placed Na+ in ramp at (-102.08, -68.96, -3.34).
+Placed Na+ in ramp at (-77.08, 38.04, -88.34).
+Placed Na+ in ramp at (39.92, -75.96, -88.34).
+Placed Na+ in ramp at (-41.08, 69.04, 93.66).
+Placed Na+ in ramp at (18.92, 67.04, -29.34).
+Placed Na+ in ramp at (36.92, -64.96, 34.66).
+Placed Na+ in ramp at (-56.08, -74.96, 82.66).
+Placed Na+ in ramp at (76.92, 38.04, 88.66).
+Placed Na+ in ramp at (-123.08, -4.96, 3.66).
+Placed Na+ in ramp at (-23.08, -115.96, 35.66).
+Placed Na+ in ramp at (-50.08, 55.04, -14.34).
+Placed Na+ in ramp at (17.92, -42.96, -116.34).
+Placed Na+ in ramp at (-78.08, -17.96, 93.66).
+Placed Na+ in ramp at (23.92, -115.96, -35.34).
+Placed Na+ in ramp at (71.92, 50.04, -96.34).
+Placed Na+ in ramp at (109.92, -41.96, 42.66).
+Placed Na+ in ramp at (-1.08, 126.04, 0.66).
+Placed Na+ in ramp at (49.92, 76.04, 85.66).
+Placed Na+ in ramp at (50.92, -43.96, -48.34).
+Placed Na+ in ramp at (-49.08, 31.04, -109.34).
+Placed Na+ in ramp at (73.92, -93.96, 37.66).
+Placed Na+ in ramp at (-61.08, -108.96, -46.34).
+Placed Na+ in ramp at (-57.08, 34.04, 48.66).
+Placed Na+ in ramp at (12.92, -39.96, 125.66).
+Placed Na+ in ramp at (-87.08, 80.04, -35.34).
+Placed Na+ in ramp at (86.92, 80.04, 35.66).
+Placed Na+ in ramp at (58.92, 4.04, -108.34).
+Placed Na+ in ramp at (82.92, -91.96, -47.34).
+Placed Na+ in ramp at (-29.08, -89.96, -93.34).
+Placed Na+ in ramp at (-13.08, 84.04, 89.66).
+Placed Na+ in ramp at (11.92, 85.04, -88.34).
+Placed Na+ in ramp at (124.92, -3.96, 10.66).
+Placed Na+ in ramp at (-61.08, -31.96, 45.66).
+Placed Na+ in ramp at (21.92, -103.96, 80.66).
+Placed Na+ in ramp at (109.92, 31.04, -67.34).
+Placed Na+ in ramp at (-102.08, 78.04, 32.66).
+Placed Na+ in ramp at (-3.08, 27.04, 130.66).
+Placed Na+ in ramp at (-34.08, -118.96, 2.66).
+Placed Na+ in ramp at (-105.08, -12.96, -80.34).
+Placed Na+ in ramp at (111.92, -46.96, -55.34).
+Placed Na+ in ramp at (42.92, 121.04, 33.66).
+Placed Na+ in ramp at (3.92, 27.04, -130.34).
+Placed Na+ in ramp at (48.92, -26.96, 50.66).
+Placed Na+ in ramp at (-43.08, 121.04, -33.34).
+Placed Na+ in ramp at (3.92, -113.96, -68.34).
+Placed Na+ in ramp at (-119.08, 18.04, 28.66).
+Placed Na+ in ramp at (105.92, -10.96, 80.66).
+Placed Na+ in ramp at (-92.08, -52.96, 80.66).
+Placed Na+ in ramp at (101.92, 78.04, -33.34).
+Placed Na+ in ramp at (13.92, 110.04, 74.66).
+Placed Na+ in ramp at (-19.08, -19.96, -130.34).
+Placed Na+ in ramp at (-129.08, -6.96, -35.34).
+Placed Na+ in ramp at (41.92, 0.04, 125.66).
+Placed Na+ in ramp at (4.92, 114.04, -67.34).
+Placed Na+ in ramp at (-60.08, -60.96, -89.34).
+Placed Na+ in ramp at (-33.08, -23.96, 126.66).
+Placed Na+ in ramp at (75.92, -55.96, -93.34).
+Placed Na+ in ramp at (-63.08, 95.04, 67.66).
+Placed Na+ in ramp at (-84.08, -91.96, 46.66).
+Placed Na+ in ramp at (36.92, -122.96, 33.66).
+Placed Na+ in ramp at (35.92, 68.04, 27.66).
+Placed Na+ in ramp at (-107.08, 39.04, -68.34).
+Placed Na+ in ramp at (120.92, 26.04, 47.66).
+Placed Na+ in ramp at (-16.08, -128.96, -26.34).
+Placed Na+ in ramp at (-110.08, 32.04, 67.66).
+Placed Na+ in ramp at (-53.08, 61.04, -93.34).
+Placed Na+ in ramp at (69.92, 88.04, -72.34).
+Placed Na+ in ramp at (-7.08, -79.96, 93.66).
+Placed Na+ in ramp at (117.92, -54.96, -27.34).
+Placed Na+ in ramp at (-14.08, 69.04, 26.66).
+Placed Na+ in ramp at (-117.08, -52.96, 35.66).
+Placed Na+ in ramp at (-33.08, 24.04, 126.66).
+Placed Na+ in ramp at (70.92, -88.96, 67.66).
+Placed Na+ in ramp at (84.92, 15.04, -88.34).
+Placed Na+ in ramp at (-70.08, -89.96, -68.34).
+Placed Na+ in ramp at (-64.08, 102.04, -60.34).
+Placed Na+ in ramp at (33.92, -22.96, -126.34).
+Placed Na+ in ramp at (64.92, 101.04, 61.66).
+Placed Na+ in ramp at (-79.08, 3.04, -23.34).
+Placed Na+ in ramp at (63.92, -94.96, -67.34).
+Placed Na+ in ramp at (-5.08, -113.96, 67.66).
+Placed Na+ in ramp at (48.92, 49.04, -45.34).
+Placed Na+ in ramp at (-118.08, 55.04, 27.66).
+Placed Na+ in ramp at (6.92, -80.96, -93.34).
+Placed Na+ in ramp at (108.92, 21.04, 74.66).
+Placed Na+ in ramp at (-41.08, -0.96, -126.34).
+Placed Na+ in ramp at (-14.08, 57.04, 108.66).
+Placed Na+ in ramp at (-7.08, -63.96, 21.66).
+Placed Na+ in ramp at (-118.08, -26.96, -56.34).
+Placed Na+ in ramp at (54.92, -106.96, -29.34).
+Placed Na+ in ramp at (34.92, -28.96, 116.66).
+Placed Na+ in ramp at (117.92, 55.04, -26.34).
+Placed Na+ in ramp at (12.92, 123.04, 47.66).
+Placed Na+ in ramp at (50.92, 44.04, -106.34).
+Placed Na+ in ramp at (129.92, -11.96, 34.66).
+Placed Na+ in ramp at (-10.08, 75.04, -34.34).
+Placed Na+ in ramp at (-63.08, -94.96, 67.66).
+Placed Na+ in ramp at (-128.08, 24.04, -27.34).
+Placed Na+ in ramp at (28.92, 89.04, 93.66).
+Placed Na+ in ramp at (-64.08, -111.96, -21.34).
+Placed Na+ in ramp at (-17.08, 129.04, -26.34).
+Placed Na+ in ramp at (-110.08, -30.96, 67.66).
+Placed Na+ in ramp at (38.92, 40.04, 50.66).
+Placed Na+ in ramp at (-89.08, 95.04, 27.66).
+Placed Na+ in ramp at (86.92, -94.96, -18.34).
+Placed Na+ in ramp at (2.92, -13.96, -81.34).
+Placed Na+ in ramp at (108.92, -25.96, -68.34).
+Placed Na+ in ramp at (-59.08, 4.04, 108.66).
+Placed Na+ in ramp at (106.92, -38.96, 68.66).
+Placed Na+ in ramp at (25.92, 7.04, -131.34).
+Placed Na+ in ramp at (15.92, -128.96, 26.66).
+Placed Na+ in ramp at (88.92, 95.04, -27.34).
+Placed Na+ in ramp at (-85.08, -84.96, -29.34).
+Placed Na+ in ramp at (15.92, 44.04, 121.66).
+Placed Na+ in ramp at (-21.08, 99.04, -85.34).
+Placed Na+ in ramp at (29.92, -88.96, 93.66).
+Placed Na+ in ramp at (-11.08, -75.96, -31.34).
+Placed Na+ in ramp at (-97.08, 76.04, -3.34).
+Placed Na+ in ramp at (-13.08, 39.04, -126.34).
+Placed Na+ in ramp at (62.92, -113.96, 26.66).
+Placed Na+ in ramp at (86.92, 2.04, 96.66).
+Placed Na+ in ramp at (117.92, -13.96, -35.34).
+Placed Na+ in ramp at (-80.08, 70.04, 81.66).
+Placed Na+ in ramp at (-100.08, 6.04, -88.34).
+Placed Na+ in ramp at (-99.08, -81.96, 26.66).
+Placed Na+ in ramp at (63.92, 113.04, 25.66).
+Placed Na+ in ramp at (29.92, -38.96, -57.34).
+Placed Na+ in ramp at (-25.08, 50.04, 50.66).
+Placed Na+ in ramp at (-1.08, 49.04, -57.34).
+Placed Na+ in ramp at (127.92, 24.04, 26.66).
+Placed Na+ in ramp at (-20.08, -103.96, -80.34).
+Placed Na+ in ramp at (-64.08, 113.04, -26.34).
+Placed Na+ in ramp at (97.92, 47.04, -76.34).
+Placed Na+ in ramp at (-13.08, -23.96, 130.66).
+Placed Na+ in ramp at (-126.08, -27.96, -22.34).
+Placed Na+ in ramp at (22.92, -10.96, 71.66).
+Placed Na+ in ramp at (-10.08, 112.04, 66.66).
+Placed Na+ in ramp at (-76.08, -54.96, 93.66).
+Placed Na+ in ramp at (102.92, -57.96, 35.66).
+Placed Na+ in ramp at (-13.08, -41.96, -124.34).
+Placed Na+ in ramp at (-35.08, -123.96, -34.34).
+Placed Na+ in ramp at (-73.08, 84.04, -68.34).
+Placed Na+ in ramp at (24.92, 11.04, 130.66).
+Placed Na+ in ramp at (92.92, -49.96, -80.34).
+Placed Na+ in ramp at (-99.08, 47.04, 75.66).
+Placed Na+ in ramp at (-106.08, -39.96, -68.34).
+Placed Na+ in ramp at (16.92, 129.04, 25.66).
+Placed Na+ in ramp at (53.92, -96.96, 74.66).
+Placed Na+ in ramp at (80.92, 91.04, -53.34).
+Placed Na+ in ramp at (105.92, -72.96, -32.34).
+Placed Na+ in ramp at (52.92, 61.04, 93.66).
+Placed Na+ in ramp at (-121.08, 26.04, -47.34).
+Placed Na+ in ramp at (46.92, 17.04, -56.34).
+Placed Na+ in ramp at (10.92, -120.96, 54.66).
+Placed Na+ in ramp at (-14.08, 123.04, -48.34).
+Placed Na+ in ramp at (-39.08, -75.96, 88.66).
+Placed Na+ in ramp at (-79.08, 92.04, 55.66).
+Placed Na+ in ramp at (67.92, 6.04, 47.66).
+Placed Na+ in ramp at (-51.08, -95.96, -76.34).
+Placed Na+ in ramp at (-25.08, 12.04, -130.34).
+Placed Na+ in ramp at (105.92, 41.04, 67.66).
+Placed Na+ in ramp at (112.92, 53.04, -47.34).
+Placed Na+ in ramp at (-10.08, -120.96, -55.34).
+Placed Na+ in ramp at (74.92, -78.96, -76.34).
+Placed Na+ in ramp at (-27.08, 6.04, 130.66).
+Placed Na+ in ramp at (-52.08, -47.96, -26.34).
+Placed Na+ in ramp at (33.92, 25.04, -125.34).
+Placed Na+ in ramp at (-113.08, 51.04, 47.66).
+Placed Na+ in ramp at (51.92, -47.96, 26.66).
+Placed Na+ in ramp at (-112.08, -46.96, 53.66).
+Placed Na+ in ramp at (79.92, 69.04, -83.34).
+Placed Na+ in ramp at (125.92, -27.96, 21.66).
+Placed Na+ in ramp at (13.92, 66.04, 47.66).
+Placed Na+ in ramp at (-86.08, -95.96, 19.66).
+Placed Na+ in ramp at (73.92, 82.04, 68.66).
+Placed Na+ in ramp at (32.92, -58.96, 107.66).
+Placed Na+ in ramp at (-46.08, 16.04, 57.66).
+Placed Na+ in ramp at (8.92, -20.96, -131.34).
+Placed Na+ in ramp at (-108.08, 20.04, -75.34).
+Placed Na+ in ramp at (86.92, -83.96, 28.66).
+Placed Na+ in ramp at (-46.08, 98.04, -77.34).
+Placed Na+ in ramp at (-4.08, -32.96, 67.66).
+Placed Na+ in ramp at (-66.08, 43.04, 22.66).
+Placed Na+ in ramp at (65.92, 45.04, -24.34).
+Placed Na+ in ramp at (18.92, -17.96, 130.66).
+Placed Na+ in ramp at (36.92, -55.96, -110.34).
+Placed Na+ in ramp at (-69.08, -9.96, -45.34).
+Placed Na+ in ramp at (-81.08, -75.96, 73.66).
+Placed Na+ in ramp at (44.92, 100.04, 75.66).
+Placed Na+ in ramp at (31.92, -62.96, -26.34).
+Placed Na+ in ramp at (113.92, 0.04, -56.34).
+Placed Na+ in ramp at (-88.08, -23.96, -85.34).
+Placed Na+ in ramp at (119.92, -21.96, 53.66).
+Placed Na+ in ramp at (-58.08, -51.96, 18.66).
+Placed Na+ in ramp at (59.92, -109.96, 46.66).
+Placed Na+ in ramp at (52.92, 100.04, -64.34).
+Placed Na+ in ramp at (-49.08, 47.04, 106.66).
+Placed Na+ in ramp at (34.92, -108.96, -55.34).
+Placed Na+ in ramp at (-118.08, -52.96, 13.66).
+Placed Na+ in ramp at (23.92, 50.04, -51.34).
+Placed Na+ in ramp at (124.92, -2.96, -7.34).
+Placed Na+ in ramp at (-62.08, -7.96, -117.34).
+Placed Na+ in ramp at (-40.08, 118.04, -12.34).
+Placed Na+ in ramp at (54.92, -10.96, -50.34).
+Placed Na+ in ramp at (87.92, -23.96, 85.66).
+Placed Na+ in ramp at (-6.08, -117.96, 41.66).
+Placed Na+ in ramp at (-13.08, 113.04, -72.34).
+Placed Na+ in ramp at (-36.08, -65.96, -35.34).
+Placed Na+ in ramp at (-89.08, 30.04, 82.66).
+Placed Na+ in ramp at (-125.08, -2.96, -15.34).
+Placed Na+ in ramp at (1.92, 94.04, 82.66).
+Placed Na+ in ramp at (39.92, 118.04, 13.66).
+Placed Na+ in ramp at (-64.08, 99.04, 41.66).
+Placed Na+ in ramp at (-72.08, -15.96, 15.66).
+Placed Na+ in ramp at (6.92, -55.96, -50.34).
+Placed Na+ in ramp at (-9.08, 65.04, -108.34).
+Placed Na+ in ramp at (-75.08, 91.04, -42.34).
+Placed Na+ in ramp at (45.92, -37.96, 108.66).
+Placed Na+ in ramp at (74.92, 91.04, 42.66).
+Placed Na+ in ramp at (82.92, -95.96, 7.66).
+Placed Na+ in ramp at (-85.08, -31.96, 86.66).
+Placed Na+ in ramp at (69.92, -23.96, -20.34).
+Placed Na+ in ramp at (-69.08, 19.04, -37.34).
+Placed Na+ in ramp at (111.92, 41.04, 38.66).
+Placed Na+ in ramp at (-24.08, -56.96, -119.34).
+Placed Na+ in ramp at (5.92, -117.96, -41.34).
+Placed Na+ in ramp at (56.92, 71.04, -85.34).
+Placed Na+ in ramp at (37.92, 24.04, 116.66).
+Placed Na+ in ramp at (10.92, -75.96, 30.66).
+Placed Na+ in ramp at (-16.08, -40.96, 117.66).
+Placed Na+ in ramp at (37.92, 63.04, -16.34).
+Placed Na+ in ramp at (-57.08, -115.96, 10.66).
+Placed Na+ in ramp at (-35.08, 109.04, 55.66).
+Placed Na+ in ramp at (-54.08, -75.96, -83.34).
+Placed Na+ in ramp at (-114.08, 60.04, -11.34).
+Placed Na+ in ramp at (98.92, 76.04, -11.34).
+Placed Na+ in ramp at (-86.08, 1.04, -97.34).
+Placed Na+ in ramp at (75.92, -12.96, 28.66).
+Placed Na+ in ramp at (43.92, 2.04, -117.34).
+Placed Na+ in ramp at (-50.08, -43.96, 48.66).
+Placed Na+ in ramp at (8.92, 67.04, 107.66).
+Placed Na+ in ramp at (3.92, -90.96, 85.66).
+Placed Na+ in ramp at (34.92, 116.04, -46.34).
+Placed Na+ in ramp at (65.92, -98.96, -38.34).
+Placed Na+ in ramp at (-110.08, -41.96, -43.34).
+Placed Na+ in ramp at (-115.08, 33.04, 37.66).
+Placed Na+ in ramp at (-17.08, 73.04, -2.34).
+Placed Na+ in ramp at (84.92, -31.96, -86.34).
+Placed Na+ in ramp at (53.92, -76.96, 82.66).
+Placed Na+ in ramp at (-109.08, -69.96, 34.66).
+Placed Na+ in ramp at (-81.08, 61.04, -78.34).
+Placed Na+ in ramp at (114.92, -57.96, 14.66).
+Placed Na+ in ramp at (10.92, 42.04, -117.34).
+Placed Na+ in ramp at (-45.08, 3.04, 116.66).
+Placed Na+ in ramp at (22.92, 24.04, 67.66).
+Placed Na+ in ramp at (-36.08, -118.96, -13.34).
+Placed Na+ in ramp at (114.92, 34.04, -38.34).
+Placed Na+ in ramp at (-57.08, 71.04, 85.66).
+Placed Na+ in ramp at (-6.08, -91.96, -85.34).
+Placed Na+ in ramp at (-66.08, 109.04, 7.66).
+Placed Na+ in ramp at (100.92, 6.04, 87.66).
+Placed Na+ in ramp at (-74.08, -93.96, -37.34).
+Placed Na+ in ramp at (35.92, -118.96, 12.66).
+Placed Na+ in ramp at (92.92, 67.04, 55.66).
+Placed Na+ in ramp at (-36.08, -108.96, 55.66).
+Placed Na+ in ramp at (-2.08, 95.04, -82.34).
+Placed Na+ in ramp at (94.92, -68.96, -58.34).
+Placed Na+ in ramp at (-4.08, 119.04, 38.66).
+Placed Na+ in ramp at (-30.08, -5.96, 68.66).
+Placed Na+ in ramp at (-36.08, 23.04, -118.34).
+Placed Na+ in ramp at (63.92, 99.04, -42.34).
+Placed Na+ in ramp at (-115.08, 1.04, 55.66).
+Placed Na+ in ramp at (-99.08, 75.04, 12.66).
+Placed Na+ in ramp at (65.92, 13.04, 107.66).
+Placed Na+ in ramp at (56.92, -75.96, -82.34).
+Placed Na+ in ramp at (91.92, -66.96, 56.66).
+Placed Na+ in ramp at (-34.08, -27.96, -117.34).
+Placed Na+ in ramp at (-46.08, -48.96, 107.66).
+Placed Na+ in ramp at (-89.08, 28.04, -83.34).
+Placed Na+ in ramp at (82.92, 96.04, 6.66).
+Placed Na+ in ramp at (-81.08, -59.96, -77.34).
+Placed Na+ in ramp at (113.92, -29.96, -42.34).
+Placed Na+ in ramp at (3.92, 119.04, -38.34).
+Placed Na+ in ramp at (-11.08, 42.04, 117.66).
+Placed Na+ in ramp at (124.92, 28.04, -5.34).
+Placed Na+ in ramp at (-112.08, 41.04, -38.34).
+Placed Na+ in ramp at (-66.08, -98.96, 38.66).
+Placed Na+ in ramp at (18.92, -65.96, -107.34).
+Placed Na+ in ramp at (59.92, 111.04, 44.66).
+Placed Na+ in ramp at (11.92, -52.96, 55.66).
+Placed Na+ in ramp at (21.92, 5.04, -74.34).
+Placed Na+ in ramp at (-127.08, -20.96, 14.66).
+Placed Na+ in ramp at (-49.08, 78.04, -85.34).
+Placed Na+ in ramp at (61.92, -27.96, -108.34).
+Placed Na+ in ramp at (128.92, 7.04, 34.66).
+Placed Na+ in ramp at (-95.08, 69.04, 58.66).
+Placed Na+ in ramp at (89.92, 31.04, -82.34).
+Placed Na+ in ramp at (-116.08, -56.96, -15.34).
+Placed Na+ in ramp at (95.92, -88.96, -32.34).
+Placed Na+ in ramp at (21.92, 128.04, -9.34).
+Placed Na+ in ramp at (-36.08, -111.96, -58.34).
+Placed Na+ in ramp at (-1.08, 1.04, 131.66).
+Placed Na+ in ramp at (-129.08, 18.04, 8.66).
+Placed Na+ in ramp at (35.92, -111.96, 58.66).
+Placed Na+ in ramp at (-45.08, 114.04, -52.34).
+Placed Na+ in ramp at (19.92, -126.96, -14.34).
+Placed Na+ in ramp at (-36.08, 42.04, -50.34).
+Placed Na+ in ramp at (89.92, 28.04, 82.66).
+Placed Na+ in ramp at (-26.08, -92.96, 87.66).
+Placed Na+ in ramp at (-95.08, -1.96, 87.66).
+Placed Na+ in ramp at (94.92, 69.04, -58.34).
+Placed Na+ in ramp at (-0.08, 1.04, -131.34).
+Placed Na+ in ramp at (-25.08, 127.04, 12.66).
+Placed Na+ in ramp at (-117.08, 0.04, -59.34).
+Placed Na+ in ramp at (113.92, 60.04, 11.66).
+Placed Na+ in ramp at (-20.08, -126.96, 14.66).
+Placed Na+ in ramp at (-114.08, -29.96, 42.66).
+Placed Na+ in ramp at (16.92, 28.04, 129.66).
+Placed Na+ in ramp at (57.92, 115.04, -15.34).
+Placed Na+ in ramp at (77.92, -53.96, 88.66).
+Placed Na+ in ramp at (-96.08, -73.96, -47.34).
+Placed Na+ in ramp at (102.92, -70.96, -14.34).
+Placed Na+ in ramp at (-44.08, 54.04, -109.34).
+Placed Na+ in ramp at (-75.08, 6.04, -2.34).
+Placed Na+ in ramp at (5.92, -28.96, -68.34).
+Placed Na+ in ramp at (35.92, 112.04, 58.66).
+Placed Na+ in ramp at (17.92, 72.04, 6.66).
+Placed Na+ in ramp at (-44.08, -58.96, -107.34).
+Placed Na+ in ramp at (-100.08, 69.04, -46.34).
+Placed Na+ in ramp at (74.92, 6.04, 2.66).
+Placed Na+ in ramp at (-67.08, -17.96, 109.66).
+Placed Na+ in ramp at (30.92, 88.04, -90.34).
+Placed Na+ in ramp at (55.92, -115.96, -12.34).
+Placed Na+ in ramp at (-34.08, 90.04, 88.66).
+Placed Na+ in ramp at (-3.08, -67.96, 111.66).
+Placed Na+ in ramp at (93.92, -1.96, -89.34).
+Placed Na+ in ramp at (44.92, 54.04, 108.66).
+Placed Na+ in ramp at (-95.08, -68.96, 58.66).
+Placed Na+ in ramp at (127.92, -22.96, -16.34).
+Placed Na+ in ramp at (-52.08, -118.96, -30.34).
+Placed Na+ in ramp at (-90.08, 93.04, -15.34).
+Placed Na+ in ramp at (64.92, -23.96, 109.66).
+Placed Na+ in ramp at (-85.08, 51.04, 88.66).
+Placed Na+ in ramp at (27.92, -89.96, -88.34).
+Placed Na+ in ramp at (37.92, 58.04, -110.34).
+Placed Na+ in ramp at (-93.08, -90.96, -9.34).
+Placed Na+ in ramp at (117.92, 1.04, 58.66).
+Placed Na+ in ramp at (-27.08, -13.96, -68.34).
+Placed Na+ in ramp at (-25.08, 84.04, -96.34).
+Placed Na+ in ramp at (-37.08, 62.04, 18.66).
+Placed Na+ in ramp at (75.92, 58.04, 87.66).
+Placed Na+ in ramp at (-65.08, -24.96, -109.34).
+Placed Na+ in ramp at (72.92, 24.04, -106.34).
+Placed Na+ in ramp at (-72.08, 17.04, 106.66).
+Placed Na+ in ramp at (48.92, 13.04, 55.66).
+Placed Na+ in ramp at (-68.08, 30.04, -106.34).
+Placed Na+ in ramp at (3.92, 119.04, 60.66).
+Placed Na+ in ramp at (-125.08, -25.96, -38.34).
+Placed Na+ in ramp at (103.92, -40.96, -73.34).
+Placed Na+ in ramp at (25.92, -42.96, -126.34).
+Placed Na+ in ramp at (-36.08, 67.04, -30.34).
+Placed Na+ in ramp at (11.92, -6.96, 81.66).
+Placed Na+ in ramp at (-49.08, -93.96, 73.66).
+Placed Na+ in ramp at (16.92, -126.96, 9.66).
+Placed Na+ in ramp at (-72.08, 83.04, 74.66).
+Placed Na+ in ramp at (66.92, -98.96, 57.66).
+Placed Na+ in ramp at (63.92, 39.04, -3.34).
+Placed Na+ in ramp at (-102.08, -70.96, 12.66).
+Placed Na+ in ramp at (-62.08, 110.04, -42.34).
+Placed Na+ in ramp at (123.92, 4.04, -35.34).
+Placed Na+ in ramp at (-121.08, 42.04, 18.66).
+Placed Na+ in ramp at (21.92, 99.04, 85.66).
+Placed Na+ in ramp at (-29.08, -68.96, -4.34).
+Placed Na+ in ramp at (11.92, 27.04, -68.34).
+Placed Na+ in ramp at (6.92, -110.96, 73.66).
+Placed Na+ in ramp at (101.92, -51.96, 59.66).
+Placed Na+ in ramp at (-35.08, 61.04, 109.66).
+Placed Na+ in ramp at (-17.08, -79.96, -99.34).
+Placed Na+ in ramp at (85.92, 53.04, -87.34).
+Placed Na+ in ramp at (3.92, -27.96, 132.66).
+Placed Na+ in ramp at (28.92, -68.96, 4.66).
+Placed Na+ in ramp at (-88.08, 93.04, 9.66).
+Placed Na+ in ramp at (118.92, -52.96, -11.34).
+Placed Na+ in ramp at (-102.08, -40.96, 74.66).
+Placed Na+ in ramp at (94.92, 86.04, 19.66).
+Placed Na+ in ramp at (17.92, -112.96, -60.34).
+Placed Na+ in ramp at (-34.08, 119.04, 34.66).
+Placed Na+ in ramp at (25.92, -7.96, -131.34).
+Placed Na+ in ramp at (-123.08, 36.04, -19.34).
+Placed Na+ in ramp at (-57.08, -105.96, -62.34).
+Placed Na+ in ramp at (40.92, -93.96, 84.66).
+Placed Na+ in ramp at (86.92, -66.96, -80.34).
+Placed Na+ in ramp at (-22.08, 20.04, -68.34).
+Placed Na+ in ramp at (57.92, 89.04, 76.66).
+Placed Na+ in ramp at (-50.08, 48.04, 45.66).
+Placed Na+ in ramp at (15.92, 104.04, -74.34).
+Placed Na+ in ramp at (-71.08, -67.96, 86.66).
+Placed Na+ in ramp at (2.92, 128.04, 18.66).
+Placed Na+ in ramp at (-29.08, -8.96, 129.66).
+Placed Na+ in ramp at (72.92, -104.96, 18.66).
+Placed Na+ in ramp at (-74.08, -48.96, -94.34).
+Placed Na+ in ramp at (-106.08, 18.04, 72.66).
+Placed Na+ in ramp at (110.92, 67.04, -30.34).
+Placed Na+ in ramp at (-128.08, 10.04, -44.34).
+Placed Na+ in ramp at (-2.08, -32.96, -129.34).
+Placed Na+ in ramp at (113.92, -21.96, 70.66).
+Placed Na+ in ramp at (-41.08, -116.96, 36.66).
+Placed Na+ in ramp at (6.92, 74.04, -106.34).
+Placed Na+ in ramp at (-93.08, 87.04, 46.66).
+Placed Na+ in ramp at (-5.08, -54.96, 50.66).
+Placed Na+ in ramp at (57.92, 34.04, -48.34).
+Placed Na+ in ramp at (-94.08, 47.04, -74.34).
+Placed Na+ in ramp at (52.92, -54.96, 104.66).
+Placed Na+ in ramp at (47.92, -92.96, -74.34).
+Placed Na+ in ramp at (63.92, 29.04, 25.66).
+Placed Na+ in ramp at (-3.08, 128.04, -19.34).
+Placed Na+ in ramp at (-13.08, -125.96, -40.34).
+Placed Na+ in ramp at (110.92, -62.96, -46.34).
+Placed Na+ in ramp at (-37.08, -65.96, 105.66).
+Placed Na+ in ramp at (68.92, 33.04, 104.66).
+Placed Na+ in ramp at (-12.08, 23.04, -133.34).
+Placed Na+ in ramp at (-8.08, 76.04, 105.66).
+Placed Na+ in ramp at (86.92, 96.04, -13.34).
+Placed Na+ in ramp at (70.92, -41.96, -99.34).
+Placed Na+ in ramp at (-124.08, 4.04, 36.66).
+Placed Na+ in ramp at (56.92, -48.96, -5.34).
+Placed Na+ in ramp at (22.92, -126.96, 43.66).
+Placed Na+ in ramp at (122.92, 37.04, 18.66).
+Placed Na+ in ramp at (-33.08, 109.04, -69.34).
+Placed Na+ in ramp at (-79.08, -90.96, 61.66).
+Placed Na+ in ramp at (-107.08, -25.96, -74.34).
+Placed Na+ in ramp at (0.92, 51.04, 54.66).
+Placed Na+ in ramp at (109.92, 48.04, -64.34).
+
+Done adding ions.
+> savepdb ramp Neutral_Na_Leu.pdb
+Writing pdb file: Neutral_Na_Leu.pdb
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+> solvateOct ramp OPCBOX 10.0
+Scaling up box by a factor of 1.156203 to meet diagonal cut criterion
+  Solute vdw bounding box:              261.532 267.075 262.820
+  Total bounding box for atom centers:  290.199 290.199 290.199
+      (box expansion for 'iso' is   3.5%)
+  Solvent unit box:                     18.865 18.478 19.006
+The number of boxes:  x=16  y=16  z=16
+  Volume: 12346366.798 A^3 (oct)
+  Total mass 6928732.776 amu,  Density 0.932 g/cc
+  Added 281946 residues.
+> addIonsRand ramp Na+ 1116 Cl- 1116
+Adding 2232 counter ions to "ramp". 279714 solvent molecules will remain.
+0: Placed Na+ in ramp at (22.46, 75.76, 5.03).
+Placed Cl- in ramp at (-36.57, -52.37, -35.92).
+0: Placed Na+ in ramp at (82.84, -14.66, -4.88).
+Placed Cl- in ramp at (-93.79, -75.87, 64.76).
+0: Placed Na+ in ramp at (104.59, -49.60, -62.37).
+Placed Cl- in ramp at (9.14, -83.60, 11.85).
+0: Placed Na+ in ramp at (-18.52, 67.68, 114.21).
+Placed Cl- in ramp at (47.05, 44.26, 32.22).
+0: Placed Na+ in ramp at (110.76, -28.00, 48.50).
+Placed Cl- in ramp at (-123.99, 23.45, 30.47).
+0: Placed Na+ in ramp at (-72.04, 15.35, 103.64).
+Placed Cl- in ramp at (-63.46, -80.56, 66.42).
+0: Placed Na+ in ramp at (-109.30, 20.22, -81.57).
+Placed Cl- in ramp at (87.18, 56.69, 65.46).
+0: Placed Na+ in ramp at (-57.72, -94.83, -53.70).
+Placed Cl- in ramp at (-40.73, -14.26, -54.86).
+0: Placed Na+ in ramp at (25.23, -23.51, 28.36).
+Placed Cl- in ramp at (-57.54, -9.76, -27.82).
+0: Placed Na+ in ramp at (67.91, -104.13, -20.31).
+Placed Cl- in ramp at (-109.74, 60.00, 27.98).
+0: Placed Na+ in ramp at (52.49, -34.96, -31.24).
+Placed Cl- in ramp at (-56.12, -14.64, -45.96).
+0: Placed Na+ in ramp at (-71.88, 71.58, -54.74).
+Placed Cl- in ramp at (74.73, -40.72, 20.08).
+0: Placed Na+ in ramp at (10.52, 6.44, 145.21).
+Placed Cl- in ramp at (36.80, -9.44, -53.35).
+0: Placed Na+ in ramp at (-15.75, -132.47, 66.88).
+Placed Cl- in ramp at (-109.46, -42.04, -14.91).
+0: Placed Na+ in ramp at (-41.95, -78.70, 87.57).
+Placed Cl- in ramp at (-8.66, -36.87, -117.48).
+0: Placed Na+ in ramp at (-10.77, 104.89, -63.82).
+Placed Cl- in ramp at (-60.18, -111.30, 47.84).
+0: Placed Na+ in ramp at (111.41, -28.73, -0.68).
+Placed Cl- in ramp at (-113.81, 55.41, -26.07).
+0: Placed Na+ in ramp at (-10.43, -117.65, -73.43).
+Placed Cl- in ramp at (34.55, 51.26, 33.45).
+0: Placed Na+ in ramp at (10.14, 69.41, -47.85).
+Placed Cl- in ramp at (39.02, 45.45, 56.53).
+0: Placed Na+ in ramp at (18.63, -45.21, -13.72).
+Placed Cl- in ramp at (-63.27, -48.19, -29.34).
+0: Placed Na+ in ramp at (-58.50, -13.58, -102.35).
+Placed Cl- in ramp at (37.98, 19.92, -73.39).
+0: Placed Na+ in ramp at (-81.90, 52.24, 106.21).
+Placed Cl- in ramp at (3.15, 66.46, 12.37).
+0: Placed Na+ in ramp at (85.81, 67.83, -59.68).
+Placed Cl- in ramp at (33.41, -71.32, -118.56).
+0: Placed Na+ in ramp at (11.11, 71.25, -43.68).
+Placed Cl- in ramp at (112.35, -7.63, -98.71).
+0: Placed Na+ in ramp at (61.50, 102.78, -10.15).
+Placed Cl- in ramp at (-105.29, 57.44, 64.82).
+0: Placed Na+ in ramp at (-12.26, 38.60, 130.42).
+Placed Cl- in ramp at (117.94, -6.82, -46.48).
+0: Placed Na+ in ramp at (-104.92, -49.69, -53.89).
+Placed Cl- in ramp at (-13.19, -100.32, -73.44).
+0: Placed Na+ in ramp at (6.88, -7.50, -18.76).
+Placed Cl- in ramp at (28.41, -117.87, -85.82).
+0: Placed Na+ in ramp at (97.41, -27.83, -99.13).
+Placed Cl- in ramp at (-51.26, -100.25, 25.52).
+0: Placed Na+ in ramp at (-2.67, -125.66, -72.47).
+Placed Cl- in ramp at (-112.44, 62.83, -24.58).
+0: Placed Na+ in ramp at (-71.49, 68.75, -100.09).
+Placed Cl- in ramp at (11.50, -41.13, 62.63).
+0: Placed Na+ in ramp at (-118.07, -13.63, -3.48).
+Placed Cl- in ramp at (-34.33, 93.73, -96.67).
+0: Placed Na+ in ramp at (95.47, -91.22, -38.24).
+Placed Cl- in ramp at (-117.08, 18.81, 85.17).
+0: Placed Na+ in ramp at (58.20, 134.20, -11.39).
+Placed Cl- in ramp at (-80.80, 48.36, 96.79).
+0: Placed Na+ in ramp at (76.94, -30.46, 75.78).
+Placed Cl- in ramp at (-88.72, -35.04, 84.31).
+0: Placed Na+ in ramp at (-15.44, 19.46, -81.69).
+Placed Cl- in ramp at (-54.88, 82.31, -94.40).
+0: Placed Na+ in ramp at (70.36, -85.67, -91.32).
+Placed Cl- in ramp at (35.92, -106.40, -51.09).
+0: Placed Na+ in ramp at (-55.76, 59.06, 44.55).
+Placed Cl- in ramp at (120.71, 32.24, -37.77).
+0: Placed Na+ in ramp at (55.37, 109.79, 22.47).
+Placed Cl- in ramp at (-113.09, 75.97, 7.44).
+0: Placed Na+ in ramp at (25.37, -90.29, 65.86).
+Placed Cl- in ramp at (-69.65, -112.48, -4.53).
+0: Placed Na+ in ramp at (-1.70, 37.38, 106.74).
+Placed Cl- in ramp at (100.03, -71.88, 66.82).
+0: Placed Na+ in ramp at (-15.69, 44.73, -46.59).
+Placed Cl- in ramp at (-29.78, 50.60, 25.90).
+0: Placed Na+ in ramp at (26.02, -50.45, 5.88).
+Placed Cl- in ramp at (-55.96, 101.94, 97.97).
+0: Placed Na+ in ramp at (72.18, -54.69, -98.91).
+Placed Cl- in ramp at (-34.00, 52.58, -51.94).
+0: Placed Na+ in ramp at (-117.13, -17.22, -58.51).
+Placed Cl- in ramp at (71.22, -36.50, -20.14).
+0: Placed Na+ in ramp at (-59.22, 68.72, -80.80).
+Placed Cl- in ramp at (45.34, 32.84, -62.25).
+0: Placed Na+ in ramp at (73.70, -31.76, 114.04).
+Placed Cl- in ramp at (43.69, 26.01, -13.82).
+0: Placed Na+ in ramp at (-6.25, -26.53, -84.20).
+Placed Cl- in ramp at (-95.48, -63.42, -23.50).
+0: Placed Na+ in ramp at (90.40, -54.09, -55.84).
+Placed Cl- in ramp at (-47.33, -24.89, 23.77).
+0: Placed Na+ in ramp at (22.69, -62.28, -114.08).
+Placed Cl- in ramp at (-91.21, -110.80, -2.92).
+0: Placed Na+ in ramp at (2.09, 51.35, -53.04).
+Placed Cl- in ramp at (-95.02, 67.15, 19.64).
+0: Placed Na+ in ramp at (19.50, -44.45, -63.17).
+Placed Cl- in ramp at (61.09, -4.11, -58.82).
+0: Placed Na+ in ramp at (16.23, -82.49, -2.17).
+Placed Cl- in ramp at (107.17, 54.49, -12.68).
+0: Placed Na+ in ramp at (37.11, 3.77, 27.76).
+Placed Cl- in ramp at (43.97, 32.85, -32.74).
+0: Placed Na+ in ramp at (42.81, -106.00, -31.92).
+Placed Cl- in ramp at (30.61, -118.46, 76.68).
+0: Placed Na+ in ramp at (68.82, -27.90, 13.05).
+Placed Cl- in ramp at (-36.01, -143.22, -39.19).
+0: Placed Na+ in ramp at (-48.59, -26.94, -108.09).
+Placed Cl- in ramp at (118.44, 43.76, 67.91).
+0: Placed Na+ in ramp at (-34.18, -36.89, -60.98).
+Placed Cl- in ramp at (-55.74, -31.57, 107.26).
+0: Placed Na+ in ramp at (-8.58, -23.16, -28.23).
+Placed Cl- in ramp at (-122.71, -32.57, -38.14).
+0: Placed Na+ in ramp at (96.05, 89.85, 53.87).
+Placed Cl- in ramp at (55.24, -54.31, -16.45).
+0: Placed Na+ in ramp at (-11.43, 43.34, 55.60).
+Placed Cl- in ramp at (46.07, -20.16, -10.57).
+0: Placed Na+ in ramp at (27.68, 8.23, -118.06).
+Placed Cl- in ramp at (-11.83, -8.35, -6.36).
+0: Placed Na+ in ramp at (27.01, 15.75, 121.21).
+Placed Cl- in ramp at (85.76, -50.29, -92.21).
+0: Placed Na+ in ramp at (-39.30, 96.48, 91.04).
+Placed Cl- in ramp at (24.57, -45.58, 122.87).
+0: Placed Na+ in ramp at (-70.85, 47.12, -9.25).
+Placed Cl- in ramp at (11.38, -46.82, -106.03).
+0: Placed Na+ in ramp at (-77.53, -1.14, -0.71).
+Placed Cl- in ramp at (38.10, -13.08, -112.97).
+0: Placed Na+ in ramp at (-44.73, 34.92, 123.89).
+Placed Cl- in ramp at (-92.45, -95.35, 7.12).
+0: Placed Na+ in ramp at (87.97, -67.54, -92.73).
+Placed Cl- in ramp at (-35.24, 24.54, -135.87).
+0: Placed Na+ in ramp at (-96.28, -10.38, -74.79).
+Placed Cl- in ramp at (29.52, -47.85, -121.77).
+0: Placed Na+ in ramp at (-49.13, 106.12, -26.62).
+Placed Cl- in ramp at (-11.24, -75.89, 23.02).
+0: Placed Na+ in ramp at (112.65, 75.65, 34.97).
+Placed Cl- in ramp at (-19.62, -55.78, 10.68).
+0: Placed Na+ in ramp at (-26.02, 120.36, 3.09).
+Placed Cl- in ramp at (-17.84, -33.95, 3.37).
+0: Placed Na+ in ramp at (13.80, -95.17, 85.58).
+Placed Cl- in ramp at (59.79, -34.18, -131.10).
+0: Placed Na+ in ramp at (-26.70, -140.03, -55.61).
+Placed Cl- in ramp at (31.10, 17.26, -54.58).
+0: Placed Na+ in ramp at (-35.82, 52.64, -43.64).
+Placed Cl- in ramp at (115.61, -56.81, 54.15).
+0: Placed Na+ in ramp at (64.65, -93.73, 32.80).
+Placed Cl- in ramp at (-68.36, -42.86, -10.40).
+0: Placed Na+ in ramp at (-79.74, -86.41, 62.84).
+Placed Cl- in ramp at (-103.61, 43.29, -41.65).
+0: Placed Na+ in ramp at (-40.68, 47.27, -125.59).
+Placed Cl- in ramp at (12.41, -43.38, -7.45).
+0: Placed Na+ in ramp at (22.83, -120.59, 19.50).
+Placed Cl- in ramp at (99.36, -27.71, 77.65).
+0: Placed Na+ in ramp at (-73.44, -28.86, -96.92).
+Placed Cl- in ramp at (-69.05, -24.14, -16.64).
+0: Placed Na+ in ramp at (33.90, 32.27, 69.16).
+Placed Cl- in ramp at (-102.05, -76.92, 44.64).
+0: Placed Na+ in ramp at (71.93, -8.19, -105.94).
+Placed Cl- in ramp at (23.47, 25.02, -75.59).
+0: Placed Na+ in ramp at (-107.58, 2.87, 20.42).
+Placed Cl- in ramp at (34.44, -106.65, -45.23).
+0: Placed Na+ in ramp at (-54.90, 26.04, -116.80).
+Placed Cl- in ramp at (-62.84, 102.94, -74.97).
+0: Placed Na+ in ramp at (-99.46, -100.00, 28.57).
+Placed Cl- in ramp at (74.76, 116.55, 7.64).
+0: Placed Na+ in ramp at (-76.90, -73.17, 71.80).
+Placed Cl- in ramp at (-19.88, 26.01, -47.74).
+0: Placed Na+ in ramp at (98.86, 106.67, 16.38).
+Placed Cl- in ramp at (1.11, -102.76, -54.76).
+0: Placed Na+ in ramp at (-48.62, -7.07, 54.03).
+Placed Cl- in ramp at (2.71, 21.68, 4.06).
+0: Placed Na+ in ramp at (-50.05, -124.35, -48.82).
+Placed Cl- in ramp at (-117.47, 89.81, -36.74).
+0: Placed Na+ in ramp at (-44.11, 36.78, -114.88).
+Placed Cl- in ramp at (-82.67, 17.35, 86.56).
+0: Placed Na+ in ramp at (18.35, -64.20, -46.63).
+Placed Cl- in ramp at (106.65, 84.61, 47.62).
+0: Placed Na+ in ramp at (114.90, -47.04, -54.36).
+Placed Cl- in ramp at (19.36, -71.54, -35.86).
+0: Placed Na+ in ramp at (-9.07, -22.37, 124.36).
+Placed Cl- in ramp at (87.34, 72.02, -72.21).
+0: Placed Na+ in ramp at (105.65, -17.23, 103.79).
+Placed Cl- in ramp at (38.41, -0.67, 30.40).
+0: Placed Na+ in ramp at (-65.80, 85.78, -42.61).
+Placed Cl- in ramp at (-120.78, 52.72, -44.98).
+0: Placed Na+ in ramp at (82.43, 109.52, -5.24).
+Placed Cl- in ramp at (-20.20, 110.36, -52.10).
+0: Placed Na+ in ramp at (-37.07, 94.87, -69.69).
+Placed Cl- in ramp at (-54.19, -112.49, 61.32).
+0: Placed Na+ in ramp at (-86.98, 66.76, 79.54).
+Placed Cl- in ramp at (-56.76, -126.50, 9.98).
+0: Placed Na+ in ramp at (34.98, -94.57, -101.43).
+Placed Cl- in ramp at (40.41, -5.68, -135.05).
+0: Placed Na+ in ramp at (-29.78, -126.25, 61.37).
+Placed Cl- in ramp at (103.99, 53.20, -6.03).
+0: Placed Na+ in ramp at (33.94, -21.03, 67.95).
+Placed Cl- in ramp at (-3.98, 45.43, -0.09).
+0: Placed Na+ in ramp at (-7.34, 75.35, 43.26).
+Placed Cl- in ramp at (-3.54, -133.80, 58.54).
+0: Placed Na+ in ramp at (105.81, 97.10, -34.21).
+Placed Cl- in ramp at (34.98, -112.02, 63.93).
+0: Placed Na+ in ramp at (-82.73, -117.89, 48.69).
+Placed Cl- in ramp at (-66.08, -64.08, -48.46).
+0: Placed Na+ in ramp at (-60.40, -131.97, 44.29).
+Placed Cl- in ramp at (-7.74, 8.83, 31.36).
+0: Placed Na+ in ramp at (-45.53, -27.75, 9.00).
+Placed Cl- in ramp at (83.36, 2.86, 118.01).
+0: Placed Na+ in ramp at (18.10, 124.07, -48.95).
+Placed Cl- in ramp at (-45.22, -0.71, -26.84).
+0: Placed Na+ in ramp at (4.91, 29.64, 8.94).
+Placed Cl- in ramp at (-67.49, 88.12, 47.64).
+0: Placed Na+ in ramp at (18.14, -38.74, 60.73).
+Placed Cl- in ramp at (-104.85, 59.59, 28.49).
+0: Placed Na+ in ramp at (66.39, -54.02, 75.95).
+Placed Cl- in ramp at (-107.89, 5.20, 108.76).
+0: Placed Na+ in ramp at (-99.53, 14.41, -57.77).
+Placed Cl- in ramp at (79.57, 32.98, 22.13).
+0: Placed Na+ in ramp at (123.87, -24.46, 0.28).
+Placed Cl- in ramp at (-18.41, -3.53, -117.88).
+0: Placed Na+ in ramp at (-50.18, -112.96, 32.01).
+Placed Cl- in ramp at (56.66, -91.38, -18.33).
+0: Placed Na+ in ramp at (13.10, 74.99, -95.32).
+Placed Cl- in ramp at (97.62, 18.19, -85.01).
+0: Placed Na+ in ramp at (-103.84, 74.97, -53.30).
+Placed Cl- in ramp at (27.94, 11.41, 19.19).
+0: Placed Na+ in ramp at (-12.75, 24.53, -85.44).
+Placed Cl- in ramp at (-123.32, -21.09, -0.72).
+0: Placed Na+ in ramp at (-113.18, -31.06, 23.57).
+Placed Cl- in ramp at (-32.06, 73.48, -16.80).
+0: Placed Na+ in ramp at (64.52, 43.45, -3.31).
+Placed Cl- in ramp at (116.96, 34.06, -58.80).
+0: Placed Na+ in ramp at (-12.38, 69.83, 51.34).
+Placed Cl- in ramp at (43.66, -115.95, -42.59).
+0: Placed Na+ in ramp at (-100.99, -90.46, 28.54).
+Placed Cl- in ramp at (-79.49, -91.85, 56.36).
+0: Placed Na+ in ramp at (124.49, 67.07, 36.98).
+Placed Cl- in ramp at (-9.80, -20.35, -15.72).
+0: Placed Na+ in ramp at (-49.68, -11.49, -1.70).
+Placed Cl- in ramp at (-87.48, -107.31, -14.11).
+0: Placed Na+ in ramp at (-71.42, 45.74, 85.38).
+Placed Cl- in ramp at (29.55, 26.74, -37.06).
+0: Placed Na+ in ramp at (-115.72, -42.20, 73.35).
+Placed Cl- in ramp at (74.44, -25.34, 118.62).
+0: Placed Na+ in ramp at (1.51, -43.84, -127.41).
+Placed Cl- in ramp at (64.86, -78.06, -102.64).
+0: Placed Na+ in ramp at (-112.40, 43.27, 58.21).
+Placed Cl- in ramp at (13.97, 4.54, 76.72).
+0: Placed Na+ in ramp at (-47.31, -74.58, 74.13).
+Placed Cl- in ramp at (121.24, 15.17, 0.14).
+0: Placed Na+ in ramp at (29.83, -24.02, 47.62).
+Placed Cl- in ramp at (-16.05, 102.67, -51.92).
+0: Placed Na+ in ramp at (76.59, 74.36, -44.30).
+Placed Cl- in ramp at (121.31, -9.67, 1.13).
+0: Placed Na+ in ramp at (-75.24, 1.45, 28.39).
+Placed Cl- in ramp at (-14.30, -62.68, -10.64).
+0: Placed Na+ in ramp at (-93.82, -24.79, -100.35).
+Placed Cl- in ramp at (-122.21, -80.18, 18.41).
+0: Placed Na+ in ramp at (31.02, 47.52, -16.63).
+Placed Cl- in ramp at (91.73, 15.39, 100.65).
+0: Placed Na+ in ramp at (7.19, -120.40, 29.64).
+Placed Cl- in ramp at (64.75, -70.32, 84.27).
+0: Placed Na+ in ramp at (6.80, 80.44, -78.21).
+Placed Cl- in ramp at (44.68, -32.74, -105.50).
+0: Placed Na+ in ramp at (-6.04, -7.46, -61.60).
+Placed Cl- in ramp at (6.44, -19.94, 72.00).
+0: Placed Na+ in ramp at (30.15, 15.83, -105.51).
+Placed Cl- in ramp at (16.07, 41.92, 66.96).
+0: Placed Na+ in ramp at (116.86, -58.98, 20.96).
+Placed Cl- in ramp at (-56.20, -1.59, -67.90).
+0: Placed Na+ in ramp at (-116.11, 22.36, -22.59).
+Placed Cl- in ramp at (5.06, 22.91, -88.83).
+0: Placed Na+ in ramp at (-9.64, 2.60, 41.03).
+Placed Cl- in ramp at (-13.27, -104.85, -44.58).
+0: Placed Na+ in ramp at (116.35, 58.62, 22.42).
+Placed Cl- in ramp at (18.12, 107.15, 16.05).
+0: Placed Na+ in ramp at (102.69, 81.56, -33.87).
+Placed Cl- in ramp at (26.41, -119.45, 22.25).
+0: Placed Na+ in ramp at (70.89, -28.40, 83.47).
+Placed Cl- in ramp at (-8.30, 87.65, -21.61).
+0: Placed Na+ in ramp at (-54.28, -22.18, 9.13).
+Placed Cl- in ramp at (73.24, -69.84, -79.60).
+0: Placed Na+ in ramp at (-70.81, 3.74, -100.62).
+Placed Cl- in ramp at (2.40, 48.38, 10.30).
+0: Placed Na+ in ramp at (18.97, -76.59, 91.77).
+Placed Cl- in ramp at (-23.62, 111.03, 86.93).
+0: Placed Na+ in ramp at (23.81, 25.47, 76.20).
+Placed Cl- in ramp at (-18.34, -137.87, -24.95).
+0: Placed Na+ in ramp at (-85.35, 41.84, 101.97).
+Placed Cl- in ramp at (67.87, 34.25, -50.32).
+0: Placed Na+ in ramp at (-115.20, 17.07, 86.29).
+Placed Cl- in ramp at (-46.49, -22.08, 43.02).
+0: Placed Na+ in ramp at (-67.67, 42.11, -119.77).
+Placed Cl- in ramp at (-63.62, 22.91, 122.50).
+0: Placed Na+ in ramp at (-112.42, 76.69, -49.77).
+Placed Cl- in ramp at (-77.67, 49.18, -27.49).
+0: Placed Na+ in ramp at (-69.49, -96.69, -4.08).
+Placed Cl- in ramp at (-31.55, 44.33, 122.37).
+0: Placed Na+ in ramp at (18.85, -45.37, 12.69).
+Placed Cl- in ramp at (-9.51, 77.76, 56.62).
+0: Placed Na+ in ramp at (-65.60, 17.92, -130.05).
+Placed Cl- in ramp at (117.37, 79.53, -46.47).
+0: Placed Na+ in ramp at (-73.01, 27.02, 90.45).
+Placed Cl- in ramp at (114.42, 4.54, 48.65).
+0: Placed Na+ in ramp at (-21.78, -53.23, 17.70).
+Placed Cl- in ramp at (40.00, -40.93, 119.38).
+0: Placed Na+ in ramp at (117.02, -12.54, -5.72).
+Placed Cl- in ramp at (70.41, -80.92, -89.91).
+0: Placed Na+ in ramp at (-7.92, 121.95, 6.84).
+Placed Cl- in ramp at (-32.72, -37.42, 9.40).
+0: Placed Na+ in ramp at (-67.67, -125.86, -16.85).
+Placed Cl- in ramp at (38.55, -13.39, -60.16).
+0: Placed Na+ in ramp at (25.50, -28.99, 62.34).
+Placed Cl- in ramp at (-95.22, 11.73, 65.60).
+0: Placed Na+ in ramp at (-89.02, 66.98, 61.44).
+Placed Cl- in ramp at (2.92, -3.40, -57.04).
+0: Placed Na+ in ramp at (36.30, -54.85, -59.77).
+Placed Cl- in ramp at (104.52, 76.11, 33.44).
+0: Placed Na+ in ramp at (50.02, -51.99, -106.14).
+Placed Cl- in ramp at (25.61, -11.01, 4.21).
+0: Placed Na+ in ramp at (62.08, -40.53, 32.13).
+Placed Cl- in ramp at (-41.57, -2.92, 13.34).
+0: Placed Na+ in ramp at (64.65, 7.40, 47.00).
+Placed Cl- in ramp at (91.22, -61.29, -74.40).
+0: Placed Na+ in ramp at (16.76, 50.32, -5.25).
+Placed Cl- in ramp at (63.78, 118.21, -20.15).
+0: Placed Na+ in ramp at (-96.43, -75.73, 62.59).
+Placed Cl- in ramp at (-18.63, -66.21, -34.47).
+0: Placed Na+ in ramp at (-2.39, 52.28, 62.26).
+Placed Cl- in ramp at (47.29, 21.92, -38.94).
+0: Placed Na+ in ramp at (-48.48, 35.83, 119.02).
+Placed Cl- in ramp at (19.24, 62.89, -14.68).
+0: Placed Na+ in ramp at (108.96, -6.01, 44.93).
+Placed Cl- in ramp at (73.78, -34.63, 13.89).
+0: Placed Na+ in ramp at (-48.48, 10.94, 116.99).
+Placed Cl- in ramp at (-109.81, 41.45, 18.48).
+0: Placed Na+ in ramp at (109.12, -59.39, 33.17).
+Placed Cl- in ramp at (121.27, -9.17, 84.68).
+0: Placed Na+ in ramp at (-80.96, 67.08, 74.00).
+Placed Cl- in ramp at (-83.98, -93.47, 44.38).
+0: Placed Na+ in ramp at (-14.86, 85.46, 106.57).
+Placed Cl- in ramp at (-104.82, 44.89, 62.96).
+0: Placed Na+ in ramp at (-73.75, -107.23, -51.61).
+Placed Cl- in ramp at (-113.01, 12.30, 32.71).
+0: Placed Na+ in ramp at (63.58, -40.80, -101.93).
+Placed Cl- in ramp at (-108.27, -79.64, -62.05).
+0: Placed Na+ in ramp at (-101.83, -94.07, 23.10).
+Placed Cl- in ramp at (69.98, 45.61, -33.38).
+0: Placed Na+ in ramp at (34.06, -2.14, -40.49).
+Placed Cl- in ramp at (-40.84, 14.33, -49.91).
+0: Placed Na+ in ramp at (-22.68, -25.26, 80.64).
+Placed Cl- in ramp at (2.33, -60.52, -0.89).
+0: Placed Na+ in ramp at (94.07, -65.30, 75.78).
+Placed Cl- in ramp at (-91.61, -10.60, -89.85).
+0: Placed Na+ in ramp at (88.41, -43.48, 90.36).
+Placed Cl- in ramp at (32.35, 14.03, -62.84).
+0: Placed Na+ in ramp at (10.68, 120.82, 28.92).
+Placed Cl- in ramp at (-122.45, 21.28, 65.41).
+0: Placed Na+ in ramp at (-39.66, -56.26, 13.60).
+Placed Cl- in ramp at (-20.09, 47.62, 64.71).
+0: Placed Na+ in ramp at (73.96, 5.38, -24.65).
+Placed Cl- in ramp at (1.30, 19.89, -87.59).
+0: Placed Na+ in ramp at (-46.46, -135.83, 0.28).
+Placed Cl- in ramp at (-119.09, -38.40, 24.81).
+0: Placed Na+ in ramp at (-22.44, 44.83, 108.02).
+Placed Cl- in ramp at (8.35, -11.64, -52.80).
+0: Placed Na+ in ramp at (63.88, -43.22, -26.55).
+Placed Cl- in ramp at (22.34, -66.36, -15.18).
+0: Placed Na+ in ramp at (-39.82, -7.98, -45.54).
+Placed Cl- in ramp at (17.35, -99.79, 73.14).
+0: Placed Na+ in ramp at (-9.21, -8.73, 9.13).
+Placed Cl- in ramp at (-97.41, 94.10, -2.33).
+0: Placed Na+ in ramp at (115.32, 7.62, 40.75).
+Placed Cl- in ramp at (-18.10, 28.43, 7.74).
+0: Placed Na+ in ramp at (17.47, 79.58, -16.33).
+Placed Cl- in ramp at (-75.52, 84.86, -65.96).
+0: Placed Na+ in ramp at (37.85, 18.24, -22.70).
+Placed Cl- in ramp at (-0.30, -116.03, -28.68).
+0: Placed Na+ in ramp at (46.16, -97.03, 48.73).
+Placed Cl- in ramp at (19.20, 97.63, -65.64).
+0: Placed Na+ in ramp at (52.86, 122.65, 60.14).
+Placed Cl- in ramp at (-100.35, 25.62, 73.59).
+0: Placed Na+ in ramp at (-2.94, -98.79, -84.62).
+Placed Cl- in ramp at (-16.02, -1.32, -132.16).
+0: Placed Na+ in ramp at (-12.79, 119.27, 74.31).
+Placed Cl- in ramp at (77.18, 16.46, 110.53).
+0: Placed Na+ in ramp at (-60.05, -117.28, 43.47).
+Placed Cl- in ramp at (85.65, 108.85, 20.98).
+0: Placed Na+ in ramp at (116.13, -4.61, 93.85).
+Placed Cl- in ramp at (120.86, -35.39, -1.40).
+0: Placed Na+ in ramp at (45.82, -104.75, -65.90).
+Placed Cl- in ramp at (-34.39, 34.20, -17.68).
+0: Placed Na+ in ramp at (-101.31, 97.28, -57.40).
+Placed Cl- in ramp at (-64.74, 82.17, -67.68).
+0: Placed Na+ in ramp at (59.11, 122.71, -38.31).
+Placed Cl- in ramp at (-58.21, -3.03, 9.57).
+0: Placed Na+ in ramp at (-87.34, 90.29, 13.39).
+Placed Cl- in ramp at (61.72, 15.81, -64.21).
+0: Placed Na+ in ramp at (-86.12, 86.11, -77.21).
+Placed Cl- in ramp at (-118.33, -12.81, 46.83).
+0: Placed Na+ in ramp at (-34.12, 3.18, 13.49).
+Placed Cl- in ramp at (-43.43, -65.77, -18.23).
+0: Placed Na+ in ramp at (-115.53, 69.37, 36.94).
+Placed Cl- in ramp at (-117.16, 55.56, 35.72).
+0: Placed Na+ in ramp at (-39.70, 60.15, -105.91).
+Placed Cl- in ramp at (-12.00, -12.84, -53.78).
+0: Placed Na+ in ramp at (-35.00, -11.92, -43.81).
+Placed Cl- in ramp at (18.53, 18.53, 74.13).
+0: Placed Na+ in ramp at (-112.20, 82.90, 50.68).
+Placed Cl- in ramp at (-69.03, 52.02, 95.18).
+0: Placed Na+ in ramp at (-45.81, 50.49, -13.10).
+Placed Cl- in ramp at (90.78, 62.62, -58.06).
+0: Placed Na+ in ramp at (-10.61, 59.64, -22.33).
+Placed Cl- in ramp at (-14.28, 32.39, -13.70).
+0: Placed Na+ in ramp at (-84.59, 16.61, -88.15).
+Placed Cl- in ramp at (20.97, -6.05, 18.51).
+0: Placed Na+ in ramp at (-47.17, 8.90, 102.35).
+Placed Cl- in ramp at (-19.84, -55.62, -15.73).
+0: Placed Na+ in ramp at (-108.63, 11.76, -56.46).
+Placed Cl- in ramp at (-0.51, -18.76, -10.19).
+0: Placed Na+ in ramp at (32.90, -109.63, -7.87).
+Placed Cl- in ramp at (54.50, -56.23, 97.73).
+0: Placed Na+ in ramp at (110.95, -51.61, -63.58).
+Placed Cl- in ramp at (-14.93, -61.92, 20.98).
+0: Placed Na+ in ramp at (19.03, -57.52, -4.33).
+Placed Cl- in ramp at (20.26, -44.37, 71.46).
+0: Placed Na+ in ramp at (-58.85, -84.19, 31.85).
+Placed Cl- in ramp at (48.99, -1.01, -45.77).
+0: Placed Na+ in ramp at (-39.12, 6.36, -73.68).
+Placed Cl- in ramp at (-107.90, -23.04, 51.22).
+0: Placed Na+ in ramp at (-9.00, 89.32, 104.37).
+Placed Cl- in ramp at (112.62, 38.30, -64.45).
+0: Placed Na+ in ramp at (-36.73, -13.99, 29.32).
+Placed Cl- in ramp at (-83.22, 13.85, -91.67).
+0: Placed Na+ in ramp at (48.00, 115.81, 57.45).
+Placed Cl- in ramp at (93.66, 55.75, -32.76).
+0: Placed Na+ in ramp at (-46.28, -41.00, 51.67).
+Placed Cl- in ramp at (114.01, -22.52, 45.11).
+0: Placed Na+ in ramp at (-61.00, 12.08, -24.58).
+Placed Cl- in ramp at (-20.01, 33.20, 67.17).
+0: Placed Na+ in ramp at (124.04, 15.82, 74.52).
+Placed Cl- in ramp at (-97.96, 92.11, -14.57).
+0: Placed Na+ in ramp at (-12.17, -50.73, -115.98).
+Placed Cl- in ramp at (40.71, 108.24, 20.44).
+0: Placed Na+ in ramp at (118.51, 41.36, -33.75).
+Placed Cl- in ramp at (-69.74, 10.86, -106.06).
+0: Placed Na+ in ramp at (120.18, 68.25, -16.32).
+Placed Cl- in ramp at (-101.07, -84.48, -23.31).
+0: Placed Na+ in ramp at (-86.19, 94.57, -54.93).
+Placed Cl- in ramp at (-6.02, 21.87, 133.44).
+0: Placed Na+ in ramp at (-92.57, -98.67, -29.40).
+Placed Cl- in ramp at (-34.89, -122.76, 7.67).
+0: Placed Na+ in ramp at (31.33, 143.29, -31.83).
+Placed Cl- in ramp at (6.75, -120.08, -23.17).
+0: Placed Na+ in ramp at (84.71, -89.95, 45.88).
+Placed Cl- in ramp at (29.44, 69.66, 7.37).
+0: Placed Na+ in ramp at (33.98, 118.61, -64.89).
+Placed Cl- in ramp at (-43.42, 53.18, 63.30).
+0: Placed Na+ in ramp at (-72.29, 40.12, 8.19).
+Placed Cl- in ramp at (-102.18, 64.58, 20.06).
+0: Placed Na+ in ramp at (112.02, -84.29, -44.82).
+Placed Cl- in ramp at (-40.70, 52.02, 46.59).
+0: Placed Na+ in ramp at (46.44, 121.07, 39.75).
+Placed Cl- in ramp at (-22.65, 64.52, -107.14).
+0: Placed Na+ in ramp at (-74.36, -2.89, 27.74).
+Placed Cl- in ramp at (31.22, -35.00, -145.57).
+0: Placed Na+ in ramp at (77.32, 27.29, 88.00).
+Placed Cl- in ramp at (58.82, -59.76, -10.75).
+0: Placed Na+ in ramp at (-5.07, -102.45, 73.19).
+Placed Cl- in ramp at (-90.54, -8.76, -104.02).
+0: Placed Na+ in ramp at (-41.99, 82.11, -72.99).
+Placed Cl- in ramp at (73.04, -63.81, -63.85).
+0: Placed Na+ in ramp at (-4.08, -47.61, 79.67).
+Placed Cl- in ramp at (96.00, -37.85, -46.48).
+0: Placed Na+ in ramp at (2.34, -1.70, 60.47).
+Placed Cl- in ramp at (-37.83, 118.08, -78.60).
+0: Placed Na+ in ramp at (-16.17, -50.50, -7.22).
+Placed Cl- in ramp at (21.92, 39.24, -38.46).
+0: Placed Na+ in ramp at (-52.10, 21.35, 11.84).
+Placed Cl- in ramp at (117.99, 6.63, -92.48).
+0: Placed Na+ in ramp at (33.65, -100.55, -96.35).
+Placed Cl- in ramp at (-57.10, -32.38, 33.73).
+0: Placed Na+ in ramp at (-43.69, -115.85, -56.63).
+Placed Cl- in ramp at (67.58, 86.20, -64.36).
+0: Placed Na+ in ramp at (73.25, 108.51, 20.71).
+Placed Cl- in ramp at (50.18, -13.18, -39.29).
+0: Placed Na+ in ramp at (-42.61, -29.21, 108.05).
+Placed Cl- in ramp at (57.93, 23.20, 1.95).
+0: Placed Na+ in ramp at (-63.40, 6.35, -28.95).
+Placed Cl- in ramp at (-99.03, -64.39, 67.02).
+0: Placed Na+ in ramp at (-42.15, 0.64, 72.33).
+Placed Cl- in ramp at (-7.78, -135.10, -6.16).
+0: Placed Na+ in ramp at (115.00, 58.57, 19.44).
+Placed Cl- in ramp at (-125.20, 77.36, -53.55).
+0: Placed Na+ in ramp at (17.94, -114.55, -26.51).
+Placed Cl- in ramp at (106.33, -23.38, -50.30).
+0: Placed Na+ in ramp at (98.47, 29.07, 84.39).
+Placed Cl- in ramp at (55.17, 5.08, -113.45).
+0: Placed Na+ in ramp at (24.24, 79.74, -32.08).
+Placed Cl- in ramp at (-82.95, -102.31, -20.59).
+0: Placed Na+ in ramp at (98.90, -13.25, 92.49).
+Placed Cl- in ramp at (-22.82, 114.47, -81.52).
+0: Placed Na+ in ramp at (-39.02, -19.90, 32.50).
+Placed Cl- in ramp at (38.06, 121.55, 52.80).
+0: Placed Na+ in ramp at (68.62, -23.26, -125.39).
+Placed Cl- in ramp at (-110.27, 19.26, -26.29).
+0: Placed Na+ in ramp at (38.24, -36.45, -73.22).
+Placed Cl- in ramp at (38.32, 36.51, 1.87).
+0: Placed Na+ in ramp at (-67.01, -109.00, -19.42).
+Placed Cl- in ramp at (-119.47, 30.62, 76.08).
+0: Placed Na+ in ramp at (-62.64, -113.21, 21.51).
+Placed Cl- in ramp at (93.92, 69.31, 13.80).
+0: Placed Na+ in ramp at (-6.15, 32.74, -91.06).
+Placed Cl- in ramp at (90.54, 92.97, 37.92).
+0: Placed Na+ in ramp at (-40.18, 66.11, 23.09).
+Placed Cl- in ramp at (-98.29, -80.68, 37.93).
+0: Placed Na+ in ramp at (-121.07, -47.31, -61.46).
+Placed Cl- in ramp at (31.92, 117.47, 58.79).
+0: Placed Na+ in ramp at (25.33, -20.31, -147.22).
+Placed Cl- in ramp at (22.90, 13.36, -118.65).
+0: Placed Na+ in ramp at (-94.91, 74.90, 24.36).
+Placed Cl- in ramp at (123.33, 66.19, -47.26).
+0: Placed Na+ in ramp at (52.05, 115.76, -25.29).
+Placed Cl- in ramp at (121.47, -33.89, -83.02).
+0: Placed Na+ in ramp at (106.91, 21.53, 65.81).
+Placed Cl- in ramp at (-5.17, 45.13, 72.23).
+0: Placed Na+ in ramp at (37.80, 40.71, -15.46).
+Placed Cl- in ramp at (115.43, -24.14, -14.89).
+0: Placed Na+ in ramp at (94.90, -76.51, -55.58).
+Placed Cl- in ramp at (29.96, 35.60, -22.56).
+0: Placed Na+ in ramp at (65.61, -101.58, -72.88).
+Placed Cl- in ramp at (-46.04, 59.87, 22.24).
+0: Placed Na+ in ramp at (-21.75, 17.31, -89.46).
+Placed Cl- in ramp at (-104.75, 10.06, 88.42).
+0: Placed Na+ in ramp at (-73.32, -30.30, -1.71).
+Placed Cl- in ramp at (45.35, 10.49, 63.77).
+0: Placed Na+ in ramp at (-52.69, 4.94, -26.40).
+Placed Cl- in ramp at (-48.62, 80.93, 94.83).
+0: Placed Na+ in ramp at (11.64, -12.48, -42.49).
+Placed Cl- in ramp at (-11.55, -13.16, -0.97).
+0: Placed Na+ in ramp at (57.12, -21.88, -31.94).
+Placed Cl- in ramp at (40.92, 38.26, 113.26).
+0: Placed Na+ in ramp at (49.75, 3.91, -124.97).
+Placed Cl- in ramp at (-87.23, -110.98, -3.80).
+0: Placed Na+ in ramp at (52.11, 19.70, -117.24).
+Placed Cl- in ramp at (-69.32, 32.34, -24.03).
+0: Placed Na+ in ramp at (-1.15, -29.77, 24.64).
+Placed Cl- in ramp at (-60.25, 104.94, -54.44).
+0: Placed Na+ in ramp at (-27.88, 46.31, 32.48).
+Placed Cl- in ramp at (79.32, -38.48, 28.91).
+0: Placed Na+ in ramp at (42.64, -7.25, 129.01).
+Placed Cl- in ramp at (46.19, -72.48, -103.72).
+0: Placed Na+ in ramp at (-95.36, 50.01, 58.76).
+Placed Cl- in ramp at (-70.26, 107.78, -76.04).
+0: Placed Na+ in ramp at (-94.21, -86.49, -57.21).
+Placed Cl- in ramp at (116.83, -3.79, 85.30).
+0: Placed Na+ in ramp at (119.49, -34.44, 6.93).
+Placed Cl- in ramp at (-119.76, -77.59, -57.61).
+0: Placed Na+ in ramp at (-105.35, -67.69, -27.79).
+Placed Cl- in ramp at (59.32, -59.62, -7.08).
+0: Placed Na+ in ramp at (81.03, -22.48, -7.97).
+Placed Cl- in ramp at (105.04, -25.36, 103.49).
+0: Placed Na+ in ramp at (53.07, -54.24, 20.87).
+Placed Cl- in ramp at (107.57, 46.89, -45.28).
+0: Placed Na+ in ramp at (-41.95, -34.31, 46.51).
+Placed Cl- in ramp at (-22.95, 7.66, -10.82).
+0: Placed Na+ in ramp at (85.02, 104.74, 29.61).
+Placed Cl- in ramp at (3.95, 62.28, 6.71).
+0: Placed Na+ in ramp at (-43.42, -61.20, 30.77).
+Placed Cl- in ramp at (-5.06, -72.48, 107.77).
+0: Placed Na+ in ramp at (-73.63, -17.59, -3.21).
+Placed Cl- in ramp at (-104.99, -49.99, -56.67).
+0: Placed Na+ in ramp at (118.58, 23.04, -19.05).
+Placed Cl- in ramp at (-68.89, 39.30, 4.63).
+0: Placed Na+ in ramp at (-29.77, 117.93, -45.97).
+Placed Cl- in ramp at (-15.13, -108.64, -63.18).
+0: Placed Na+ in ramp at (-89.29, -94.59, -41.22).
+Placed Cl- in ramp at (-100.41, 41.57, 47.64).
+0: Placed Na+ in ramp at (-41.64, -89.41, 71.12).
+Placed Cl- in ramp at (20.31, -54.36, -5.81).
+0: Placed Na+ in ramp at (38.76, 144.63, -45.26).
+Placed Cl- in ramp at (41.68, -47.53, 12.41).
+0: Placed Na+ in ramp at (2.56, -30.02, 69.78).
+Placed Cl- in ramp at (-0.83, -41.72, -55.45).
+0: Placed Na+ in ramp at (-13.50, -59.92, -6.54).
+Placed Cl- in ramp at (20.34, -120.28, -49.29).
+0: Placed Na+ in ramp at (-30.50, -59.13, -50.59).
+Placed Cl- in ramp at (123.49, -17.49, 30.87).
+0: Placed Na+ in ramp at (8.54, 27.47, 16.91).
+Placed Cl- in ramp at (23.66, -59.93, -33.97).
+0: Placed Na+ in ramp at (66.94, -70.65, 74.63).
+Placed Cl- in ramp at (108.83, 40.11, -69.59).
+0: Placed Na+ in ramp at (63.71, -81.11, -88.76).
+Placed Cl- in ramp at (51.53, -16.29, 129.54).
+0: Placed Na+ in ramp at (-0.30, 49.10, 119.11).
+Placed Cl- in ramp at (-43.03, 40.93, -11.18).
+0: Placed Na+ in ramp at (116.24, 59.13, 13.86).
+Placed Cl- in ramp at (-82.90, -73.94, 56.48).
+0: Placed Na+ in ramp at (20.01, 73.22, -40.01).
+Placed Cl- in ramp at (14.13, -41.04, -63.24).
+0: Placed Na+ in ramp at (-10.43, -136.29, 24.57).
+Placed Cl- in ramp at (-12.40, 20.75, -36.69).
+0: Placed Na+ in ramp at (-18.72, 16.80, -78.29).
+Placed Cl- in ramp at (-26.28, -19.44, -41.94).
+0: Placed Na+ in ramp at (72.27, -58.97, 108.00).
+Placed Cl- in ramp at (-67.15, 74.80, 74.78).
+0: Placed Na+ in ramp at (1.71, -76.38, -27.40).
+Placed Cl- in ramp at (-27.65, 29.97, 73.15).
+0: Placed Na+ in ramp at (54.94, 122.63, -47.78).
+Placed Cl- in ramp at (20.20, 8.58, 71.95).
+0: Placed Na+ in ramp at (-124.49, 57.08, -46.09).
+Placed Cl- in ramp at (54.59, 55.72, -35.11).
+0: Placed Na+ in ramp at (-62.15, -3.95, -57.59).
+Placed Cl- in ramp at (15.22, -60.30, 18.52).
+0: Placed Na+ in ramp at (-11.60, -32.77, -48.19).
+Placed Cl- in ramp at (107.79, 54.87, 16.40).
+0: Placed Na+ in ramp at (64.20, -41.90, -112.30).
+Placed Cl- in ramp at (45.29, 132.86, 29.23).
+0: Placed Na+ in ramp at (-0.75, 82.88, -4.33).
+Placed Cl- in ramp at (92.70, -11.32, -104.33).
+0: Placed Na+ in ramp at (12.26, 65.42, 102.43).
+Placed Cl- in ramp at (-96.95, 73.05, -78.18).
+0: Placed Na+ in ramp at (-20.94, -19.80, -126.69).
+Placed Cl- in ramp at (-36.55, 60.66, 109.35).
+0: Placed Na+ in ramp at (98.00, 21.83, 87.36).
+Placed Cl- in ramp at (-48.40, 59.05, 105.68).
+0: Placed Na+ in ramp at (98.89, -78.56, -6.73).
+Placed Cl- in ramp at (-27.37, -79.98, 41.62).
+0: Placed Na+ in ramp at (-17.65, 85.80, 10.74).
+Placed Cl- in ramp at (-28.43, -125.79, -37.32).
+0: Placed Na+ in ramp at (9.61, -63.51, -105.78).
+Placed Cl- in ramp at (80.35, -64.66, 76.99).
+0: Placed Na+ in ramp at (87.71, 88.14, 16.04).
+Placed Cl- in ramp at (-125.56, 2.41, 26.39).
+0: Placed Na+ in ramp at (29.37, -28.23, 59.87).
+Placed Cl- in ramp at (103.52, -79.38, 72.05).
+0: Placed Na+ in ramp at (91.48, -41.47, 52.48).
+Placed Cl- in ramp at (119.88, -78.91, -4.66).
+0: Placed Na+ in ramp at (-63.82, 92.89, 29.67).
+Placed Cl- in ramp at (-95.13, 49.85, 85.17).
+0: Placed Na+ in ramp at (3.68, -33.65, -23.76).
+Placed Cl- in ramp at (113.26, 30.40, -20.03).
+0: Placed Na+ in ramp at (32.90, -33.42, 52.65).
+Placed Cl- in ramp at (1.16, -119.54, 33.75).
+0: Placed Na+ in ramp at (29.60, -22.04, 83.44).
+Placed Cl- in ramp at (-2.72, 42.94, 108.60).
+0: Placed Na+ in ramp at (50.12, -31.40, -55.61).
+Placed Cl- in ramp at (-62.47, -77.56, 77.67).
+0: Placed Na+ in ramp at (-81.48, 11.28, -87.55).
+Placed Cl- in ramp at (-38.07, -54.65, 44.02).
+0: Placed Na+ in ramp at (-1.05, -7.02, 46.86).
+Placed Cl- in ramp at (-115.69, -33.02, -38.86).
+0: Placed Na+ in ramp at (-32.81, -33.07, -56.61).
+Placed Cl- in ramp at (-119.04, 39.56, -77.21).
+0: Placed Na+ in ramp at (2.70, -59.33, 28.90).
+Placed Cl- in ramp at (-0.33, 107.13, -60.16).
+0: Placed Na+ in ramp at (34.19, 133.58, 15.32).
+Placed Cl- in ramp at (-59.96, 48.00, -114.34).
+0: Placed Na+ in ramp at (-11.89, -134.15, -24.72).
+Placed Cl- in ramp at (62.51, 103.57, 52.92).
+0: Placed Na+ in ramp at (120.67, -53.97, -0.63).
+Placed Cl- in ramp at (53.26, 14.12, 38.54).
+0: Placed Na+ in ramp at (-5.77, 120.41, -68.12).
+Placed Cl- in ramp at (-90.95, -67.25, 26.24).
+0: Placed Na+ in ramp at (119.24, -84.17, -27.86).
+Placed Cl- in ramp at (-8.31, -130.22, 15.09).
+0: Placed Na+ in ramp at (-63.06, -103.94, 50.32).
+Placed Cl- in ramp at (65.88, -7.11, -29.95).
+0: Placed Na+ in ramp at (-90.00, 24.08, -103.07).
+Placed Cl- in ramp at (-114.67, 4.55, -28.31).
+0: Placed Na+ in ramp at (-90.86, -101.64, -50.66).
+Placed Cl- in ramp at (-122.22, 17.81, 60.25).
+0: Placed Na+ in ramp at (-25.38, 118.95, 18.09).
+Placed Cl- in ramp at (-25.00, 39.85, -23.00).
+0: Placed Na+ in ramp at (38.45, -111.32, -99.54).
+Placed Cl- in ramp at (23.26, 2.83, 24.02).
+0: Placed Na+ in ramp at (21.18, 7.87, 52.95).
+Placed Cl- in ramp at (-84.60, -76.08, 73.54).
+0: Placed Na+ in ramp at (65.48, 10.60, 12.86).
+Placed Cl- in ramp at (70.77, 13.56, 15.49).
+0: Placed Na+ in ramp at (-80.63, 18.82, -111.53).
+Placed Cl- in ramp at (-23.13, 34.45, 119.20).
+0: Placed Na+ in ramp at (37.75, 68.40, -20.59).
+Placed Cl- in ramp at (118.04, 44.91, -22.53).
+0: Placed Na+ in ramp at (-20.74, -116.98, 36.08).
+Placed Cl- in ramp at (-18.13, -34.67, -46.45).
+0: Placed Na+ in ramp at (124.57, -10.35, -72.28).
+Placed Cl- in ramp at (34.77, -3.64, 46.54).
+0: Placed Na+ in ramp at (-76.33, -85.02, -44.00).
+Placed Cl- in ramp at (-123.83, 12.19, -77.06).
+0: Placed Na+ in ramp at (-34.83, 19.96, -7.98).
+Placed Cl- in ramp at (54.03, -97.91, 0.21).
+0: Placed Na+ in ramp at (-58.86, 45.18, -14.65).
+Placed Cl- in ramp at (-20.01, 120.82, 21.79).
+0: Placed Na+ in ramp at (-73.73, -92.36, -48.91).
+Placed Cl- in ramp at (51.47, -16.04, 34.55).
+0: Placed Na+ in ramp at (-82.77, 13.95, -113.69).
+Placed Cl- in ramp at (-25.19, 23.12, 116.40).
+0: Placed Na+ in ramp at (-122.59, -66.03, -10.04).
+Placed Cl- in ramp at (86.52, 107.02, 41.17).
+0: Placed Na+ in ramp at (66.52, -45.83, 41.44).
+Placed Cl- in ramp at (-42.37, 43.08, 51.56).
+0: Placed Na+ in ramp at (47.80, 69.73, -18.86).
+Placed Cl- in ramp at (-0.09, 99.73, -6.91).
+0: Placed Na+ in ramp at (54.24, -87.79, 54.77).
+Placed Cl- in ramp at (34.49, -54.59, -43.81).
+0: Placed Na+ in ramp at (71.69, -93.88, -59.88).
+Placed Cl- in ramp at (14.18, 97.73, 57.51).
+0: Placed Na+ in ramp at (48.25, -100.39, -26.07).
+Placed Cl- in ramp at (-90.29, 12.11, -105.65).
+0: Placed Na+ in ramp at (14.01, 129.94, -42.95).
+Placed Cl- in ramp at (-33.01, 22.96, 128.19).
+0: Placed Na+ in ramp at (24.82, -19.37, 42.60).
+Placed Cl- in ramp at (81.83, 2.56, -86.29).
+0: Placed Na+ in ramp at (39.45, 49.84, 58.66).
+Placed Cl- in ramp at (2.20, -39.38, -36.02).
+0: Placed Na+ in ramp at (-75.97, 48.53, -103.91).
+Placed Cl- in ramp at (67.45, 113.92, -54.10).
+0: Placed Na+ in ramp at (-22.76, -16.58, 79.06).
+Placed Cl- in ramp at (-119.93, -88.65, 51.00).
+0: Placed Na+ in ramp at (-2.25, -29.45, -71.82).
+Placed Cl- in ramp at (109.90, 23.19, -66.01).
+0: Placed Na+ in ramp at (-102.96, 81.89, -72.49).
+Placed Cl- in ramp at (-68.22, -10.12, 102.72).
+0: Placed Na+ in ramp at (18.65, 44.84, 63.52).
+Placed Cl- in ramp at (-39.64, -31.71, 97.19).
+0: Placed Na+ in ramp at (-59.50, -89.06, -55.01).
+Placed Cl- in ramp at (-2.18, 54.75, 24.80).
+0: Placed Na+ in ramp at (-52.28, -139.16, -7.88).
+Placed Cl- in ramp at (-33.49, 64.50, 52.00).
+0: Placed Na+ in ramp at (-28.85, 19.47, -86.47).
+Placed Cl- in ramp at (53.07, -13.88, 125.76).
+0: Placed Na+ in ramp at (-45.76, -120.60, -11.62).
+Placed Cl- in ramp at (66.11, -75.71, -76.61).
+0: Placed Na+ in ramp at (-39.40, -18.70, 3.09).
+Placed Cl- in ramp at (-35.89, 60.13, 10.16).
+0: Placed Na+ in ramp at (-81.93, -11.90, 95.10).
+Placed Cl- in ramp at (37.85, 125.01, -52.45).
+0: Placed Na+ in ramp at (62.29, -51.81, -110.75).
+Placed Cl- in ramp at (91.39, -14.85, -101.08).
+0: Placed Na+ in ramp at (-63.80, 86.48, 14.77).
+Placed Cl- in ramp at (-106.90, 91.79, -45.20).
+0: Placed Na+ in ramp at (35.90, 55.26, -32.98).
+Placed Cl- in ramp at (38.21, -68.27, 11.88).
+0: Placed Na+ in ramp at (-47.58, 2.70, 126.50).
+Placed Cl- in ramp at (-16.15, 78.27, 17.43).
+0: Placed Na+ in ramp at (34.66, -95.49, 53.21).
+Placed Cl- in ramp at (-72.63, -119.08, -13.60).
+0: Placed Na+ in ramp at (-104.33, -64.35, 26.74).
+Placed Cl- in ramp at (122.85, 56.29, -14.30).
+0: Placed Na+ in ramp at (98.76, 66.47, -4.62).
+Placed Cl- in ramp at (123.39, 44.64, -49.62).
+0: Placed Na+ in ramp at (15.61, 27.67, 23.09).
+Placed Cl- in ramp at (-46.60, -112.46, -39.46).
+0: Placed Na+ in ramp at (90.41, 102.37, 5.23).
+Placed Cl- in ramp at (-49.76, 10.35, -115.81).
+0: Placed Na+ in ramp at (40.55, -54.90, 55.78).
+Placed Cl- in ramp at (-13.14, -49.42, -11.86).
+0: Placed Na+ in ramp at (-26.20, -50.09, -57.34).
+Placed Cl- in ramp at (20.97, -41.00, -77.80).
+0: Placed Na+ in ramp at (13.00, 22.12, 74.23).
+Placed Cl- in ramp at (-28.34, -67.96, -51.04).
+0: Placed Na+ in ramp at (-24.17, 4.74, 115.77).
+Placed Cl- in ramp at (-120.22, 74.24, -18.49).
+0: Placed Na+ in ramp at (21.00, 23.13, 42.26).
+Placed Cl- in ramp at (-66.44, 80.25, -92.21).
+0: Placed Na+ in ramp at (-1.38, 107.97, -79.92).
+Placed Cl- in ramp at (124.20, 20.79, 69.34).
+0: Placed Na+ in ramp at (-5.03, 118.39, -63.27).
+Placed Cl- in ramp at (-45.70, 65.82, -23.38).
+0: Placed Na+ in ramp at (-35.96, 29.96, 26.48).
+Placed Cl- in ramp at (42.96, 142.56, -38.85).
+0: Placed Na+ in ramp at (44.78, -0.36, 8.63).
+Placed Cl- in ramp at (-105.20, -98.11, 17.80).
+0: Placed Na+ in ramp at (27.22, -62.24, 13.12).
+Placed Cl- in ramp at (-62.86, 62.04, -78.52).
+0: Placed Na+ in ramp at (96.32, 101.31, 7.92).
+Placed Cl- in ramp at (46.56, -99.59, 52.75).
+0: Placed Na+ in ramp at (1.90, -6.86, 124.36).
+Placed Cl- in ramp at (123.32, -23.27, -59.23).
+0: Placed Na+ in ramp at (-3.24, -110.73, 71.60).
+Placed Cl- in ramp at (-15.13, 60.82, 12.03).
+0: Placed Na+ in ramp at (44.26, -54.43, 50.53).
+Placed Cl- in ramp at (36.45, -20.66, -129.98).
+0: Placed Na+ in ramp at (-40.96, -35.04, -16.38).
+Placed Cl- in ramp at (-50.93, 19.84, -102.23).
+0: Placed Na+ in ramp at (17.44, -71.24, -15.44).
+Placed Cl- in ramp at (-26.55, 39.25, -114.83).
+0: Placed Na+ in ramp at (82.35, -36.06, -74.44).
+Placed Cl- in ramp at (73.00, 85.25, 70.55).
+0: Placed Na+ in ramp at (104.23, 22.62, 96.82).
+Placed Cl- in ramp at (-33.18, 108.81, -20.11).
+0: Placed Na+ in ramp at (108.56, -59.71, 40.07).
+Placed Cl- in ramp at (-38.92, 1.72, 64.76).
+0: Placed Na+ in ramp at (-113.03, -25.83, -40.42).
+Placed Cl- in ramp at (-35.42, 110.30, 26.87).
+0: Placed Na+ in ramp at (-118.19, 9.49, -30.52).
+Placed Cl- in ramp at (-72.38, -71.91, -80.30).
+0: Placed Na+ in ramp at (122.97, 84.72, 17.06).
+Placed Cl- in ramp at (120.77, 44.56, 76.24).
+0: Placed Na+ in ramp at (-12.10, 43.95, -73.57).
+Placed Cl- in ramp at (24.95, 23.24, -51.13).
+0: Placed Na+ in ramp at (23.02, -111.72, 47.08).
+Placed Cl- in ramp at (-8.09, 73.08, 30.83).
+0: Placed Na+ in ramp at (-75.78, -28.72, -43.83).
+Placed Cl- in ramp at (12.84, 80.03, -2.93).
+0: Placed Na+ in ramp at (43.00, -5.93, -61.24).
+Placed Cl- in ramp at (-88.82, -109.55, 48.67).
+0: Placed Na+ in ramp at (9.49, 3.65, 59.32).
+Placed Cl- in ramp at (18.33, -29.25, -62.23).
+0: Placed Na+ in ramp at (11.97, 21.56, -48.44).
+Placed Cl- in ramp at (58.12, 60.81, -78.68).
+0: Placed Na+ in ramp at (-99.85, -3.12, 90.59).
+Placed Cl- in ramp at (61.23, 4.92, -25.88).
+0: Placed Na+ in ramp at (110.12, -56.92, 34.29).
+Placed Cl- in ramp at (114.75, -6.78, -64.43).
+0: Placed Na+ in ramp at (67.90, -87.46, -47.78).
+Placed Cl- in ramp at (100.59, 55.35, -73.76).
+0: Placed Na+ in ramp at (-103.67, 83.72, 6.18).
+Placed Cl- in ramp at (-23.46, 66.44, 44.67).
+0: Placed Na+ in ramp at (94.65, -98.96, 53.25).
+Placed Cl- in ramp at (76.45, 82.72, -51.67).
+0: Placed Na+ in ramp at (20.05, 138.39, 13.91).
+Placed Cl- in ramp at (117.68, -4.60, -86.29).
+0: Placed Na+ in ramp at (-13.92, -51.01, 58.07).
+Placed Cl- in ramp at (-121.93, 11.20, -0.31).
+0: Placed Na+ in ramp at (-58.68, -47.58, -82.84).
+Placed Cl- in ramp at (26.06, 139.75, -19.97).
+0: Placed Na+ in ramp at (-98.42, 81.71, -61.32).
+Placed Cl- in ramp at (-100.23, -104.23, 0.94).
+0: Placed Na+ in ramp at (-110.32, -38.80, 71.13).
+Placed Cl- in ramp at (-41.95, -112.48, 58.05).
+0: Placed Na+ in ramp at (-15.05, -80.81, 13.59).
+Placed Cl- in ramp at (95.80, 1.66, -91.60).
+0: Placed Na+ in ramp at (-29.57, -50.07, 105.20).
+Placed Cl- in ramp at (43.23, 52.39, -92.99).
+0: Placed Na+ in ramp at (-101.51, 50.72, 72.18).
+Placed Cl- in ramp at (0.77, 6.20, -74.84).
+0: Placed Na+ in ramp at (40.49, 103.01, 77.45).
+Placed Cl- in ramp at (123.99, 72.75, 26.11).
+0: Placed Na+ in ramp at (36.42, 109.15, -46.10).
+Placed Cl- in ramp at (9.43, -94.56, 91.62).
+0: Placed Na+ in ramp at (13.93, -90.68, 75.71).
+Placed Cl- in ramp at (16.33, 125.60, 64.49).
+0: Placed Na+ in ramp at (-62.18, -95.70, -49.44).
+Placed Cl- in ramp at (109.79, -3.31, 82.44).
+0: Placed Na+ in ramp at (-32.53, -37.15, -23.40).
+Placed Cl- in ramp at (57.66, -88.67, 89.14).
+0: Placed Na+ in ramp at (36.82, -54.39, 7.17).
+Placed Cl- in ramp at (9.86, 88.47, 0.15).
+0: Placed Na+ in ramp at (-22.53, -33.68, -1.02).
+Placed Cl- in ramp at (-51.42, -129.11, -0.57).
+0: Placed Na+ in ramp at (-87.84, -98.88, 38.50).
+Placed Cl- in ramp at (111.16, 23.24, -35.48).
+0: Placed Na+ in ramp at (-78.86, 38.08, 97.90).
+Placed Cl- in ramp at (-76.09, -15.36, -84.02).
+0: Placed Na+ in ramp at (21.60, 58.72, -36.87).
+Placed Cl- in ramp at (-120.61, -34.80, 61.70).
+0: Placed Na+ in ramp at (-14.17, -7.58, -142.42).
+Placed Cl- in ramp at (107.77, 78.98, 7.67).
+0: Placed Na+ in ramp at (17.99, -25.37, 66.30).
+Placed Cl- in ramp at (67.90, -56.88, 103.95).
+0: Placed Na+ in ramp at (63.73, 76.55, -67.36).
+Placed Cl- in ramp at (-42.46, -65.56, -47.84).
+0: Placed Na+ in ramp at (-46.38, 103.85, -32.03).
+Placed Cl- in ramp at (-49.54, -41.50, 25.32).
+0: Placed Na+ in ramp at (96.99, -63.81, -27.87).
+Placed Cl- in ramp at (-46.37, -57.99, -91.86).
+0: Placed Na+ in ramp at (19.11, 83.64, 9.45).
+Placed Cl- in ramp at (9.65, 76.87, -30.82).
+0: Placed Na+ in ramp at (67.54, 116.40, 0.88).
+Placed Cl- in ramp at (34.72, -0.95, -35.14).
+0: Placed Na+ in ramp at (106.25, -64.01, 15.64).
+Placed Cl- in ramp at (-12.21, 41.90, -51.91).
+0: Placed Na+ in ramp at (52.56, 33.04, 19.87).
+Placed Cl- in ramp at (-81.65, 13.16, 18.33).
+0: Placed Na+ in ramp at (119.89, 37.20, 44.92).
+Placed Cl- in ramp at (83.78, 111.38, 0.47).
+0: Placed Na+ in ramp at (115.53, -84.64, -22.61).
+Placed Cl- in ramp at (-66.38, -50.21, -3.86).
+0: Placed Na+ in ramp at (24.64, 3.38, 123.93).
+Placed Cl- in ramp at (119.73, -81.69, 16.24).
+0: Placed Na+ in ramp at (47.23, 23.25, 58.00).
+Placed Cl- in ramp at (72.33, -98.81, 84.26).
+0: Placed Na+ in ramp at (89.38, 84.49, 35.81).
+Placed Cl- in ramp at (-57.55, 104.98, -24.25).
+0: Placed Na+ in ramp at (87.09, -71.23, 83.35).
+Placed Cl- in ramp at (-55.86, 76.65, -80.20).
+0: Placed Na+ in ramp at (46.36, -21.82, 38.86).
+Placed Cl- in ramp at (-13.87, 30.28, 109.75).
+0: Placed Na+ in ramp at (64.08, -22.46, 27.09).
+Placed Cl- in ramp at (96.40, -31.01, 80.15).
+0: Placed Na+ in ramp at (22.09, -26.77, 21.85).
+Placed Cl- in ramp at (52.44, -46.49, 27.07).
+0: Placed Na+ in ramp at (-57.49, -135.68, -16.86).
+Placed Cl- in ramp at (8.00, -45.75, -31.56).
+0: Placed Na+ in ramp at (68.10, -16.07, -104.54).
+Placed Cl- in ramp at (61.29, 11.32, 0.65).
+0: Placed Na+ in ramp at (44.56, -56.12, -26.88).
+Placed Cl- in ramp at (25.78, -39.53, -46.45).
+0: Placed Na+ in ramp at (89.32, -44.71, -47.82).
+Placed Cl- in ramp at (22.45, -117.84, -80.89).
+0: Placed Na+ in ramp at (81.71, 83.87, 32.49).
+Placed Cl- in ramp at (15.98, -83.53, 90.70).
+0: Placed Na+ in ramp at (-90.25, -104.31, 13.85).
+Placed Cl- in ramp at (53.99, 82.37, -76.34).
+0: Placed Na+ in ramp at (-82.91, -87.74, -27.49).
+Placed Cl- in ramp at (116.28, -61.90, 43.26).
+0: Placed Na+ in ramp at (17.51, 59.67, 33.53).
+Placed Cl- in ramp at (-2.42, 79.90, 99.99).
+0: Placed Na+ in ramp at (-54.67, 52.44, -20.69).
+Placed Cl- in ramp at (9.57, 53.67, -13.50).
+0: Placed Na+ in ramp at (-15.03, 125.46, 29.01).
+Placed Cl- in ramp at (-45.99, 92.35, 99.74).
+0: Placed Na+ in ramp at (-30.02, 111.87, -35.60).
+Placed Cl- in ramp at (-106.39, 81.08, 5.68).
+0: Placed Na+ in ramp at (-79.82, -90.69, 32.92).
+Placed Cl- in ramp at (-96.63, -64.60, 17.17).
+0: Placed Na+ in ramp at (68.53, 13.74, 8.56).
+Placed Cl- in ramp at (82.40, 22.91, -22.04).
+0: Placed Na+ in ramp at (64.66, -11.64, -121.95).
+Placed Cl- in ramp at (-9.23, 72.11, -29.97).
+0: Placed Na+ in ramp at (-107.07, -88.57, 24.84).
+Placed Cl- in ramp at (39.48, -16.57, 70.24).
+0: Placed Na+ in ramp at (6.65, 24.17, -33.30).
+Placed Cl- in ramp at (93.76, -63.94, 90.43).
+0: Placed Na+ in ramp at (35.57, 114.83, -49.02).
+Placed Cl- in ramp at (102.60, 32.14, 68.95).
+0: Placed Na+ in ramp at (-32.68, -102.93, 56.12).
+Placed Cl- in ramp at (43.36, 20.67, -42.03).
+0: Placed Na+ in ramp at (-24.51, 20.63, -34.27).
+Placed Cl- in ramp at (-121.65, -26.35, 11.36).
+0: Placed Na+ in ramp at (11.22, -1.19, -114.32).
+Placed Cl- in ramp at (28.70, -39.53, -16.14).
+0: Placed Na+ in ramp at (-35.35, 42.11, 48.18).
+Placed Cl- in ramp at (-115.54, -16.18, 58.97).
+0: Placed Na+ in ramp at (-20.96, 120.05, 84.32).
+Placed Cl- in ramp at (33.00, -42.12, 16.02).
+0: Placed Na+ in ramp at (109.03, -29.87, 23.24).
+Placed Cl- in ramp at (87.52, -67.77, 87.04).
+0: Placed Na+ in ramp at (22.76, 11.43, 116.05).
+Placed Cl- in ramp at (-90.56, -0.49, 102.79).
+0: Placed Na+ in ramp at (-40.35, 11.08, 9.75).
+Placed Cl- in ramp at (21.76, -122.09, 69.98).
+0: Placed Na+ in ramp at (47.29, -101.72, 41.44).
+Placed Cl- in ramp at (49.69, -7.33, -64.98).
+0: Placed Na+ in ramp at (99.46, -4.75, 77.02).
+Placed Cl- in ramp at (-51.67, -35.12, -10.76).
+0: Placed Na+ in ramp at (-115.52, -22.43, 87.41).
+Placed Cl- in ramp at (57.24, 51.49, 12.92).
+0: Placed Na+ in ramp at (25.25, -14.06, 83.84).
+Placed Cl- in ramp at (17.55, -55.67, -112.67).
+0: Placed Na+ in ramp at (-22.48, 4.60, 68.94).
+Placed Cl- in ramp at (1.78, 28.29, -66.11).
+0: Placed Na+ in ramp at (-45.46, -2.43, -76.43).
+Placed Cl- in ramp at (60.99, -11.75, -12.41).
+0: Placed Na+ in ramp at (101.08, -83.18, 3.62).
+Placed Cl- in ramp at (-39.52, 31.27, -46.74).
+0: Placed Na+ in ramp at (-24.49, -4.89, 15.48).
+Placed Cl- in ramp at (33.73, -4.82, -2.74).
+0: Placed Na+ in ramp at (-10.37, -128.57, -70.73).
+Placed Cl- in ramp at (-110.22, -79.75, 40.62).
+0: Placed Na+ in ramp at (60.78, -92.45, -70.52).
+Placed Cl- in ramp at (77.55, -38.48, -96.35).
+0: Placed Na+ in ramp at (100.08, 106.41, -12.52).
+Placed Cl- in ramp at (-8.27, -74.85, 28.90).
+0: Placed Na+ in ramp at (70.07, 127.13, 4.73).
+Placed Cl- in ramp at (-41.98, -18.20, -41.04).
+0: Placed Na+ in ramp at (-53.48, 65.35, 22.67).
+Placed Cl- in ramp at (-28.69, 93.69, -52.43).
+0: Placed Na+ in ramp at (72.37, -8.51, -53.13).
+Placed Cl- in ramp at (-4.68, 61.41, 30.41).
+0: Placed Na+ in ramp at (73.77, -3.45, -110.46).
+Placed Cl- in ramp at (-25.32, -118.39, 31.86).
+0: Placed Na+ in ramp at (84.12, -52.82, 78.97).
+Placed Cl- in ramp at (10.21, -98.38, 92.14).
+0: Placed Na+ in ramp at (79.98, -96.38, 68.32).
+Placed Cl- in ramp at (55.55, -47.91, -33.68).
+0: Placed Na+ in ramp at (-51.09, 7.18, -51.68).
+Placed Cl- in ramp at (74.45, 93.49, -5.42).
+0: Placed Na+ in ramp at (-61.59, -17.48, -52.82).
+Placed Cl- in ramp at (-21.95, 41.13, 132.18).
+0: Placed Na+ in ramp at (-53.37, 9.27, 41.73).
+Placed Cl- in ramp at (75.68, -89.93, -12.86).
+0: Placed Na+ in ramp at (-50.85, 86.00, -68.75).
+Placed Cl- in ramp at (-61.29, -24.93, -25.25).
+0: Placed Na+ in ramp at (-108.83, 78.90, -55.15).
+Placed Cl- in ramp at (81.69, -29.96, -104.18).
+0: Placed Na+ in ramp at (-59.68, 98.59, -5.21).
+Placed Cl- in ramp at (-104.79, 12.99, 81.57).
+0: Placed Na+ in ramp at (13.81, -99.08, 97.45).
+Placed Cl- in ramp at (39.95, 26.40, 26.78).
+0: Placed Na+ in ramp at (-1.65, -4.01, 132.81).
+Placed Cl- in ramp at (95.65, 41.99, -73.63).
+0: Placed Na+ in ramp at (119.57, 52.23, -51.12).
+Placed Cl- in ramp at (-53.32, 14.57, -16.71).
+0: Placed Na+ in ramp at (84.94, -101.39, 52.70).
+Placed Cl- in ramp at (46.14, -113.42, 23.41).
+0: Placed Na+ in ramp at (3.40, 70.79, 4.68).
+Placed Cl- in ramp at (118.67, -23.73, -75.08).
+0: Placed Na+ in ramp at (-11.41, -1.43, 19.61).
+Placed Cl- in ramp at (-9.91, 52.31, 109.31).
+0: Placed Na+ in ramp at (42.47, 30.39, 48.95).
+Placed Cl- in ramp at (-65.63, -19.93, -100.33).
+0: Placed Na+ in ramp at (-122.68, 9.05, 66.34).
+Placed Cl- in ramp at (63.76, -22.23, 125.31).
+0: Placed Na+ in ramp at (101.86, -78.25, -62.91).
+Placed Cl- in ramp at (-43.85, 67.05, -81.30).
+0: Placed Na+ in ramp at (47.33, -62.97, -116.27).
+Placed Cl- in ramp at (-91.17, 37.19, 73.86).
+0: Placed Na+ in ramp at (64.88, 74.67, -63.00).
+Placed Cl- in ramp at (-38.05, -52.93, -97.35).
+0: Placed Na+ in ramp at (76.94, -18.99, 88.28).
+Placed Cl- in ramp at (13.73, -52.77, 11.83).
+0: Placed Na+ in ramp at (-6.35, -129.87, -67.34).
+Placed Cl- in ramp at (10.98, -92.70, 81.05).
+0: Placed Na+ in ramp at (64.02, -31.49, -5.98).
+Placed Cl- in ramp at (124.43, -24.06, 72.80).
+0: Placed Na+ in ramp at (-96.60, -1.57, -98.78).
+Placed Cl- in ramp at (-60.77, 108.93, 20.49).
+0: Placed Na+ in ramp at (48.40, -74.18, -101.61).
+Placed Cl- in ramp at (49.68, -26.59, -28.06).
+0: Placed Na+ in ramp at (-36.19, 16.83, -146.56).
+Placed Cl- in ramp at (-39.89, 78.33, -78.83).
+0: Placed Na+ in ramp at (-24.81, -9.38, -73.59).
+Placed Cl- in ramp at (24.66, 21.48, -57.86).
+0: Placed Na+ in ramp at (-39.10, -133.07, -58.21).
+Placed Cl- in ramp at (0.69, -3.85, 8.18).
+0: Placed Na+ in ramp at (118.91, 80.81, -53.23).
+Placed Cl- in ramp at (50.17, -29.68, -122.24).
+0: Placed Na+ in ramp at (-54.90, 108.22, -67.11).
+Placed Cl- in ramp at (36.95, 145.55, 42.37).
+0: Placed Na+ in ramp at (1.99, 89.23, -74.79).
+Placed Cl- in ramp at (37.85, -11.51, -119.91).
+0: Placed Na+ in ramp at (-103.52, 4.93, 79.83).
+Placed Cl- in ramp at (-94.92, -55.22, 50.44).
+0: Placed Na+ in ramp at (124.07, -0.52, 6.65).
+Placed Cl- in ramp at (29.33, -23.38, 87.13).
+0: Placed Na+ in ramp at (72.82, 13.16, -51.48).
+Placed Cl- in ramp at (-62.78, 29.14, 48.05).
+0: Placed Na+ in ramp at (112.48, 43.95, -34.99).
+Placed Cl- in ramp at (-34.10, 100.61, 50.65).
+0: Placed Na+ in ramp at (-106.98, -55.99, 34.99).
+Placed Cl- in ramp at (10.73, 44.55, -48.46).
+0: Placed Na+ in ramp at (115.35, 15.59, -81.74).
+Placed Cl- in ramp at (-74.51, 49.80, 79.26).
+0: Placed Na+ in ramp at (116.04, 87.49, 43.21).
+Placed Cl- in ramp at (-44.15, 33.17, -54.33).
+0: Placed Na+ in ramp at (10.42, -87.72, 78.50).
+Placed Cl- in ramp at (-55.34, -38.09, 54.97).
+0: Placed Na+ in ramp at (51.93, -48.88, -11.31).
+Placed Cl- in ramp at (-89.24, -66.57, -78.32).
+0: Placed Na+ in ramp at (107.25, -89.84, -55.11).
+Placed Cl- in ramp at (9.30, 9.93, 5.04).
+0: Placed Na+ in ramp at (-91.53, 68.29, -54.67).
+Placed Cl- in ramp at (-12.23, -5.85, -60.98).
+0: Placed Na+ in ramp at (98.41, 75.66, 31.30).
+Placed Cl- in ramp at (-72.69, -104.81, -25.33).
+0: Placed Na+ in ramp at (-87.30, -96.72, -50.68).
+Placed Cl- in ramp at (87.51, 3.73, -10.96).
+0: Placed Na+ in ramp at (-74.04, 75.59, -72.65).
+Placed Cl- in ramp at (-38.77, 43.99, -67.51).
+0: Placed Na+ in ramp at (-54.58, 105.37, -81.33).
+Placed Cl- in ramp at (-58.38, 49.18, 31.43).
+0: Placed Na+ in ramp at (-83.83, 15.89, -94.26).
+Placed Cl- in ramp at (5.91, 19.04, 130.60).
+0: Placed Na+ in ramp at (117.67, -85.19, -43.85).
+Placed Cl- in ramp at (-48.36, 102.24, -25.79).
+0: Placed Na+ in ramp at (-80.83, -108.43, -32.10).
+Placed Cl- in ramp at (-47.97, 38.45, -118.89).
+0: Placed Na+ in ramp at (53.32, 112.32, 6.23).
+Placed Cl- in ramp at (-63.58, 73.82, 109.15).
+0: Placed Na+ in ramp at (-60.48, -32.14, 19.42).
+Placed Cl- in ramp at (54.78, -96.62, -72.78).
+0: Placed Na+ in ramp at (-63.78, 42.77, -112.99).
+Placed Cl- in ramp at (-45.37, -26.63, 0.94).
+0: Placed Na+ in ramp at (-49.56, -34.57, -113.41).
+Placed Cl- in ramp at (-16.62, 58.30, 55.63).
+0: Placed Na+ in ramp at (-115.67, 85.58, -10.36).
+Placed Cl- in ramp at (102.65, 87.38, -47.63).
+0: Placed Na+ in ramp at (6.94, -59.49, 117.74).
+Placed Cl- in ramp at (-22.77, 35.68, 22.50).
+0: Placed Na+ in ramp at (71.79, -16.14, 44.11).
+Placed Cl- in ramp at (-100.31, 74.22, -74.84).
+0: Placed Na+ in ramp at (-116.60, -15.60, 68.69).
+Placed Cl- in ramp at (48.16, 42.51, 14.42).
+0: Placed Na+ in ramp at (55.90, 1.69, -106.62).
+Placed Cl- in ramp at (109.28, 17.78, 17.26).
+0: Placed Na+ in ramp at (-61.26, -85.93, 60.36).
+Placed Cl- in ramp at (28.21, 38.15, 96.83).
+0: Placed Na+ in ramp at (-44.03, -48.86, -53.52).
+Placed Cl- in ramp at (-124.75, 32.89, 43.71).
+0: Placed Na+ in ramp at (103.97, -85.33, 25.41).
+Placed Cl- in ramp at (12.71, -95.83, 66.74).
+0: Placed Na+ in ramp at (114.69, 35.51, 6.37).
+Placed Cl- in ramp at (50.74, 19.21, 50.89).
+0: Placed Na+ in ramp at (13.34, -108.22, -10.84).
+Placed Cl- in ramp at (-23.11, 103.71, -40.56).
+0: Placed Na+ in ramp at (72.58, 68.64, 82.75).
+Placed Cl- in ramp at (69.59, -0.68, -33.11).
+0: Placed Na+ in ramp at (-116.21, 2.79, -101.71).
+Placed Cl- in ramp at (-94.83, 19.16, -97.61).
+0: Placed Na+ in ramp at (-19.16, -33.05, 113.28).
+Placed Cl- in ramp at (-77.34, -85.79, 37.44).
+0: Placed Na+ in ramp at (34.52, 73.19, 81.35).
+Placed Cl- in ramp at (118.90, 24.92, 82.47).
+0: Placed Na+ in ramp at (31.53, -106.64, 85.21).
+Placed Cl- in ramp at (39.93, -1.59, -60.70).
+0: Placed Na+ in ramp at (76.61, 26.47, -29.67).
+Placed Cl- in ramp at (70.16, -21.46, -44.17).
+0: Placed Na+ in ramp at (-2.37, 122.10, -4.17).
+Placed Cl- in ramp at (-77.50, -42.35, -43.61).
+0: Placed Na+ in ramp at (-44.78, -50.33, 93.49).
+Placed Cl- in ramp at (-52.93, 36.10, -107.46).
+0: Placed Na+ in ramp at (-24.88, 46.18, 129.47).
+Placed Cl- in ramp at (-29.98, -68.12, 17.69).
+0: Placed Na+ in ramp at (90.88, 89.14, -60.87).
+Placed Cl- in ramp at (67.73, 98.52, 57.18).
+0: Placed Na+ in ramp at (-78.94, 83.13, -44.18).
+Placed Cl- in ramp at (-104.14, 6.97, 77.24).
+0: Placed Na+ in ramp at (7.49, -126.87, 54.42).
+Placed Cl- in ramp at (-115.87, 57.51, 51.02).
+0: Placed Na+ in ramp at (-15.18, -85.30, -84.41).
+Placed Cl- in ramp at (-85.07, 32.65, 66.62).
+0: Placed Na+ in ramp at (-18.78, 7.61, -77.81).
+Placed Cl- in ramp at (78.95, -71.41, 72.78).
+0: Placed Na+ in ramp at (24.18, 136.93, 1.34).
+Placed Cl- in ramp at (92.27, -81.92, -35.19).
+0: Placed Na+ in ramp at (6.83, 14.51, 26.59).
+Placed Cl- in ramp at (86.46, 44.49, 89.05).
+0: Placed Na+ in ramp at (-74.82, 7.55, 96.10).
+Placed Cl- in ramp at (118.09, 48.78, -36.49).
+0: Placed Na+ in ramp at (99.28, -89.97, 64.75).
+Placed Cl- in ramp at (12.37, 55.58, 18.46).
+0: Placed Na+ in ramp at (-118.63, 31.10, 11.20).
+Placed Cl- in ramp at (79.67, 106.93, 43.81).
+0: Placed Na+ in ramp at (-18.85, 63.37, -107.95).
+Placed Cl- in ramp at (-84.11, -21.32, -83.85).
+0: Placed Na+ in ramp at (46.46, -90.41, 75.98).
+Placed Cl- in ramp at (41.37, -59.30, 18.93).
+0: Placed Na+ in ramp at (104.85, 7.04, 83.85).
+Placed Cl- in ramp at (-99.48, 77.00, 37.04).
+0: Placed Na+ in ramp at (-112.25, -59.22, -50.95).
+Placed Cl- in ramp at (18.96, -49.73, 43.87).
+0: Placed Na+ in ramp at (-123.00, -20.44, -48.65).
+Placed Cl- in ramp at (98.09, -24.27, 72.27).
+0: Placed Na+ in ramp at (-26.59, -42.18, 96.46).
+Placed Cl- in ramp at (2.18, -40.02, 77.49).
+0: Placed Na+ in ramp at (-14.69, 106.71, 55.71).
+Placed Cl- in ramp at (-80.92, 99.78, -58.44).
+0: Placed Na+ in ramp at (46.98, -103.06, 43.93).
+Placed Cl- in ramp at (-66.23, -60.28, -83.15).
+0: Placed Na+ in ramp at (46.92, 122.84, -31.56).
+Placed Cl- in ramp at (-124.04, 28.23, -21.01).
+0: Placed Na+ in ramp at (20.91, 5.60, -130.89).
+Placed Cl- in ramp at (80.03, -11.82, -116.43).
+0: Placed Na+ in ramp at (31.11, -31.41, 49.22).
+Placed Cl- in ramp at (4.75, -37.80, 40.65).
+0: Placed Na+ in ramp at (33.90, 19.70, 106.76).
+Placed Cl- in ramp at (-0.60, -17.60, 120.38).
+0: Placed Na+ in ramp at (-45.10, -25.83, -60.23).
+Placed Cl- in ramp at (-0.26, 37.02, -122.76).
+0: Placed Na+ in ramp at (-110.10, 14.49, 46.29).
+Placed Cl- in ramp at (-24.25, 54.94, -54.28).
+0: Placed Na+ in ramp at (22.50, 30.80, -42.57).
+Placed Cl- in ramp at (-87.07, 87.18, 78.55).
+0: Placed Na+ in ramp at (44.90, 16.02, -11.91).
+Placed Cl- in ramp at (108.11, -87.59, -3.46).
+0: Placed Na+ in ramp at (-53.29, 64.46, -8.32).
+Placed Cl- in ramp at (17.24, -38.11, -44.89).
+0: Placed Na+ in ramp at (-38.74, -69.71, -30.66).
+Placed Cl- in ramp at (60.80, 94.89, 67.58).
+0: Placed Na+ in ramp at (-111.55, -20.39, 74.31).
+Placed Cl- in ramp at (-33.23, 93.70, 71.58).
+0: Placed Na+ in ramp at (114.97, -12.57, -87.51).
+Placed Cl- in ramp at (-50.51, -106.35, -54.94).
+0: Placed Na+ in ramp at (29.73, -114.94, -93.49).
+Placed Cl- in ramp at (-25.69, 103.26, -55.12).
+0: Placed Na+ in ramp at (-110.71, 80.20, -11.50).
+Placed Cl- in ramp at (-11.94, -59.44, -0.69).
+0: Placed Na+ in ramp at (109.37, 49.19, -13.41).
+Placed Cl- in ramp at (-42.35, -135.33, 33.47).
+0: Placed Na+ in ramp at (50.34, -77.62, 80.66).
+Placed Cl- in ramp at (102.47, -46.96, -70.73).
+0: Placed Na+ in ramp at (-70.34, -4.49, 7.54).
+Placed Cl- in ramp at (89.27, -67.89, -31.39).
+0: Placed Na+ in ramp at (11.06, -54.22, -28.96).
+Placed Cl- in ramp at (15.86, 99.50, 80.35).
+0: Placed Na+ in ramp at (86.83, -58.43, -50.19).
+Placed Cl- in ramp at (84.06, 64.62, 79.96).
+0: Placed Na+ in ramp at (84.95, 24.47, -89.22).
+Placed Cl- in ramp at (-121.61, 29.06, 39.77).
+0: Placed Na+ in ramp at (28.00, -103.93, -60.07).
+Placed Cl- in ramp at (-42.68, -31.62, -44.73).
+0: Placed Na+ in ramp at (21.19, -64.91, -70.49).
+Placed Cl- in ramp at (-90.66, -64.93, 78.82).
+0: Placed Na+ in ramp at (-91.00, 99.17, 42.65).
+Placed Cl- in ramp at (-82.37, 45.06, 96.37).
+0: Placed Na+ in ramp at (22.02, -61.45, 22.70).
+Placed Cl- in ramp at (29.66, 62.13, 100.56).
+0: Placed Na+ in ramp at (45.61, -116.63, 44.01).
+Placed Cl- in ramp at (-31.89, -132.36, 48.37).
+0: Placed Na+ in ramp at (18.80, 65.52, -34.76).
+Placed Cl- in ramp at (-5.50, 10.99, 149.03).
+0: Placed Na+ in ramp at (85.81, -85.94, 35.09).
+Placed Cl- in ramp at (12.98, 121.57, -25.07).
+0: Placed Na+ in ramp at (-109.13, 51.90, -72.99).
+Placed Cl- in ramp at (-70.69, -39.91, -9.89).
+0: Placed Na+ in ramp at (19.29, 8.66, 131.94).
+Placed Cl- in ramp at (-54.66, 93.98, -48.74).
+0: Placed Na+ in ramp at (-33.54, -53.42, 64.11).
+Placed Cl- in ramp at (-38.58, -107.08, -54.55).
+0: Placed Na+ in ramp at (28.11, -10.90, -139.83).
+Placed Cl- in ramp at (-1.74, -93.14, -61.37).
+0: Placed Na+ in ramp at (70.86, 50.90, -73.10).
+Placed Cl- in ramp at (-22.93, -63.02, 105.74).
+0: Placed Na+ in ramp at (-25.19, 111.14, 57.54).
+Placed Cl- in ramp at (-2.89, -84.41, 78.43).
+0: Placed Na+ in ramp at (105.84, -21.63, 52.57).
+Placed Cl- in ramp at (-14.89, 62.69, 70.77).
+0: Placed Na+ in ramp at (31.99, 43.18, -3.59).
+Placed Cl- in ramp at (-8.88, -78.76, 90.83).
+0: Placed Na+ in ramp at (-7.97, 23.57, 11.52).
+Placed Cl- in ramp at (-45.29, -29.03, -100.73).
+0: Placed Na+ in ramp at (-28.80, 0.65, 27.34).
+Placed Cl- in ramp at (-40.95, -26.46, 23.64).
+0: Placed Na+ in ramp at (48.35, -34.19, 135.94).
+Placed Cl- in ramp at (-114.38, -10.68, 65.93).
+0: Placed Na+ in ramp at (58.39, -2.50, 2.92).
+Placed Cl- in ramp at (-83.91, 1.45, 97.08).
+0: Placed Na+ in ramp at (-121.03, 69.30, 28.41).
+Placed Cl- in ramp at (-11.22, 37.77, 19.77).
+0: Placed Na+ in ramp at (-42.22, 46.05, -44.38).
+Placed Cl- in ramp at (-36.05, -26.24, -65.36).
+0: Placed Na+ in ramp at (-8.66, -121.13, 29.17).
+Placed Cl- in ramp at (3.56, 15.99, 6.98).
+0: Placed Na+ in ramp at (-43.61, 35.33, -143.51).
+Placed Cl- in ramp at (-57.13, 27.75, 104.95).
+0: Placed Na+ in ramp at (-90.15, -86.29, 27.52).
+Placed Cl- in ramp at (22.51, 41.44, -30.22).
+0: Placed Na+ in ramp at (54.80, 109.69, 57.71).
+Placed Cl- in ramp at (-48.43, 82.37, 106.23).
+0: Placed Na+ in ramp at (2.55, -68.47, -53.42).
+Placed Cl- in ramp at (3.17, -70.51, -50.83).
+0: Placed Na+ in ramp at (-51.49, -50.88, 36.43).
+Placed Cl- in ramp at (36.43, -117.30, 81.74).
+0: Placed Na+ in ramp at (-32.41, 10.45, -83.30).
+Placed Cl- in ramp at (97.15, 76.19, 38.54).
+0: Placed Na+ in ramp at (17.64, -16.42, 53.27).
+Placed Cl- in ramp at (-8.72, -32.32, 64.15).
+0: Placed Na+ in ramp at (-80.08, -31.96, 0.08).
+Placed Cl- in ramp at (-73.11, -116.01, 46.73).
+0: Placed Na+ in ramp at (50.13, -43.84, -48.44).
+Placed Cl- in ramp at (-30.26, 85.34, 111.53).
+0: Placed Na+ in ramp at (53.74, -37.33, -95.99).
+Placed Cl- in ramp at (-60.19, 58.35, -1.35).
+0: Placed Na+ in ramp at (78.11, -83.85, 39.30).
+Placed Cl- in ramp at (-54.12, 49.07, -123.32).
+0: Placed Na+ in ramp at (27.30, 12.83, 4.18).
+Placed Cl- in ramp at (50.94, 138.27, -9.80).
+0: Placed Na+ in ramp at (34.65, -35.36, -63.38).
+Placed Cl- in ramp at (-14.39, 62.32, 5.89).
+0: Placed Na+ in ramp at (108.51, -30.03, -67.88).
+Placed Cl- in ramp at (123.18, -71.32, 14.18).
+0: Placed Na+ in ramp at (-36.06, 47.80, -40.38).
+Placed Cl- in ramp at (26.08, 31.28, 64.99).
+0: Placed Na+ in ramp at (-14.40, 104.95, -93.13).
+Placed Cl- in ramp at (13.54, -115.87, 58.54).
+0: Placed Na+ in ramp at (2.41, 4.13, -55.85).
+Placed Cl- in ramp at (-30.98, 77.40, -118.56).
+0: Placed Na+ in ramp at (-45.88, 81.36, 101.58).
+Placed Cl- in ramp at (70.22, 8.45, -34.65).
+0: Placed Na+ in ramp at (26.21, 27.08, 6.36).
+Placed Cl- in ramp at (-72.99, 36.12, 90.79).
+0: Placed Na+ in ramp at (69.01, -102.05, 0.28).
+Placed Cl- in ramp at (48.35, -35.74, -9.09).
+0: Placed Na+ in ramp at (-36.38, 107.10, 82.67).
+Placed Cl- in ramp at (10.18, 67.89, 27.55).
+0: Placed Na+ in ramp at (-89.25, -71.30, -51.66).
+Placed Cl- in ramp at (8.55, 64.16, -86.30).
+0: Placed Na+ in ramp at (-66.58, 12.50, -23.89).
+Placed Cl- in ramp at (-4.64, 125.28, -61.53).
+0: Placed Na+ in ramp at (104.76, 82.69, 57.89).
+Placed Cl- in ramp at (94.92, -33.48, -58.55).
+0: Placed Na+ in ramp at (-18.17, 31.19, 122.05).
+Placed Cl- in ramp at (-22.77, 101.82, -77.60).
+0: Placed Na+ in ramp at (-87.36, 52.37, 64.90).
+Placed Cl- in ramp at (80.42, 7.06, -33.37).
+0: Placed Na+ in ramp at (13.22, -75.39, 4.89).
+Placed Cl- in ramp at (-55.68, 4.94, -60.50).
+0: Placed Na+ in ramp at (79.34, 14.05, 97.17).
+Placed Cl- in ramp at (97.35, 92.12, -58.28).
+0: Placed Na+ in ramp at (-100.48, -48.29, 41.35).
+Placed Cl- in ramp at (-16.04, -8.37, -27.17).
+0: Placed Na+ in ramp at (5.67, 67.39, 106.78).
+Placed Cl- in ramp at (72.77, 13.71, -99.44).
+0: Placed Na+ in ramp at (13.73, -65.12, 116.74).
+Placed Cl- in ramp at (-28.03, 3.65, 56.48).
+0: Placed Na+ in ramp at (-110.19, -62.13, 62.03).
+Placed Cl- in ramp at (-65.98, 22.96, 123.94).
+0: Placed Na+ in ramp at (87.50, -47.64, -64.51).
+Placed Cl- in ramp at (0.72, -5.70, 42.27).
+0: Placed Na+ in ramp at (79.01, -77.60, -77.25).
+Placed Cl- in ramp at (-86.96, 86.72, -41.81).
+0: Placed Na+ in ramp at (-52.71, 46.20, -92.15).
+Placed Cl- in ramp at (14.06, -47.70, -52.00).
+0: Placed Na+ in ramp at (-46.31, 108.17, 31.75).
+Placed Cl- in ramp at (-53.06, 33.52, -56.02).
+0: Placed Na+ in ramp at (-59.57, 47.23, -12.39).
+Placed Cl- in ramp at (-92.52, -89.63, -20.83).
+0: Placed Na+ in ramp at (24.90, -116.39, 81.72).
+Placed Cl- in ramp at (31.56, -56.74, -109.90).
+0: Placed Na+ in ramp at (-24.26, -77.11, 28.59).
+Placed Cl- in ramp at (-55.83, -121.52, -0.69).
+0: Placed Na+ in ramp at (-11.07, -8.70, 84.45).
+Placed Cl- in ramp at (-25.02, -57.32, -12.28).
+0: Placed Na+ in ramp at (-44.35, -3.08, 5.65).
+Placed Cl- in ramp at (-53.96, -25.82, -98.85).
+0: Placed Na+ in ramp at (-36.09, -24.98, 118.87).
+Placed Cl- in ramp at (-49.44, 96.02, -88.05).
+0: Placed Na+ in ramp at (-24.04, 22.22, -133.78).
+Placed Cl- in ramp at (-32.12, 109.60, -94.15).
+0: Placed Na+ in ramp at (33.70, -25.30, 150.94).
+Placed Cl- in ramp at (-2.27, 58.39, -9.76).
+0: Placed Na+ in ramp at (-34.02, -132.14, 58.59).
+Placed Cl- in ramp at (66.52, 46.75, 48.83).
+0: Placed Na+ in ramp at (-47.44, -30.98, 103.34).
+Placed Cl- in ramp at (113.95, -78.35, 35.17).
+0: Placed Na+ in ramp at (-111.88, -86.75, 20.39).
+Placed Cl- in ramp at (-114.57, -17.17, 18.87).
+0: Placed Na+ in ramp at (98.59, -65.95, -70.18).
+Placed Cl- in ramp at (-68.60, 66.25, -10.91).
+0: Placed Na+ in ramp at (34.69, 8.84, -126.84).
+Placed Cl- in ramp at (-38.24, 1.98, -11.91).
+0: Placed Na+ in ramp at (-45.09, 51.51, 31.48).
+Placed Cl- in ramp at (52.00, -64.71, 85.67).
+0: Placed Na+ in ramp at (-2.32, 25.99, 41.88).
+Placed Cl- in ramp at (-124.64, 85.16, 3.27).
+0: Placed Na+ in ramp at (-19.39, -66.99, -10.84).
+Placed Cl- in ramp at (-72.75, 57.54, -104.43).
+0: Placed Na+ in ramp at (-22.68, 58.90, 9.16).
+Placed Cl- in ramp at (-56.17, 22.13, -10.94).
+0: Placed Na+ in ramp at (84.77, -59.57, 73.50).
+Placed Cl- in ramp at (-37.94, -107.25, -46.10).
+0: Placed Na+ in ramp at (-9.13, -2.18, -34.50).
+Placed Cl- in ramp at (22.61, -31.24, -17.78).
+0: Placed Na+ in ramp at (75.27, -87.01, 52.64).
+Placed Cl- in ramp at (0.54, -58.27, -113.07).
+0: Placed Na+ in ramp at (-25.67, -118.22, -33.45).
+Placed Cl- in ramp at (-17.57, 46.12, -32.47).
+0: Placed Na+ in ramp at (-57.54, 33.22, -20.44).
+Placed Cl- in ramp at (-95.13, -92.51, -40.90).
+0: Placed Na+ in ramp at (-22.05, 75.94, -33.75).
+Placed Cl- in ramp at (51.10, 2.56, 107.45).
+0: Placed Na+ in ramp at (-107.35, 7.28, 95.82).
+Placed Cl- in ramp at (32.26, -8.11, 121.75).
+0: Placed Na+ in ramp at (32.58, 71.28, -88.20).
+Placed Cl- in ramp at (-31.65, -122.97, -50.75).
+0: Placed Na+ in ramp at (42.11, 8.20, -10.28).
+Placed Cl- in ramp at (4.09, -37.87, 28.93).
+0: Placed Na+ in ramp at (-1.75, -9.53, -30.19).
+Placed Cl- in ramp at (23.58, -106.62, -92.62).
+0: Placed Na+ in ramp at (24.20, 115.47, 48.17).
+Placed Cl- in ramp at (79.76, 118.96, -11.12).
+0: Placed Na+ in ramp at (-104.29, -87.22, 5.54).
+Placed Cl- in ramp at (-3.72, 71.29, 49.54).
+0: Placed Na+ in ramp at (24.83, 20.37, 110.86).
+Placed Cl- in ramp at (-73.01, -22.98, -33.03).
+0: Placed Na+ in ramp at (31.93, 23.54, 26.54).
+Placed Cl- in ramp at (-47.57, -108.95, -44.94).
+0: Placed Na+ in ramp at (79.88, 86.53, 58.04).
+Placed Cl- in ramp at (27.06, 37.77, -112.20).
+0: Placed Na+ in ramp at (20.42, -94.43, -79.10).
+Placed Cl- in ramp at (88.82, 13.77, 71.07).
+0: Placed Na+ in ramp at (-61.56, -98.66, 51.97).
+Placed Cl- in ramp at (-22.28, 84.33, -102.21).
+0: Placed Na+ in ramp at (47.50, -12.09, -116.71).
+Placed Cl- in ramp at (50.87, -3.71, -20.87).
+0: Placed Na+ in ramp at (-13.01, 99.68, 86.04).
+Placed Cl- in ramp at (-0.01, 21.82, -34.44).
+0: Placed Na+ in ramp at (-15.22, 16.35, -46.64).
+Placed Cl- in ramp at (-2.14, -25.42, 58.71).
+0: Placed Na+ in ramp at (-108.88, 79.15, 6.32).
+Placed Cl- in ramp at (66.15, 10.13, 92.08).
+0: Placed Na+ in ramp at (-30.59, -114.24, -8.45).
+Placed Cl- in ramp at (-63.80, 66.92, 70.36).
+0: Placed Na+ in ramp at (-23.42, -27.50, 74.34).
+Placed Cl- in ramp at (78.06, -13.47, -127.30).
+0: Placed Na+ in ramp at (-82.77, -88.63, 38.94).
+Placed Cl- in ramp at (-82.46, -65.57, 52.01).
+0: Placed Na+ in ramp at (65.64, -15.35, -132.16).
+Placed Cl- in ramp at (115.83, 22.56, 83.85).
+0: Placed Na+ in ramp at (-108.25, -35.35, -24.82).
+Placed Cl- in ramp at (-2.60, 68.75, -32.42).
+0: Placed Na+ in ramp at (-81.27, 44.02, 60.94).
+Placed Cl- in ramp at (109.29, -22.93, -92.14).
+0: Placed Na+ in ramp at (-47.40, -33.95, 36.25).
+Placed Cl- in ramp at (-5.54, 48.69, -38.31).
+0: Placed Na+ in ramp at (-51.54, -9.79, 30.19).
+Placed Cl- in ramp at (-91.21, -47.86, -83.11).
+0: Placed Na+ in ramp at (-39.76, 0.96, 47.72).
+Placed Cl- in ramp at (-119.14, -67.89, -4.36).
+0: Placed Na+ in ramp at (-44.22, 6.01, -45.77).
+Placed Cl- in ramp at (28.42, -55.72, -15.44).
+0: Placed Na+ in ramp at (56.44, -5.67, -66.77).
+Placed Cl- in ramp at (-83.94, -49.93, -88.89).
+0: Placed Na+ in ramp at (104.16, 30.93, -67.69).
+Placed Cl- in ramp at (-109.61, -33.62, 66.75).
+0: Placed Na+ in ramp at (73.07, 93.59, 59.25).
+Placed Cl- in ramp at (-21.51, 41.98, -73.92).
+0: Placed Na+ in ramp at (54.82, 25.56, -60.20).
+Placed Cl- in ramp at (103.78, 33.59, -86.29).
+0: Placed Na+ in ramp at (106.64, 78.78, 12.69).
+Placed Cl- in ramp at (-35.36, 43.10, -52.57).
+0: Placed Na+ in ramp at (3.39, 35.30, 76.45).
+Placed Cl- in ramp at (-107.96, 34.04, 22.40).
+0: Placed Na+ in ramp at (-12.92, 14.36, -94.03).
+Placed Cl- in ramp at (22.12, -60.99, -64.45).
+0: Placed Na+ in ramp at (38.27, -15.52, 57.63).
+Placed Cl- in ramp at (15.90, 12.26, -113.14).
+0: Placed Na+ in ramp at (43.60, -6.88, -43.45).
+Placed Cl- in ramp at (-13.22, -104.55, 74.89).
+0: Placed Na+ in ramp at (13.98, 21.47, 130.03).
+Placed Cl- in ramp at (106.17, 71.25, -0.79).
+0: Placed Na+ in ramp at (-41.89, 14.52, 132.77).
+Placed Cl- in ramp at (-121.50, 58.99, -35.22).
+0: Placed Na+ in ramp at (-117.99, 14.81, -39.69).
+Placed Cl- in ramp at (-58.55, -110.07, 63.79).
+0: Placed Na+ in ramp at (-47.90, 49.29, -104.89).
+Placed Cl- in ramp at (45.67, 3.26, -109.40).
+0: Placed Na+ in ramp at (-40.13, -125.77, 27.21).
+Placed Cl- in ramp at (-13.65, 30.13, 136.16).
+0: Placed Na+ in ramp at (36.99, -22.94, -114.69).
+Placed Cl- in ramp at (3.53, -2.31, 129.36).
+0: Placed Na+ in ramp at (33.56, -110.10, 71.34).
+Placed Cl- in ramp at (44.80, -103.33, -75.54).
+0: Placed Na+ in ramp at (-29.08, 37.89, 50.44).
+Placed Cl- in ramp at (-75.53, 35.72, 16.87).
+0: Placed Na+ in ramp at (-7.86, 61.05, 66.56).
+Placed Cl- in ramp at (32.95, -50.80, 2.11).
+0: Placed Na+ in ramp at (104.11, 16.85, -84.09).
+Placed Cl- in ramp at (-73.23, -19.88, -11.03).
+0: Placed Na+ in ramp at (124.60, 22.38, 46.12).
+Placed Cl- in ramp at (84.25, -99.66, 61.82).
+0: Placed Na+ in ramp at (-67.16, -31.74, -26.84).
+Placed Cl- in ramp at (57.27, 14.99, 120.19).
+0: Placed Na+ in ramp at (41.28, 30.27, 67.54).
+Placed Cl- in ramp at (19.98, -11.79, 14.04).
+0: Placed Na+ in ramp at (58.99, 124.80, 27.34).
+Placed Cl- in ramp at (-36.06, -48.23, -14.21).
+0: Placed Na+ in ramp at (23.29, -55.33, -112.60).
+Placed Cl- in ramp at (-59.04, -104.08, -43.55).
+0: Placed Na+ in ramp at (12.32, 8.34, 131.26).
+Placed Cl- in ramp at (75.60, -9.95, 39.27).
+0: Placed Na+ in ramp at (24.25, -107.09, -13.40).
+Placed Cl- in ramp at (3.88, -62.16, 47.56).
+0: Placed Na+ in ramp at (20.31, -27.64, 14.78).
+Placed Cl- in ramp at (-13.10, -107.56, -39.06).
+0: Placed Na+ in ramp at (-26.53, 39.06, 109.98).
+Placed Cl- in ramp at (-86.96, 52.92, 67.57).
+0: Placed Na+ in ramp at (-89.80, 53.50, 86.40).
+Placed Cl- in ramp at (44.11, 0.12, -70.59).
+0: Placed Na+ in ramp at (-122.79, 55.52, 49.95).
+Placed Cl- in ramp at (-71.63, 4.09, 15.89).
+0: Placed Na+ in ramp at (-32.05, -13.09, -17.15).
+Placed Cl- in ramp at (15.20, 132.27, 57.22).
+0: Placed Na+ in ramp at (-24.02, 62.44, 69.28).
+Placed Cl- in ramp at (113.56, 53.46, -6.96).
+0: Placed Na+ in ramp at (9.82, -4.78, 21.02).
+Placed Cl- in ramp at (-45.47, 97.32, -61.33).
+0: Placed Na+ in ramp at (-16.55, 30.99, -70.68).
+Placed Cl- in ramp at (-54.85, -60.22, -85.83).
+0: Placed Na+ in ramp at (-53.61, -98.25, -55.30).
+Placed Cl- in ramp at (87.70, 5.35, -113.17).
+0: Placed Na+ in ramp at (-61.18, -25.03, -39.14).
+Placed Cl- in ramp at (47.39, -40.21, -53.08).
+0: Placed Na+ in ramp at (-33.45, -83.96, 71.32).
+Placed Cl- in ramp at (25.12, -88.94, 88.87).
+0: Placed Na+ in ramp at (-7.46, -57.83, -51.46).
+Placed Cl- in ramp at (-35.77, 112.25, -71.05).
+0: Placed Na+ in ramp at (-99.15, 87.64, -41.11).
+Placed Cl- in ramp at (-75.27, 57.99, -3.65).
+0: Placed Na+ in ramp at (37.01, -31.84, 147.32).
+Placed Cl- in ramp at (97.01, -12.36, -114.86).
+0: Placed Na+ in ramp at (-24.63, 60.84, 22.83).
+Placed Cl- in ramp at (45.83, 115.05, -40.70).
+0: Placed Na+ in ramp at (-53.18, 56.64, -83.05).
+Placed Cl- in ramp at (124.05, -12.77, -36.88).
+0: Placed Na+ in ramp at (56.13, 12.69, -121.45).
+Placed Cl- in ramp at (-74.20, 43.55, 1.06).
+0: Placed Na+ in ramp at (61.49, -58.40, 101.36).
+Placed Cl- in ramp at (-71.46, 86.08, 60.73).
+0: Placed Na+ in ramp at (-125.26, -35.48, -45.54).
+Placed Cl- in ramp at (51.17, 24.24, 111.34).
+0: Placed Na+ in ramp at (13.87, 45.48, -23.23).
+Placed Cl- in ramp at (-40.17, 0.36, -19.69).
+0: Placed Na+ in ramp at (-20.36, -55.29, 102.80).
+Placed Cl- in ramp at (47.44, 11.19, 121.82).
+0: Placed Na+ in ramp at (-68.69, 82.78, -96.30).
+Placed Cl- in ramp at (-58.24, 13.96, 26.04).
+0: Placed Na+ in ramp at (-12.60, 7.76, 41.38).
+Placed Cl- in ramp at (2.08, -10.51, 53.36).
+0: Placed Na+ in ramp at (11.52, 93.74, 83.84).
+Placed Cl- in ramp at (-18.25, -78.64, -11.36).
+0: Placed Na+ in ramp at (68.75, -8.98, 114.63).
+Placed Cl- in ramp at (80.81, 3.92, 19.22).
+0: Placed Na+ in ramp at (6.84, 133.28, 42.35).
+Placed Cl- in ramp at (-111.54, 34.23, -64.04).
+0: Placed Na+ in ramp at (-19.08, -43.93, 2.22).
+Placed Cl- in ramp at (-9.31, -9.95, 30.78).
+0: Placed Na+ in ramp at (-123.18, 46.14, -21.33).
+Placed Cl- in ramp at (64.02, -66.60, 13.19).
+0: Placed Na+ in ramp at (11.97, 71.05, 2.73).
+Placed Cl- in ramp at (24.72, 26.60, 110.59).
+0: Placed Na+ in ramp at (-77.65, -96.05, 55.87).
+Placed Cl- in ramp at (-2.42, -39.62, -80.42).
+0: Placed Na+ in ramp at (-112.49, -17.51, 52.17).
+Placed Cl- in ramp at (-20.26, 120.56, 24.88).
+0: Placed Na+ in ramp at (19.83, 75.44, -7.72).
+Placed Cl- in ramp at (64.74, -105.12, 56.61).
+0: Placed Na+ in ramp at (-105.96, 89.57, -35.87).
+Placed Cl- in ramp at (29.50, -117.67, -55.35).
+0: Placed Na+ in ramp at (29.81, 98.68, -74.58).
+Placed Cl- in ramp at (28.21, -38.36, 140.40).
+0: Placed Na+ in ramp at (-18.25, -115.19, 29.20).
+Placed Cl- in ramp at (26.62, -30.53, 121.49).
+0: Placed Na+ in ramp at (50.37, 7.05, -106.22).
+Placed Cl- in ramp at (-55.13, -29.65, -101.53).
+0: Placed Na+ in ramp at (77.64, -40.25, 6.06).
+Placed Cl- in ramp at (112.52, -33.01, 30.87).
+0: Placed Na+ in ramp at (15.87, 127.51, -33.93).
+Placed Cl- in ramp at (-123.56, 72.94, 55.35).
+0: Placed Na+ in ramp at (-34.12, 67.03, 31.48).
+Placed Cl- in ramp at (30.88, -63.14, 41.71).
+0: Placed Na+ in ramp at (-8.79, 118.38, 27.15).
+Placed Cl- in ramp at (-21.31, -133.64, -25.31).
+0: Placed Na+ in ramp at (-118.79, -43.54, 47.16).
+Placed Cl- in ramp at (-50.83, 94.45, 70.40).
+0: Placed Na+ in ramp at (14.06, 22.27, 132.98).
+Placed Cl- in ramp at (116.94, 75.08, -25.07).
+0: Placed Na+ in ramp at (37.65, -24.64, 59.17).
+Placed Cl- in ramp at (15.87, -24.66, 75.37).
+0: Placed Na+ in ramp at (104.04, -19.12, 72.82).
+Placed Cl- in ramp at (93.55, -20.77, 103.72).
+0: Placed Na+ in ramp at (98.33, 57.67, -56.08).
+Placed Cl- in ramp at (-74.38, 48.35, -17.18).
+0: Placed Na+ in ramp at (84.37, 9.76, -33.13).
+Placed Cl- in ramp at (-56.88, -28.54, 54.95).
+0: Placed Na+ in ramp at (-118.38, -5.91, 57.56).
+Placed Cl- in ramp at (111.65, 14.34, 77.37).
+0: Placed Na+ in ramp at (-46.96, -134.40, -7.15).
+Placed Cl- in ramp at (-17.58, -115.12, 40.92).
+0: Placed Na+ in ramp at (21.48, -107.10, 57.99).
+Placed Cl- in ramp at (52.64, -67.81, 12.12).
+0: Placed Na+ in ramp at (19.70, 1.59, -71.82).
+Placed Cl- in ramp at (-120.83, 87.94, -19.58).
+0: Placed Na+ in ramp at (44.32, 121.96, -36.98).
+Placed Cl- in ramp at (-8.15, 56.09, 7.39).
+0: Placed Na+ in ramp at (-56.77, 33.98, 87.65).
+Placed Cl- in ramp at (-41.79, -129.60, -34.85).
+0: Placed Na+ in ramp at (-113.79, 60.39, -76.86).
+Placed Cl- in ramp at (-100.29, -91.66, 19.32).
+0: Placed Na+ in ramp at (71.25, -56.54, -69.14).
+Placed Cl- in ramp at (13.93, 70.94, -41.18).
+0: Placed Na+ in ramp at (104.58, 29.51, 86.53).
+Placed Cl- in ramp at (36.37, 40.25, 34.92).
+0: Placed Na+ in ramp at (-25.97, 3.62, -28.88).
+Placed Cl- in ramp at (18.19, -65.15, -118.41).
+0: Placed Na+ in ramp at (5.30, -116.56, 4.08).
+Placed Cl- in ramp at (-59.73, 22.53, -129.31).
+0: Placed Na+ in ramp at (104.43, 50.64, -65.23).
+Placed Cl- in ramp at (-99.25, -78.98, -33.48).
+0: Placed Na+ in ramp at (-2.15, 68.43, 20.39).
+Placed Cl- in ramp at (79.75, 2.27, -104.17).
+0: Placed Na+ in ramp at (-22.26, 26.09, -119.99).
+Placed Cl- in ramp at (-4.61, 8.86, 57.97).
+0: Placed Na+ in ramp at (66.85, -98.65, -87.29).
+Placed Cl- in ramp at (-45.23, 15.70, 68.97).
+0: Placed Na+ in ramp at (-29.11, 117.48, -62.62).
+Placed Cl- in ramp at (-97.20, -98.22, -16.00).
+0: Placed Na+ in ramp at (-93.04, -92.04, 14.56).
+Placed Cl- in ramp at (-57.20, -27.73, 105.32).
+0: Placed Na+ in ramp at (-46.17, 42.54, -136.64).
+Placed Cl- in ramp at (82.65, -26.18, -86.48).
+0: Placed Na+ in ramp at (-4.10, 58.54, 100.11).
+Placed Cl- in ramp at (-102.33, -64.95, -16.83).
+0: Placed Na+ in ramp at (95.92, 108.02, 41.14).
+Placed Cl- in ramp at (119.38, 85.27, 32.19).
+0: Placed Na+ in ramp at (123.07, 47.82, 4.72).
+Placed Cl- in ramp at (-72.17, 101.38, -10.09).
+0: Placed Na+ in ramp at (-70.32, -26.29, -22.15).
+Placed Cl- in ramp at (35.47, -9.44, -31.18).
+0: Placed Na+ in ramp at (-52.72, 58.08, -101.47).
+Placed Cl- in ramp at (-110.55, -38.64, 44.72).
+0: Placed Na+ in ramp at (-13.06, 64.77, 44.18).
+Placed Cl- in ramp at (-72.55, 98.18, 2.97).
+0: Placed Na+ in ramp at (74.40, 5.06, 28.16).
+Placed Cl- in ramp at (-0.60, -80.55, -44.02).
+0: Placed Na+ in ramp at (48.37, -3.82, 123.17).
+Placed Cl- in ramp at (96.39, -52.64, 74.36).
+0: Placed Na+ in ramp at (-57.07, 22.76, -116.56).
+Placed Cl- in ramp at (18.96, -110.16, 72.59).
+0: Placed Na+ in ramp at (0.55, -19.17, 2.41).
+Placed Cl- in ramp at (120.84, -79.18, 14.75).
+0: Placed Na+ in ramp at (-29.60, 79.76, -110.50).
+Placed Cl- in ramp at (-116.63, -74.64, 49.22).
+0: Placed Na+ in ramp at (83.95, 89.29, -47.55).
+Placed Cl- in ramp at (12.94, -96.17, -76.39).
+0: Placed Na+ in ramp at (-24.32, -34.02, 5.64).
+Placed Cl- in ramp at (-106.38, 5.34, 19.91).
+0: Placed Na+ in ramp at (23.59, 69.35, 22.04).
+Placed Cl- in ramp at (107.08, -92.44, 34.75).
+0: Placed Na+ in ramp at (24.84, -28.57, 22.62).
+Placed Cl- in ramp at (63.49, -46.15, -87.50).
+0: Placed Na+ in ramp at (95.99, -14.76, -71.41).
+Placed Cl- in ramp at (-36.56, 47.95, 36.20).
+0: Placed Na+ in ramp at (-77.75, 51.28, -83.66).
+Placed Cl- in ramp at (-35.72, -11.07, -49.24).
+0: Placed Na+ in ramp at (39.94, -101.03, 29.65).
+Placed Cl- in ramp at (65.82, -45.34, 110.80).
+0: Placed Na+ in ramp at (-101.78, -10.22, -69.62).
+Placed Cl- in ramp at (63.70, 37.30, -29.92).
+0: Placed Na+ in ramp at (10.44, 51.16, 68.94).
+Placed Cl- in ramp at (-115.83, 82.23, 29.10).
+0: Placed Na+ in ramp at (24.94, 24.09, -35.57).
+Placed Cl- in ramp at (-81.80, 32.78, -65.26).
+0: Placed Na+ in ramp at (-31.44, 119.50, 41.52).
+Placed Cl- in ramp at (-38.31, 14.16, -125.81).
+0: Placed Na+ in ramp at (-49.33, -23.41, -35.47).
+Placed Cl- in ramp at (104.84, 16.17, 58.04).
+0: Placed Na+ in ramp at (-16.35, -125.89, 60.75).
+Placed Cl- in ramp at (39.29, 131.17, 21.60).
+0: Placed Na+ in ramp at (-69.26, 1.31, -89.15).
+Placed Cl- in ramp at (32.84, 12.82, 64.89).
+0: Placed Na+ in ramp at (-35.31, -25.48, 51.67).
+Placed Cl- in ramp at (123.86, -81.98, -46.01).
+0: Placed Na+ in ramp at (-13.23, 81.69, -111.04).
+Placed Cl- in ramp at (34.54, -53.04, -14.06).
+0: Placed Na+ in ramp at (0.41, -28.76, 29.21).
+Placed Cl- in ramp at (-57.73, 4.49, -102.32).
+0: Placed Na+ in ramp at (-7.69, -42.46, 9.11).
+Placed Cl- in ramp at (19.32, 86.11, -28.02).
+0: Placed Na+ in ramp at (47.44, -84.09, -82.65).
+Placed Cl- in ramp at (-46.86, 44.61, 10.16).
+0: Placed Na+ in ramp at (-43.32, -44.40, 2.53).
+Placed Cl- in ramp at (92.35, 6.51, 85.85).
+0: Placed Na+ in ramp at (-119.66, -44.70, -27.98).
+Placed Cl- in ramp at (-9.64, -68.97, -107.17).
+0: Placed Na+ in ramp at (-48.96, 28.44, -114.71).
+Placed Cl- in ramp at (-53.74, 50.12, 124.07).
+0: Placed Na+ in ramp at (69.45, -99.66, -29.57).
+Placed Cl- in ramp at (-59.62, -103.05, -62.63).
+0: Placed Na+ in ramp at (57.91, -18.61, -45.90).
+Placed Cl- in ramp at (4.60, -46.59, -75.22).
+0: Placed Na+ in ramp at (-79.00, 104.78, 8.75).
+Placed Cl- in ramp at (27.99, -113.88, 0.73).
+0: Placed Na+ in ramp at (69.54, 8.96, 29.20).
+Placed Cl- in ramp at (112.44, 0.42, 98.29).
+0: Placed Na+ in ramp at (16.16, 65.14, 53.62).
+Placed Cl- in ramp at (-53.02, 18.70, 41.33).
+0: Placed Na+ in ramp at (-73.76, 14.53, 13.47).
+Placed Cl- in ramp at (-96.88, -65.31, -6.57).
+0: Placed Na+ in ramp at (12.83, 85.25, -25.80).
+Placed Cl- in ramp at (-52.91, 66.28, 96.09).
+0: Placed Na+ in ramp at (-64.63, 77.15, -52.62).
+Placed Cl- in ramp at (97.10, 93.48, -28.16).
+0: Placed Na+ in ramp at (-26.08, 123.09, 3.45).
+Placed Cl- in ramp at (75.96, -2.91, 10.97).
+0: Placed Na+ in ramp at (112.01, -45.51, -4.43).
+Placed Cl- in ramp at (-11.17, -25.09, -69.67).
+0: Placed Na+ in ramp at (58.03, -99.32, -86.91).
+Placed Cl- in ramp at (23.39, -4.13, -142.87).
+0: Placed Na+ in ramp at (79.95, -12.37, -107.20).
+Placed Cl- in ramp at (47.39, 65.70, -11.06).
+0: Placed Na+ in ramp at (-121.05, 68.11, 47.35).
+Placed Cl- in ramp at (-12.25, -75.67, 5.44).
+0: Placed Na+ in ramp at (-52.74, -94.34, 75.28).
+Placed Cl- in ramp at (74.98, -39.15, 115.64).
+0: Placed Na+ in ramp at (-13.95, -130.18, -29.15).
+Placed Cl- in ramp at (14.25, -55.08, -64.73).
+0: Placed Na+ in ramp at (-73.09, -122.96, -37.22).
+Placed Cl- in ramp at (-36.72, 112.85, 27.18).
+0: Placed Na+ in ramp at (-37.30, 113.58, 44.21).
+Placed Cl- in ramp at (124.10, 63.49, 16.14).
+0: Placed Na+ in ramp at (21.47, -111.66, 9.00).
+Placed Cl- in ramp at (20.12, -117.50, -92.17).
+0: Placed Na+ in ramp at (-54.47, -9.30, 30.09).
+Placed Cl- in ramp at (-112.71, 17.97, -66.87).
+0: Placed Na+ in ramp at (-56.01, 16.70, 19.04).
+Placed Cl- in ramp at (81.00, 69.53, 60.63).
+0: Placed Na+ in ramp at (84.88, -84.10, -14.00).
+Placed Cl- in ramp at (-51.04, -134.62, 15.98).
+0: Placed Na+ in ramp at (45.30, -62.95, -96.79).
+Placed Cl- in ramp at (27.81, 89.05, -18.59).
+0: Placed Na+ in ramp at (-7.97, -26.50, 76.72).
+Placed Cl- in ramp at (66.58, -108.18, -48.27).
+0: Placed Na+ in ramp at (-48.40, -126.36, 10.39).
+Placed Cl- in ramp at (-77.14, 13.25, 13.94).
+0: Placed Na+ in ramp at (67.62, 39.34, -54.36).
+Placed Cl- in ramp at (-1.77, 118.71, 14.93).
+0: Placed Na+ in ramp at (-102.81, 81.55, -63.34).
+Placed Cl- in ramp at (36.03, 3.90, -10.78).
+0: Placed Na+ in ramp at (25.00, -14.19, 24.90).
+Placed Cl- in ramp at (-24.42, 9.80, 72.39).
+0: Placed Na+ in ramp at (42.03, -15.02, 3.06).
+Placed Cl- in ramp at (-27.62, 61.01, -33.67).
+0: Placed Na+ in ramp at (-103.84, 76.99, 52.65).
+Placed Cl- in ramp at (-50.70, 52.20, 34.04).
+0: Placed Na+ in ramp at (-48.29, -113.54, 51.59).
+Placed Cl- in ramp at (-57.78, 66.35, 98.86).
+0: Placed Na+ in ramp at (-54.77, -122.28, -9.69).
+Placed Cl- in ramp at (-33.75, 4.60, 117.53).
+0: Placed Na+ in ramp at (78.10, -89.50, -29.37).
+Placed Cl- in ramp at (31.62, 36.71, 22.62).
+0: Placed Na+ in ramp at (35.28, -36.65, -129.23).
+Placed Cl- in ramp at (6.12, 133.55, -25.52).
+0: Placed Na+ in ramp at (9.14, -36.51, 31.72).
+Placed Cl- in ramp at (-88.92, -87.55, -4.06).
+0: Placed Na+ in ramp at (-50.93, 55.42, -45.11).
+Placed Cl- in ramp at (-13.43, 58.41, 115.19).
+0: Placed Na+ in ramp at (9.62, -116.63, 73.68).
+Placed Cl- in ramp at (115.27, 91.79, 7.04).
+0: Placed Na+ in ramp at (-1.05, -23.79, -48.58).
+Placed Cl- in ramp at (49.85, 16.90, -46.10).
+0: Placed Na+ in ramp at (-15.94, -8.44, -49.55).
+Placed Cl- in ramp at (-87.62, -83.94, -53.86).
+0: Placed Na+ in ramp at (-65.38, 54.41, -118.50).
+Placed Cl- in ramp at (21.76, -69.03, -56.35).
+0: Placed Na+ in ramp at (38.00, -32.41, -128.23).
+Placed Cl- in ramp at (20.03, -7.60, -85.30).
+0: Placed Na+ in ramp at (118.14, 38.54, 69.64).
+Placed Cl- in ramp at (-117.12, -71.40, -10.44).
+0: Placed Na+ in ramp at (-42.25, 21.24, -127.33).
+Placed Cl- in ramp at (2.01, 59.78, -61.18).
+0: Placed Na+ in ramp at (-112.96, -65.33, 2.70).
+Placed Cl- in ramp at (50.68, 79.38, 63.16).
+0: Placed Na+ in ramp at (-24.81, -101.77, 74.02).
+Placed Cl- in ramp at (9.84, 46.35, -60.92).
+0: Placed Na+ in ramp at (36.79, -31.69, 120.92).
+Placed Cl- in ramp at (-3.43, -80.46, -8.94).
+0: Placed Na+ in ramp at (-82.80, 36.82, -92.50).
+Placed Cl- in ramp at (-72.26, 101.00, 3.86).
+0: Placed Na+ in ramp at (-4.32, 30.87, -78.87).
+Placed Cl- in ramp at (-104.54, 72.10, 40.96).
+0: Placed Na+ in ramp at (2.20, -2.88, 38.45).
+Placed Cl- in ramp at (-20.50, 42.55, 76.11).
+0: Placed Na+ in ramp at (103.98, -71.17, 24.55).
+Placed Cl- in ramp at (-100.77, 82.60, 55.26).
+0: Placed Na+ in ramp at (37.33, -116.30, 17.88).
+Placed Cl- in ramp at (52.91, 125.11, -20.88).
+0: Placed Na+ in ramp at (36.99, 14.49, -46.98).
+Placed Cl- in ramp at (29.64, -18.46, -70.48).
+0: Placed Na+ in ramp at (1.94, 64.24, 67.17).
+Placed Cl- in ramp at (58.09, 110.87, -30.73).
+0: Placed Na+ in ramp at (-1.67, -5.59, 5.04).
+Placed Cl- in ramp at (42.54, -112.84, -13.00).
+0: Placed Na+ in ramp at (-82.87, -79.50, 40.90).
+Placed Cl- in ramp at (-49.67, 31.25, 126.66).
+0: Placed Na+ in ramp at (74.46, -30.63, -87.50).
+Placed Cl- in ramp at (-79.26, -94.00, 40.86).
+0: Placed Na+ in ramp at (-11.95, 107.36, 87.64).
+Placed Cl- in ramp at (-40.38, 11.37, -77.48).
+0: Placed Na+ in ramp at (46.40, 45.75, -22.96).
+Placed Cl- in ramp at (-112.89, 21.53, 95.74).
+0: Placed Na+ in ramp at (-18.07, 18.87, -11.33).
+Placed Cl- in ramp at (53.29, -104.02, -59.22).
+0: Placed Na+ in ramp at (-119.26, 0.50, -4.76).
+Placed Cl- in ramp at (-16.19, 11.67, -60.60).
+0: Placed Na+ in ramp at (83.60, -73.41, 72.23).
+Placed Cl- in ramp at (44.71, 28.06, 105.19).
+0: Placed Na+ in ramp at (26.10, 101.72, 69.95).
+Placed Cl- in ramp at (90.45, -20.38, -99.89).
+0: Placed Na+ in ramp at (33.57, -26.07, -72.15).
+Placed Cl- in ramp at (33.94, -88.01, -81.44).
+0: Placed Na+ in ramp at (-76.84, -105.11, -60.31).
+Placed Cl- in ramp at (-7.67, -108.99, -85.92).
+0: Placed Na+ in ramp at (47.50, 88.63, 62.84).
+Placed Cl- in ramp at (-2.59, 9.50, 145.57).
+0: Placed Na+ in ramp at (50.79, -72.59, -95.52).
+Placed Cl- in ramp at (-35.05, 99.15, 65.68).
+0: Placed Na+ in ramp at (27.26, -32.20, -19.37).
+Placed Cl- in ramp at (26.83, 12.20, -112.84).
+0: Placed Na+ in ramp at (45.77, -5.30, -61.26).
+Placed Cl- in ramp at (113.82, 74.62, 50.04).
+0: Placed Na+ in ramp at (50.72, -50.60, 117.31).
+Placed Cl- in ramp at (11.47, 41.94, -20.84).
+0: Placed Na+ in ramp at (52.23, 35.23, -65.18).
+Placed Cl- in ramp at (-12.99, -23.50, -39.63).
+0: Placed Na+ in ramp at (-57.99, 105.30, -77.06).
+Placed Cl- in ramp at (23.41, 113.40, 35.40).
+0: Placed Na+ in ramp at (84.29, -88.62, 27.51).
+Placed Cl- in ramp at (-93.71, -7.44, 86.92).
+0: Placed Na+ in ramp at (-43.64, 1.36, -67.20).
+Placed Cl- in ramp at (-77.53, -86.83, -45.49).
+0: Placed Na+ in ramp at (-48.23, -36.91, 23.41).
+Placed Cl- in ramp at (-111.32, 70.85, 66.07).
+0: Placed Na+ in ramp at (108.60, 64.82, 25.99).
+Placed Cl- in ramp at (-42.38, -141.61, 18.86).
+0: Placed Na+ in ramp at (11.65, 19.29, 76.30).
+Placed Cl- in ramp at (77.75, 69.20, -66.55).
+0: Placed Na+ in ramp at (20.67, -40.95, -13.81).
+Placed Cl- in ramp at (-67.71, 30.39, -17.98).
+0: Placed Na+ in ramp at (75.40, -80.82, -76.56).
+Placed Cl- in ramp at (-57.79, 0.10, -96.93).
+0: Placed Na+ in ramp at (107.92, -51.10, -74.75).
+Placed Cl- in ramp at (23.03, 140.44, -14.66).
+0: Placed Na+ in ramp at (-80.76, 85.25, -46.08).
+Placed Cl- in ramp at (-45.76, 21.59, -136.36).
+0: Placed Na+ in ramp at (63.94, 44.20, 9.98).
+Placed Cl- in ramp at (97.17, -86.40, 45.46).
+0: Placed Na+ in ramp at (-50.25, 27.76, -50.99).
+Placed Cl- in ramp at (-106.98, 17.95, 99.70).
+0: Placed Na+ in ramp at (121.93, -21.21, -60.88).
+Placed Cl- in ramp at (16.61, -117.21, -67.98).
+0: Placed Na+ in ramp at (-124.38, -80.53, -50.11).
+Placed Cl- in ramp at (36.82, 70.40, -33.12).
+0: Placed Na+ in ramp at (-83.83, 16.51, -22.88).
+Placed Cl- in ramp at (-117.94, 27.12, 74.32).
+0: Placed Na+ in ramp at (-93.13, 84.36, 45.36).
+Placed Cl- in ramp at (20.71, 97.08, 71.24).
+0: Placed Na+ in ramp at (-0.08, -29.45, -13.84).
+Placed Cl- in ramp at (74.30, -77.07, -60.82).
+0: Placed Na+ in ramp at (-86.34, 97.96, -77.55).
+Placed Cl- in ramp at (80.17, 61.25, -78.07).
+0: Placed Na+ in ramp at (34.61, -114.23, 32.46).
+Placed Cl- in ramp at (-120.89, 61.78, 4.43).
+0: Placed Na+ in ramp at (-48.31, 63.05, -35.13).
+Placed Cl- in ramp at (-2.83, -67.46, -19.61).
+0: Placed Na+ in ramp at (121.53, 21.82, 6.06).
+Placed Cl- in ramp at (-8.74, -19.43, 46.26).
+0: Placed Na+ in ramp at (11.74, 55.64, -19.95).
+Placed Cl- in ramp at (86.12, 22.81, 88.96).
+0: Placed Na+ in ramp at (-27.95, 12.13, 139.77).
+Placed Cl- in ramp at (53.85, -95.14, 92.11).
+0: Placed Na+ in ramp at (-4.06, -119.68, 62.62).
+Placed Cl- in ramp at (-55.44, -31.88, -62.19).
+0: Placed Na+ in ramp at (-27.27, 113.94, -13.28).
+Placed Cl- in ramp at (2.61, 8.25, -74.31).
+0: Placed Na+ in ramp at (-31.05, 63.00, 4.85).
+Placed Cl- in ramp at (-79.73, 77.02, -86.01).
+0: Placed Na+ in ramp at (-33.22, 66.01, -43.88).
+Placed Cl- in ramp at (12.32, -74.76, -100.73).
+0: Placed Na+ in ramp at (82.99, -25.18, -100.95).
+Placed Cl- in ramp at (15.44, 60.48, -11.91).
+0: Placed Na+ in ramp at (-70.41, 33.24, 105.88).
+Placed Cl- in ramp at (19.40, -100.36, 87.68).
+0: Placed Na+ in ramp at (28.40, -111.97, 49.10).
+Placed Cl- in ramp at (-121.20, -11.11, -30.85).
+0: Placed Na+ in ramp at (42.21, -53.93, 38.26).
+Placed Cl- in ramp at (25.42, -109.54, 28.10).
+0: Placed Na+ in ramp at (-19.05, -11.63, -23.82).
+Placed Cl- in ramp at (70.42, -75.87, -73.72).
+0: Placed Na+ in ramp at (78.36, -28.78, -7.29).
+Placed Cl- in ramp at (-44.79, -75.95, 5.17).
+0: Placed Na+ in ramp at (-92.98, -104.87, -5.25).
+Placed Cl- in ramp at (116.18, 73.33, -32.41).
+0: Placed Na+ in ramp at (9.49, 25.34, -87.39).
+Placed Cl- in ramp at (42.99, -70.39, 126.49).
+0: Placed Na+ in ramp at (-7.77, -65.68, 22.45).
+Placed Cl- in ramp at (58.58, -14.82, 59.98).
+0: Placed Na+ in ramp at (32.64, 43.87, -65.01).
+Placed Cl- in ramp at (47.56, 20.03, 4.21).
+0: Placed Na+ in ramp at (-65.93, -36.14, -93.58).
+Placed Cl- in ramp at (43.71, 33.42, -99.95).
+0: Placed Na+ in ramp at (-15.42, -36.64, -79.30).
+Placed Cl- in ramp at (41.10, -70.36, -24.16).
+0: Placed Na+ in ramp at (-70.15, 36.16, 100.68).
+Placed Cl- in ramp at (-11.64, -25.56, -27.67).
+0: Placed Na+ in ramp at (-117.37, 50.67, -27.22).
+Placed Cl- in ramp at (77.99, -56.48, 79.02).
+0: Placed Na+ in ramp at (-95.67, 62.14, 57.12).
+Placed Cl- in ramp at (61.53, -41.15, 103.22).
+0: Placed Na+ in ramp at (-49.77, -125.53, -45.14).
+Placed Cl- in ramp at (-28.64, 77.61, 5.94).
+0: Placed Na+ in ramp at (90.00, -18.02, -98.44).
+Placed Cl- in ramp at (94.61, -56.54, -71.62).
+0: Placed Na+ in ramp at (-6.23, 47.98, -61.51).
+Placed Cl- in ramp at (-24.65, 8.02, 137.20).
+0: Placed Na+ in ramp at (-49.99, 3.30, -61.09).
+Placed Cl- in ramp at (8.24, 76.91, -38.63).
+0: Placed Na+ in ramp at (115.03, -65.92, 42.40).
+Placed Cl- in ramp at (-34.73, -42.95, -12.64).
+0: Placed Na+ in ramp at (46.64, -31.43, -104.20).
+Placed Cl- in ramp at (103.95, 15.61, 88.84).
+0: Placed Na+ in ramp at (-38.22, 6.96, -62.70).
+Placed Cl- in ramp at (71.86, -10.42, -43.01).
+0: Placed Na+ in ramp at (61.95, 111.28, 1.28).
+Placed Cl- in ramp at (-114.43, 8.56, 103.69).
+0: Placed Na+ in ramp at (116.63, 61.24, 23.61).
+Placed Cl- in ramp at (-24.06, -20.56, 110.61).
+0: Placed Na+ in ramp at (-51.03, -39.42, 1.41).
+Placed Cl- in ramp at (12.73, -26.01, 0.31).
+0: Placed Na+ in ramp at (60.46, 123.40, -49.36).
+Placed Cl- in ramp at (115.29, -47.61, 54.05).
+0: Placed Na+ in ramp at (39.38, 32.57, -7.62).
+Placed Cl- in ramp at (-49.20, 37.01, -138.52).
+0: Placed Na+ in ramp at (53.45, 0.18, 55.87).
+Placed Cl- in ramp at (36.42, 54.17, 31.32).
+0: Placed Na+ in ramp at (-88.78, 87.13, 14.38).
+Placed Cl- in ramp at (32.67, 137.85, -59.11).
+0: Placed Na+ in ramp at (-99.65, -93.29, -28.71).
+Placed Cl- in ramp at (13.07, -48.10, -46.72).
+0: Placed Na+ in ramp at (29.13, 99.36, 78.18).
+Placed Cl- in ramp at (-62.85, 72.21, 106.94).
+0: Placed Na+ in ramp at (-33.20, -68.43, -35.11).
+Placed Cl- in ramp at (105.14, 24.36, 73.14).
+0: Placed Na+ in ramp at (-48.26, 113.80, 47.60).
+Placed Cl- in ramp at (45.68, 64.33, -15.83).
+0: Placed Na+ in ramp at (68.23, -88.71, 42.85).
+Placed Cl- in ramp at (65.83, -66.06, -96.86).
+0: Placed Na+ in ramp at (24.50, 25.36, -70.70).
+Placed Cl- in ramp at (-102.80, 19.44, 77.31).
+0: Placed Na+ in ramp at (81.47, -93.53, -51.57).
+Placed Cl- in ramp at (20.38, -93.89, -88.70).
+0: Placed Na+ in ramp at (-66.96, -5.98, -21.91).
+Placed Cl- in ramp at (39.33, 74.15, 83.13).
+0: Placed Na+ in ramp at (-35.27, -11.39, 3.57).
+Placed Cl- in ramp at (-19.20, 58.80, 11.50).
+0: Placed Na+ in ramp at (11.16, -13.09, 2.80).
+Placed Cl- in ramp at (-24.75, 36.11, -113.60).
+0: Placed Na+ in ramp at (-47.18, 27.18, 96.54).
+Placed Cl- in ramp at (2.51, -5.78, 142.71).
+0: Placed Na+ in ramp at (-14.07, 43.86, 52.41).
+Placed Cl- in ramp at (-82.70, 89.45, 30.85).
+0: Placed Na+ in ramp at (45.34, -24.27, 39.34).
+Placed Cl- in ramp at (50.82, -51.12, 106.55).
+0: Placed Na+ in ramp at (67.38, -30.32, -14.34).
+Placed Cl- in ramp at (-28.60, 97.16, -102.50).
+0: Placed Na+ in ramp at (-98.41, 13.62, 74.26).
+Placed Cl- in ramp at (-112.03, -17.02, 22.55).
+0: Placed Na+ in ramp at (-95.47, 8.64, -94.54).
+Placed Cl- in ramp at (-88.14, -86.84, 6.27).
+0: Placed Na+ in ramp at (25.25, 55.47, -15.12).
+Placed Cl- in ramp at (-63.79, 17.58, -16.90).
+0: Placed Na+ in ramp at (80.76, 94.14, -10.81).
+Placed Cl- in ramp at (-61.01, -5.94, 25.02).
+0: Placed Na+ in ramp at (116.40, -20.87, 70.79).
+Placed Cl- in ramp at (-50.91, 62.45, -94.26).
+0: Placed Na+ in ramp at (-7.93, 55.96, -62.08).
+Placed Cl- in ramp at (-46.28, -35.20, 29.34).
+0: Placed Na+ in ramp at (-2.34, -32.92, -75.88).
+Placed Cl- in ramp at (-1.94, 70.10, 109.03).
+0: Placed Na+ in ramp at (68.36, -55.26, 114.90).
+Placed Cl- in ramp at (74.62, -20.71, -33.75).
+0: Placed Na+ in ramp at (-113.24, 38.38, 6.73).
+Placed Cl- in ramp at (35.41, 24.68, -106.51).
+0: Placed Na+ in ramp at (-16.98, 77.97, 100.25).
+Placed Cl- in ramp at (-63.26, 6.21, 47.28).
+0: Placed Na+ in ramp at (54.03, 13.12, -55.09).
+Placed Cl- in ramp at (-10.99, 41.18, -133.19).
+0: Placed Na+ in ramp at (11.91, 61.56, -42.84).
+Placed Cl- in ramp at (-70.39, -16.85, 3.18).
+0: Placed Na+ in ramp at (-4.19, -65.65, -4.26).
+Placed Cl- in ramp at (-58.94, 105.60, 57.27).
+0: Placed Na+ in ramp at (-31.29, 75.43, -88.73).
+Placed Cl- in ramp at (11.01, 6.58, -143.21).
+0: Placed Na+ in ramp at (24.98, -93.17, 68.38).
+Placed Cl- in ramp at (57.54, 105.25, 39.51).
+0: Placed Na+ in ramp at (54.85, -2.38, 52.65).
+Placed Cl- in ramp at (105.90, 52.44, 63.78).
+0: Placed Na+ in ramp at (123.69, -15.65, -32.56).
+Placed Cl- in ramp at (38.87, -49.54, -56.80).
+0: Placed Na+ in ramp at (3.60, -51.50, -120.81).
+Placed Cl- in ramp at (-76.01, -91.11, 28.93).
+0: Placed Na+ in ramp at (-39.08, 109.78, -18.25).
+Placed Cl- in ramp at (-124.21, -86.92, -29.31).
+0: Placed Na+ in ramp at (78.51, 31.64, -41.02).
+Placed Cl- in ramp at (17.65, 36.30, 73.27).
+0: Placed Na+ in ramp at (-12.56, 81.21, -31.83).
+Placed Cl- in ramp at (74.24, -13.70, -18.47).
+0: Placed Na+ in ramp at (81.06, -100.66, 44.56).
+Placed Cl- in ramp at (16.28, -49.71, -123.50).
+0: Placed Na+ in ramp at (49.09, -2.90, -120.61).
+Placed Cl- in ramp at (-43.69, -33.35, 4.35).
+0: Placed Na+ in ramp at (-55.61, -121.67, 25.71).
+Placed Cl- in ramp at (76.84, 14.03, 85.07).
+0: Placed Na+ in ramp at (-38.01, -57.38, 43.65).
+Placed Cl- in ramp at (-63.76, 21.96, 22.76).
+0: Placed Na+ in ramp at (-75.32, -21.77, 41.73).
+Placed Cl- in ramp at (45.12, 15.86, 14.49).
+0: Placed Na+ in ramp at (0.66, 117.13, -62.34).
+Placed Cl- in ramp at (88.23, -94.71, 67.79).
+0: Placed Na+ in ramp at (45.98, -18.09, 37.53).
+Placed Cl- in ramp at (26.06, 24.25, 114.14).
+0: Placed Na+ in ramp at (120.78, 41.79, 49.82).
+Placed Cl- in ramp at (-102.94, 55.12, -75.15).
+0: Placed Na+ in ramp at (7.88, 8.29, 137.47).
+Placed Cl- in ramp at (-16.06, 63.03, -12.12).
+0: Placed Na+ in ramp at (50.04, -23.92, -1.81).
+Placed Cl- in ramp at (119.82, 58.44, -46.43).
+0: Placed Na+ in ramp at (104.87, 76.86, 17.43).
+Placed Cl- in ramp at (-36.89, -110.22, -60.70).
+0: Placed Na+ in ramp at (-19.57, 107.10, 35.83).
+Placed Cl- in ramp at (-30.21, 73.77, 45.97).
+0: Placed Na+ in ramp at (43.53, 131.36, 10.76).
+Placed Cl- in ramp at (76.24, -49.66, 90.46).
+0: Placed Na+ in ramp at (-113.19, -69.63, 7.73).
+Placed Cl- in ramp at (113.20, 1.33, -73.85).
+0: Placed Na+ in ramp at (36.11, -47.27, -51.39).
+Placed Cl- in ramp at (-37.15, -8.94, -22.86).
+0: Placed Na+ in ramp at (111.77, -63.60, -54.76).
+Placed Cl- in ramp at (108.15, 17.84, -74.04).
+0: Placed Na+ in ramp at (41.11, -14.19, 136.12).
+Placed Cl- in ramp at (57.00, -19.36, 126.03).
+0: Placed Na+ in ramp at (84.73, 2.54, -89.30).
+Placed Cl- in ramp at (27.85, 82.51, 7.83).
+0: Placed Na+ in ramp at (67.04, -52.17, -110.88).
+Placed Cl- in ramp at (-7.14, -37.71, 123.31).
+0: Placed Na+ in ramp at (112.90, -29.95, 86.93).
+Placed Cl- in ramp at (25.26, 45.05, 47.93).
+0: Placed Na+ in ramp at (16.50, 136.80, 52.53).
+Placed Cl- in ramp at (-17.97, -7.08, 64.10).
+0: Placed Na+ in ramp at (-50.48, 100.19, 37.11).
+Placed Cl- in ramp at (-67.43, 1.49, -33.77).
+0: Placed Na+ in ramp at (-10.46, 36.26, 17.42).
+Placed Cl- in ramp at (41.02, -50.37, 109.38).
+0: Placed Na+ in ramp at (-45.00, 26.64, 105.86).
+Placed Cl- in ramp at (-19.82, 34.82, -35.05).
+0: Placed Na+ in ramp at (11.16, 52.23, -69.95).
+Placed Cl- in ramp at (5.81, 104.62, -71.68).
+0: Placed Na+ in ramp at (-23.59, 52.47, -109.95).
+Placed Cl- in ramp at (50.41, -103.57, -9.04).
+0: Placed Na+ in ramp at (-50.48, 0.10, 103.91).
+Placed Cl- in ramp at (51.16, 100.86, -19.04).
+0: Placed Na+ in ramp at (118.89, -35.58, -74.75).
+Placed Cl- in ramp at (49.96, 68.42, -92.41).
+0: Placed Na+ in ramp at (52.81, 14.43, -14.27).
+Placed Cl- in ramp at (-32.46, 44.77, -48.05).
+0: Placed Na+ in ramp at (-79.13, 90.58, 42.19).
+Placed Cl- in ramp at (-58.41, 96.71, 42.56).
+0: Placed Na+ in ramp at (111.06, -5.53, -105.69).
+Placed Cl- in ramp at (-87.84, -90.34, -50.38).
+0: Placed Na+ in ramp at (-71.57, -89.12, 51.38).
+Placed Cl- in ramp at (44.94, -43.11, -7.18).
+0: Placed Na+ in ramp at (39.61, 27.53, -100.36).
+Placed Cl- in ramp at (-72.51, -110.11, 14.77).
+0: Placed Na+ in ramp at (-30.10, -138.34, -45.64).
+Placed Cl- in ramp at (-83.24, 99.46, -3.19).
+0: Placed Na+ in ramp at (-97.62, 59.38, -90.61).
+Placed Cl- in ramp at (103.55, 53.52, -58.84).
+0: Placed Na+ in ramp at (33.43, -2.69, -111.89).
+Placed Cl- in ramp at (40.47, 18.31, -112.16).
+0: Placed Na+ in ramp at (-21.24, -131.73, 49.27).
+Placed Cl- in ramp at (-45.48, 84.40, -90.43).
+0: Placed Na+ in ramp at (20.55, -27.46, -132.50).
+Placed Cl- in ramp at (-59.48, -5.67, -56.08).
+0: Placed Na+ in ramp at (-15.59, 90.69, 87.61).
+Placed Cl- in ramp at (34.67, -16.73, 52.41).
+0: Placed Na+ in ramp at (101.65, 80.06, 22.62).
+Placed Cl- in ramp at (49.40, -73.13, -30.67).
+0: Placed Na+ in ramp at (-23.31, -27.74, 40.17).
+Placed Cl- in ramp at (-11.61, 33.44, -54.05).
+0: Placed Na+ in ramp at (56.64, -76.19, -110.32).
+Placed Cl- in ramp at (77.24, 36.16, -98.56).
+0: Placed Na+ in ramp at (4.19, 55.17, -50.83).
+Placed Cl- in ramp at (10.52, 1.33, 57.98).
+0: Placed Na+ in ramp at (-65.41, 24.17, -88.74).
+Placed Cl- in ramp at (47.73, -44.91, 1.45).
+0: Placed Na+ in ramp at (89.26, 82.41, 60.13).
+Placed Cl- in ramp at (-124.62, -53.10, 68.76).
+0: Placed Na+ in ramp at (-84.42, 47.38, -107.88).
+Placed Cl- in ramp at (-34.19, 43.42, -136.16).
+0: Placed Na+ in ramp at (-46.57, 101.78, -53.99).
+Placed Cl- in ramp at (-53.62, -119.17, 33.72).
+0: Placed Na+ in ramp at (57.39, -60.69, 13.00).
+Placed Cl- in ramp at (38.20, -112.45, -38.18).
+0: Placed Na+ in ramp at (-70.22, -107.99, 50.80).
+Placed Cl- in ramp at (-72.05, 51.26, 108.86).
+0: Placed Na+ in ramp at (119.64, 9.18, -42.91).
+Placed Cl- in ramp at (-20.35, -43.50, -34.13).
+0: Placed Na+ in ramp at (4.71, 34.45, -34.41).
+Placed Cl- in ramp at (41.85, -47.19, 109.11).
+0: Placed Na+ in ramp at (-38.94, 15.80, -128.03).
+Placed Cl- in ramp at (40.56, -19.70, 58.34).
+0: Placed Na+ in ramp at (-61.96, 65.76, 77.11).
+Placed Cl- in ramp at (-35.97, 105.62, 58.48).
+0: Placed Na+ in ramp at (-1.39, -99.43, 64.66).
+Placed Cl- in ramp at (67.69, 42.92, 46.54).
+0: Placed Na+ in ramp at (-36.93, 64.81, -104.89).
+Placed Cl- in ramp at (14.41, -17.68, -79.47).
+0: Placed Na+ in ramp at (-30.91, 57.09, -100.83).
+Placed Cl- in ramp at (-10.39, 38.80, -12.33).
+0: Placed Na+ in ramp at (-21.59, -35.51, -51.25).
+Placed Cl- in ramp at (-34.43, -52.79, -41.51).
+0: Placed Na+ in ramp at (-25.83, 103.71, 33.67).
+Placed Cl- in ramp at (-43.87, -41.70, -51.94).
+0: Placed Na+ in ramp at (-84.94, -1.98, -1.50).
+Placed Cl- in ramp at (-29.98, -5.95, -70.97).
+0: Placed Na+ in ramp at (46.22, -40.45, -115.77).
+Placed Cl- in ramp at (86.18, -87.58, -56.61).
+0: Placed Na+ in ramp at (67.36, -90.62, -50.51).
+Placed Cl- in ramp at (79.49, -20.52, 95.33).
+0: Placed Na+ in ramp at (67.89, -107.43, -30.83).
+Placed Cl- in ramp at (34.12, 7.19, 21.70).
+0: Placed Na+ in ramp at (41.99, -105.75, -92.23).
+Placed Cl- in ramp at (-5.57, -23.29, -118.50).
+0: Placed Na+ in ramp at (105.06, 79.25, 19.06).
+Placed Cl- in ramp at (7.92, 37.07, -27.55).
+0: Placed Na+ in ramp at (-63.81, -76.61, -80.76).
+Placed Cl- in ramp at (120.85, 39.87, -77.44).
+0: Placed Na+ in ramp at (-56.96, 2.70, 44.18).
+Placed Cl- in ramp at (53.89, 42.22, -89.58).
+0: Placed Na+ in ramp at (-0.95, 124.06, 68.70).
+Placed Cl- in ramp at (-122.25, -52.15, 41.34).
+0: Placed Na+ in ramp at (36.62, 29.46, -25.87).
+Placed Cl- in ramp at (66.88, -30.94, -83.28).
+0: Placed Na+ in ramp at (123.21, -30.15, 21.98).
+Placed Cl- in ramp at (34.16, -49.76, 20.41).
+0: Placed Na+ in ramp at (-29.80, -106.32, 49.03).
+Placed Cl- in ramp at (83.25, -44.35, -65.98).
+0: Placed Na+ in ramp at (-41.80, -42.61, 6.52).
+Placed Cl- in ramp at (-78.19, -19.21, 31.50).
+0: Placed Na+ in ramp at (13.10, 17.78, -5.40).
+Placed Cl- in ramp at (-21.43, 13.69, 5.03).
+0: Placed Na+ in ramp at (57.17, 0.46, -63.92).
+Placed Cl- in ramp at (-83.52, -102.34, -38.87).
+0: Placed Na+ in ramp at (-94.71, -95.98, -49.72).
+Placed Cl- in ramp at (18.19, -39.06, -31.60).
+0: Placed Na+ in ramp at (22.57, -31.21, -56.47).
+Placed Cl- in ramp at (57.08, 18.51, -96.10).
+0: Placed Na+ in ramp at (10.51, -66.77, 16.32).
+Placed Cl- in ramp at (-11.72, 97.36, -96.69).
+0: Placed Na+ in ramp at (-72.07, -96.47, 55.18).
+Placed Cl- in ramp at (2.74, -89.60, 35.12).
+0: Placed Na+ in ramp at (12.68, 28.54, -12.79).
+Placed Cl- in ramp at (0.93, -20.17, -124.09).
+0: Placed Na+ in ramp at (-38.80, -130.39, 54.85).
+Placed Cl- in ramp at (72.84, -91.41, 65.91).
+0: Placed Na+ in ramp at (32.84, -13.54, -9.79).
+Placed Cl- in ramp at (-61.57, -69.29, 67.08).
+0: Placed Na+ in ramp at (16.10, 127.35, -7.52).
+Placed Cl- in ramp at (-75.57, -8.36, -111.15).
+0: Placed Na+ in ramp at (116.41, 52.17, -64.54).
+Placed Cl- in ramp at (62.82, -38.74, 16.83).
+0: Placed Na+ in ramp at (-20.59, -23.97, -4.98).
+Placed Cl- in ramp at (29.08, 6.75, -16.41).
+0: Placed Na+ in ramp at (45.62, -0.05, 40.97).
+Placed Cl- in ramp at (-25.37, -34.78, 22.32).
+0: Placed Na+ in ramp at (-108.33, 26.99, 50.70).
+Placed Cl- in ramp at (65.83, -22.60, 36.04).
+0: Placed Na+ in ramp at (-61.64, -77.63, 83.12).
+Placed Cl- in ramp at (-106.26, 92.91, 56.84).
+0: Placed Na+ in ramp at (106.43, 54.04, 54.75).
+Placed Cl- in ramp at (15.26, -15.56, 139.28).
+0: Placed Na+ in ramp at (51.32, -8.99, -66.49).
+Placed Cl- in ramp at (-93.52, -1.73, -87.29).
+0: Placed Na+ in ramp at (-21.33, -128.59, 11.23).
+Placed Cl- in ramp at (104.64, -44.06, -66.12).
+0: Placed Na+ in ramp at (-115.49, 47.39, 20.98).
+Placed Cl- in ramp at (113.45, 62.77, 59.98).
+0: Placed Na+ in ramp at (-34.16, 11.23, 19.30).
+Placed Cl- in ramp at (-122.19, -69.55, 29.23).
+0: Placed Na+ in ramp at (95.47, -85.56, -0.11).
+Placed Cl- in ramp at (-46.17, -54.67, 48.71).
+0: Placed Na+ in ramp at (-109.51, -55.49, 31.09).
+Placed Cl- in ramp at (26.50, -21.72, 31.59).
+0: Placed Na+ in ramp at (27.19, -109.98, -41.87).
+Placed Cl- in ramp at (-105.91, 50.28, 24.02).
+0: Placed Na+ in ramp at (116.08, 8.08, -49.56).
+Placed Cl- in ramp at (-1.31, -72.61, 102.54).
+0: Placed Na+ in ramp at (30.60, -15.95, 29.62).
+Placed Cl- in ramp at (111.33, 69.68, -62.15).
+0: Placed Na+ in ramp at (75.96, -41.58, -4.01).
+Placed Cl- in ramp at (-3.85, -37.18, -80.28).
+0: Placed Na+ in ramp at (121.30, -17.76, -88.61).
+Placed Cl- in ramp at (-14.23, 22.97, -78.10).
+0: Placed Na+ in ramp at (-59.73, 49.34, 108.74).
+Placed Cl- in ramp at (-49.66, 61.72, 5.80).
+0: Placed Na+ in ramp at (-14.07, 106.63, 90.97).
+Placed Cl- in ramp at (3.13, -87.63, 98.64).
+0: Placed Na+ in ramp at (-112.98, 19.14, 86.22).
+Placed Cl- in ramp at (-28.35, 91.45, -91.67).
+0: Placed Na+ in ramp at (29.75, -14.04, -9.42).
+Placed Cl- in ramp at (-23.78, 45.78, -50.41).
+0: Placed Na+ in ramp at (2.28, 53.02, -2.27).
+Placed Cl- in ramp at (-4.56, 121.83, -72.64).
+0: Placed Na+ in ramp at (122.96, -5.54, -49.47).
+Placed Cl- in ramp at (44.91, 98.27, 55.58).
+0: Placed Na+ in ramp at (-19.63, -11.73, 32.93).
+Placed Cl- in ramp at (-6.98, 35.32, -49.15).
+0: Placed Na+ in ramp at (-65.71, 20.30, -131.71).
+Placed Cl- in ramp at (-54.03, -44.41, 55.24).
+0: Placed Na+ in ramp at (-110.47, 0.90, -90.94).
+Placed Cl- in ramp at (29.91, -80.63, -6.01).
+0: Placed Na+ in ramp at (42.36, -35.70, 145.65).
+Placed Cl- in ramp at (86.12, -17.23, -90.59).
+0: Placed Na+ in ramp at (-83.74, 96.91, -30.27).
+Placed Cl- in ramp at (-76.95, -10.20, 50.78).
+0: Placed Na+ in ramp at (54.27, 53.48, 4.23).
+Placed Cl- in ramp at (-36.52, 114.94, 47.46).
+0: Placed Na+ in ramp at (6.40, -23.28, -38.85).
+Placed Cl- in ramp at (-103.06, 71.09, -52.47).
+0: Placed Na+ in ramp at (-118.92, 18.41, 54.59).
+Placed Cl- in ramp at (42.85, 44.79, 67.57).
+0: Placed Na+ in ramp at (-87.45, -65.69, -71.25).
+Placed Cl- in ramp at (-14.65, 114.82, -49.81).
+0: Placed Na+ in ramp at (118.72, 24.68, 74.09).
+Placed Cl- in ramp at (71.01, -95.55, -56.25).
+0: Placed Na+ in ramp at (42.03, -65.93, -118.89).
+Placed Cl- in ramp at (-92.04, 86.81, -63.82).
+0: Placed Na+ in ramp at (-36.53, -42.34, -0.03).
+Placed Cl- in ramp at (9.86, -2.20, -134.58).
+0: Placed Na+ in ramp at (6.33, -113.19, 40.76).
+Placed Cl- in ramp at (56.01, 17.09, 118.35).
+0: Placed Na+ in ramp at (-46.22, 42.91, -62.85).
+Placed Cl- in ramp at (-7.88, 46.44, 27.65).
+0: Placed Na+ in ramp at (-95.79, 83.93, -5.46).
+Placed Cl- in ramp at (-18.99, 24.39, -41.18).
+0: Placed Na+ in ramp at (36.64, 68.77, -77.78).
+Placed Cl- in ramp at (-20.16, 46.81, 127.82).
+0: Placed Na+ in ramp at (-20.00, 118.06, -4.63).
+Placed Cl- in ramp at (-44.39, 13.36, 40.62).
+0: Placed Na+ in ramp at (-15.05, 84.04, -1.31).
+Placed Cl- in ramp at (-32.43, 74.26, -82.59).
+0: Placed Na+ in ramp at (46.00, -5.46, -34.85).
+Placed Cl- in ramp at (54.40, 1.86, -13.56).
+0: Placed Na+ in ramp at (44.12, -59.41, -114.51).
+Placed Cl- in ramp at (-54.53, -52.62, -49.71).
+0: Placed Na+ in ramp at (-8.06, -100.27, -44.72).
+Placed Cl- in ramp at (102.22, -90.69, -30.28).
+0: Placed Na+ in ramp at (-50.78, 86.03, -92.17).
+Placed Cl- in ramp at (101.55, 63.10, 7.53).
+0: Placed Na+ in ramp at (-111.10, -77.92, 20.43).
+Placed Cl- in ramp at (-36.82, 57.67, -98.19).
+0: Placed Na+ in ramp at (-80.51, 32.48, -16.88).
+Placed Cl- in ramp at (-72.74, -12.57, 49.22).
+0: Placed Na+ in ramp at (-28.67, 121.08, -21.69).
+Placed Cl- in ramp at (-5.25, -124.61, 17.70).
+> saveamberparm ramp RAMPL10_ion.prmtop RAMPL10_ion.inpcrd
+Checking Unit.
+
+Note: Ignoring the warnings from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 51240 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CPHE	60
+	NMET	60
+  )
+ (no restraints)
+> savepdb ramp RAMPL1_ion.pdb
+Writing pdb file: RAMPL1_ion.pdb
+   printing CRYST1 record to PDB file with box info
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+
+Warning:  Converting N-terminal residue name to PDB format: NMET -> MET
+
+Warning:  Converting C-terminal residue name to PDB format: CPHE -> PHE
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 240; Notes = 1.
